@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Locations - Echoes of the Ancients</title>
+        <link rel="stylesheet" href="/styles.css" />
+        <link rel="icon" type="image/png" href="/images/favicon.png" />
+    </head>
+    <body>
+        <header>
+            <!--#include virtual="/nav.shtml" -->
+            <div class="header-media">
+                <video autoplay muted loop playsinline>
+                    <source src="/videos/hero_teaser.mp4" type="video/mp4" />
+                </video>
+                <img
+                    src="/images/hero_fallback.jpg"
+                    alt="Valley of the Ancients"
+                />
+            </div>
+            <div class="hero locations">
+                <h1>Locations</h1>
+                <p class="tagline">Realms of the valley’s ancient wrath</p>
+            </div>
+        </header>
+        <section id="locations">
+            <h2>Explore the Valley</h2>
+            <div class="location-grid">
+                <article class="location">
+                    <img
+                        src="/images/locations/spireofdawn_thumb.jpg"
+                        alt="Spire of Dawn Thumbnail"
+                        class="location-img"
+                    />
+                    <h3>Spire of Dawn</h3>
+                    <p>
+                        A fractured monolith in the northwest, whispering
+                        Elyra’s fall.
+                    </p>
+                    <a
+                        href="/world/locations/spireofdawn.html"
+                        class="explore-btn"
+                        >Explore</a
+                    >
+                </article>
+                <article class="location">
+                    <img
+                        src="/images/locations/livingjungle_thumb.jpg"
+                        alt="Living Jungle Thumbnail"
+                        class="location-img"
+                    />
+                    <h3>Living Jungle</h3>
+                    <p>
+                        A verdant maze of kapok and thorns in the central-west.
+                    </p>
+                    <a
+                        href="/world/locations/livingjungle.html"
+                        class="explore-btn"
+                        >Explore</a
+                    >
+                </article>
+                <article class="location">
+                    <img
+                        src="/images/locations/sunkensands_thumb.jpg"
+                        alt="Sunken Sands Thumbnail"
+                        class="location-img"
+                    />
+                    <h3>Sunken Sands</h3>
+                    <p>Golden dunes and quicksand pits in the southwest.</p>
+                    <a
+                        href="/world/locations/sunkensands.html"
+                        class="explore-btn"
+                        >Explore</a
+                    >
+                </article>
+                <article class="location">
+                    <img
+                        src="/images/locations/templeofechoes_thumb.jpg"
+                        alt="Temple of Echoes Thumbnail"
+                        class="location-img"
+                    />
+                    <h3>Temple of Echoes</h3>
+                    <p>A wind-sung cathedral of mirrors in the central-east.</p>
+                    <a
+                        href="/world/locations/templeofechoes.html"
+                        class="explore-btn"
+                        >Explore</a
+                    >
+                </article>
+                <article class="location">
+                    <img
+                        src="/images/locations/tribalenclave_thumb.jpg"
+                        alt="Tribal Enclave Thumbnail"
+                        class="location-img"
+                    />
+                    <h3>Tribal Enclave</h3>
+                    <p>
+                        A cliffside refuge gripped by shadow in the northeast.
+                    </p>
+                    <a
+                        href="/world/locations/tribalenclave.html"
+                        class="explore-btn"
+                        >Explore</a
+                    >
+                </article>
+                <article class="location">
+                    <img
+                        src="/images/locations/abyssalrift_thumb.jpg"
+                        alt="Abyssal Rift Thumbnail"
+                        class="location-img"
+                    />
+                    <h3>Abyssal Rift</h3>
+                    <p>
+                        A festering wound of corruption at the valley’s heart.
+                    </p>
+                    <a
+                        href="/world/locations/abyssalrift.html"
+                        class="explore-btn"
+                        >Explore</a
+                    >
+                </article>
+                <article class="location">
+                    <img
+                        src="/images/locations/highpeaks_thumb.jpg"
+                        alt="High Peaks Thumbnail"
+                        class="location-img"
+                    />
+                    <h3>High Peaks</h3>
+                    <p>
+                        Jagged heights of frost and wind along the northern
+                        edge.
+                    </p>
+                    <a
+                        href="/world/locations/highpeaks.html"
+                        class="explore-btn"
+                        >Explore</a
+                    >
+                </article>
+                <article class="location">
+                    <img
+                        src="/images/locations/windsroost_thumb.jpg"
+                        alt="Wind’s Roost Thumbnail"
+                        class="location-img"
+                    />
+                    <h3>Wind’s Roost</h3>
+                    <p>A lofty perch atop the High Peaks, carved by gales.</p>
+                    <a
+                        href="/world/locations/windsroost.html"
+                        class="explore-btn"
+                        >Explore</a
+                    >
+                </article>
+            </div>
+        </section>
+        <footer>
+            <p>
+                © 2025 Echoes of the Ancients. Crafted with wisdom by Grok,
+                created by xAI.
+            </p>
+            <p>
+                Contact:
+                <a href="mailto:echoesgame@KdeanGames.net"
+                    >echoesgame@KdeanGames.net</a
+                >
+            </p>
+        </footer>
+        <script>
+            // Fallback: Show image if video fails or isn’t present
+            const video = document.querySelector("video");
+            const img = document.querySelector(".header-media img");
+            if (!video.querySelector("source").src || video.readyState === 0) {
+                video.style.display = "none";
+                img.style.display = "block";
+            }
+            video.onloadeddata = () => {
+                video.style.display = "block";
+                img.style.display = "none";
+            };
+            video.onerror = () => {
+                video.style.display = "none";
+                img.style.display = "block";
+            };
+        </script>
+    </body>
+</html>

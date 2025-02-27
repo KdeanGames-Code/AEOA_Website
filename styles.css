@@ -1,20 +1,32 @@
-/* Reset and Base */
+/* ==========================================================================
+   Reset and Base Styles
+   ========================================================================== */
+
+/* Reset default margins and padding for all elements */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-body {
-    font-family: "Arial", sans-serif;
-    background: #0d0d0d;
-    color: #e6e6e6;
-    line-height: 1.6;
-    overflow-x: hidden;
+    box-sizing: border-box; /* Ensures padding/margins don’t bloat elements */
 }
 
-/* Fonts */
+/* Base body styling for consistent look across site */
+body {
+    font-family: "Arial", sans-serif; /* Default fallback font */
+    background: #0d0d0d; /* Dark background for medieval fantasy vibe */
+    color: #e6e6e6; /* Light text for contrast */
+    line-height: 1.6; /* Improved readability */
+    overflow-x: hidden; /* Prevents horizontal scroll issues */
+}
+
+/* ==========================================================================
+   Fonts and Typography
+   ========================================================================== */
+
+/* Import custom fonts for medieval aesthetic */
 @import url("https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap");
+
+/* Headings and navigation typography (desktop) */
 h1,
 h2,
 .tagline,
@@ -22,47 +34,63 @@ nav a,
 .dropbtn,
 .dropdown-content a,
 .update h3,
-.document h3 {
-    font-family: "MedievalSharp", cursive, Arial; /* Desktop default, including document titles */
-    font-weight: 400; /* Normal weight for MedievalSharp */
+.document h3,
+.location h3 {
+    font-family: "MedievalSharp", cursive, Arial; /* MedievalSharp for titles/nav on desktop */
+    font-weight: 400; /* Normal weight for readability */
 }
+
+/* Body text for updates and documents (desktop) */
 .update .date,
-.document p {
-    font-family: "MedievalSharp", cursive, Arial; /* Same for dates and document text */
+.document p,
+.location p {
+    font-family: "MedievalSharp", cursive, Arial; /* Consistent medieval style */
     font-weight: 400;
 }
 
-/* Header */
+/* ==========================================================================
+   Header and Hero Section
+   ========================================================================== */
+
+/* Header container for full-screen background media */
 header {
-    height: 100vh;
+    height: 100vh; /* Full viewport height */
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-    overflow: hidden;
+    overflow: hidden; /* Contains media overflow */
 }
+
+/* Media layer for video/image background */
 .header-media {
     position: absolute;
-    top: 4rem; /* Height of nav */
+    top: 4rem; /* Offset for nav height */
     left: 0;
     width: 100%;
     height: calc(100% - 4rem); /* Full height minus nav */
-    z-index: 0; /* Below nav */
+    z-index: 0; /* Below nav and hero */
 }
+
+/* Video styling with fallback logic */
 header video {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    animation: fadeIn 2s ease-in;
-    display: none; /* Hidden by default until loaded */
+    object-fit: cover; /* Covers area without distortion */
+    animation: fadeIn 2s ease-in; /* Fade-in animation */
+    display: none; /* Hidden until loaded */
 }
+
+/* Fallback image styling */
 header img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     animation: fadeIn 2s ease-in;
-    display: block; /* Image is default */
+    display: block; /* Default visible */
 }
+
+/* Fade-in animation for header media */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -72,62 +100,139 @@ header img {
     }
 }
 
-/* Navigation */
+/* Hero overlay for titles and taglines */
+.hero {
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent dark overlay */
+    padding: 2.5rem;
+    border-radius: 15px;
+    animation: slideUp 1s ease-out; /* Slide-up entry */
+    position: relative;
+    z-index: 1; /* Above media */
+    margin-top: 60vh; /* Positions below nav on desktop */
+    width: 80%;
+    max-width: 800px;
+}
+
+/* Page-specific hero adjustments (desktop) */
+.hero.index {
+    margin-top: 60vh; /* Consistent spacing for index */
+}
+.hero.updates {
+    margin-top: 60vh; /* Matches index for updates */
+}
+.hero.documents {
+    margin-top: 60vh; /* Matches others for documents */
+}
+
+/* Slide-up animation for hero */
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Main heading styling */
+h1 {
+    font-size: 4rem; /* Large, bold titles */
+    color: #d4a017; /* Gold for medieval flair */
+    text-shadow: 3px 3px 6px #000; /* Deep shadow for depth */
+}
+
+/* Tagline styling */
+.tagline {
+    font-size: 1.8rem;
+    margin: 1rem 0;
+}
+
+/* ==========================================================================
+   Navigation
+   ========================================================================== */
+
+/* Fixed navigation bar */
 nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.9); /* Dark, semi-transparent */
     padding: 1rem 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+    z-index: 1000; /* Above all but burger toggle */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7); /* Subtle shadow */
 }
+
+/* Hidden checkbox for main menu toggle */
 .nav-toggle {
     display: none;
 }
-.nav-toggle-label {
+
+/* Hidden checkbox for World submenu toggle */
+.world-toggle {
     display: none;
+}
+
+/* Hamburger menu toggle label (mobile) */
+.nav-toggle-label {
+    display: none; /* Hidden on desktop */
     position: absolute;
     top: 1rem;
     right: 1rem;
     cursor: pointer;
     z-index: 1002; /* Above everything */
     padding: 0.5rem;
-    background: transparent; /* Removed background to show lines */
+    background: transparent; /* No background, just lines */
 }
+
+/* Hamburger lines */
 .nav-toggle-label span {
     display: block;
     width: 30px;
     height: 4px;
-    background: #d4a017;
+    background: #d4a017; /* Gold lines */
     margin: 6px 0;
-    transition: all 0.3s ease;
-    z-index: 1003; /* Ensure above all */
+    transition: all 0.3s ease; /* Smooth animation */
+    z-index: 1003; /* Above all */
 }
+
+/* Main menu layout */
 .main-menu {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 2rem; /* Space between items */
     list-style: none;
 }
+
+/* Nav link styling */
 nav a {
     color: #e6e6e6;
     text-decoration: none;
     font-size: 1.3rem;
-    transition: color 0.3s, text-shadow 0.3s;
+    transition: color 0.3s, text-shadow 0.3s; /* Hover effects */
 }
+
 nav a:hover {
-    color: #d4a017;
-    text-shadow: 0 0 5px rgba(212, 160, 23, 0.8);
+    color: #d4a017; /* Gold on hover */
+    text-shadow: 0 0 5px rgba(212, 160, 23, 0.8); /* Glow effect */
 }
+
+/* Dropdown container */
 .dropdown {
     position: relative;
 }
+
+/* Dropdown button (label for toggle on mobile) */
 .dropbtn {
     color: #e6e6e6;
     font-size: 1.3rem;
-    padding: 0;
+    padding: 0; /* No extra padding on desktop */
+    display: block; /* Full click area */
+    cursor: pointer; /* Clickable feel */
 }
+
+/* Dropdown menu */
 .dropdown-content {
     display: none;
     position: absolute;
@@ -138,25 +243,35 @@ nav a:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
     border-radius: 5px;
     padding: 0.5rem 0;
-    z-index: 1001; /* Above nav but below burger */
+    z-index: 1001; /* Above nav, below burger */
 }
+
 .dropdown:hover .dropdown-content {
-    display: block;
-} /* Desktop hover */
+    display: block; /* Shows on hover (desktop) */
+}
+
 .dropdown-content a {
     padding: 0.5rem 1rem;
     font-size: 1.1rem;
-}
-.dropdown-content a:hover {
-    background: rgba(212, 160, 23, 0.2);
+    display: block; /* Ensures full click area */
 }
 
-/* Mobile Nav Fix */
+.dropdown-content a:hover {
+    background: rgba(212, 160, 23, 0.2); /* Subtle gold on hover */
+}
+
+/* ==========================================================================
+   Responsive Design (Mobile Adjustments)
+   ========================================================================== */
+
 @media (max-width: 767px) {
+    /* Show hamburger toggle */
     .nav-toggle-label {
         display: block;
-        z-index: 1002; /* Ensure above all */
+        z-index: 1002;
     }
+
+    /* Collapse main menu */
     .main-menu {
         display: none;
         flex-direction: column;
@@ -168,9 +283,12 @@ nav a:hover {
         padding: 1rem 0;
         z-index: 1000; /* Above header media */
     }
+
     .nav-toggle:checked ~ .main-menu {
-        display: flex;
+        display: flex; /* Show when toggled */
     }
+
+    /* Hamburger animation */
     .nav-toggle:checked + .nav-toggle-label span:nth-child(1) {
         transform: rotate(45deg) translate(6px, 6px);
     }
@@ -180,178 +298,106 @@ nav a:hover {
     .nav-toggle:checked + .nav-toggle-label span:nth-child(3) {
         transform: rotate(-45deg) translate(8px, -8px);
     }
+
+    /* Submenu (World) adjustments */
     .dropdown-content {
-        display: none; /* Collapsed by default on mobile */
+        display: none; /* Hidden by default */
         position: static;
         transform: none;
         width: 100%;
         box-shadow: none;
         background: rgba(0, 0, 0, 0.95);
+        padding-left: 1rem; /* Indent for hierarchy */
     }
+
     .dropdown {
         position: static;
     }
+
     .dropbtn {
-        padding: 0.5rem;
+        padding: 0.5rem; /* Padding for click area */
     }
+
     .dropdown:hover .dropdown-content {
-        display: none;
-    } /* Disable hover on mobile */
-    h1,
-    h2,
-    .tagline,
-    nav a,
-    .dropbtn,
-    .dropdown-content a,
-    .update h3,
-    .document h3 {
-        font-family: "EB Garamond", serif, Arial; /* Mobile font, including documents */
-        font-weight: 400; /* Normal weight for EB Garamond */
+        display: none; /* Disable hover on mobile */
     }
-    h1 {
-        font-size: 2.2rem;
-    } /* Reduced for mobile readability */
-    .tagline {
-        font-size: 1.2rem;
-    } /* Reduced for mobile readability */
-    nav a {
-        font-size: 1.2rem;
-    } /* Smaller nav text on mobile */
-    .dropbtn {
-        font-size: 1.2rem;
-    }
-    .dropdown-content a {
-        font-size: 1rem;
-    }
-    .update h3,
-    .document h3 {
-        font-size: 1.6rem;
-    } /* Adjusted for mobile readability */
-    .update .date,
-    .document p {
-        font-size: 1rem;
-    } /* Adjusted for mobile */
-}
 
-/* Hero */
-.hero {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 2.5rem;
-    border-radius: 15px;
-    animation: slideUp 1s ease-out;
-    position: relative;
-    z-index: 1; /* Above media */
-    margin-top: 60vh; /* 4rem Default for updates.shtml, matching nav height on desktop */
-    width: 80%;
-    max-width: 800px;
-}
-.hero.index {
-    /* Specific rule for index.shtml */
-    margin-top: 60vh; /* Ensure proper spacing below nav for index on desktop */
-}
-.hero.updates {
-    /* Specific rule for updates.shtml on desktop */
-    margin-top: 60vh; /* Match index.shtml spacing on desktop to fix title at top */
-}
-.hero.documents {
-    /* Specific rule for documents.html on desktop */
-    margin-top: 60vh; /* Match index.shtml and updates.shtml spacing on desktop */
-}
-@media (max-width: 767px) {
-    .hero {
-        margin-top: 50vh; /* Adjusted for mobile, matching earlier versions for updates */
+    /* Show World submenu when toggled */
+    #world-toggle:checked ~ .dropdown-content {
+        display: block; /* Expands when clicked on mobile */
     }
-    .hero.index {
-        /* Specific rule for index.shtml on mobile */
-        margin-top: 20vh; /* Reduced for mobile to fix gap, adjust as needed (e.g., 15vh or 25vh) */
-    }
-    .hero.updates {
-        /* Specific rule for updates.shtml on mobile */
-        margin-top: 50vh; /* Maintain mobile spacing for updates, no gap needed here */
-    }
-    .hero.documents {
-        /* Specific rule for documents.html on mobile */
-        margin-top: 50vh; /* Match updates.shtml mobile spacing, adjust as needed */
-    }
-}
-@keyframes slideUp {
-    from {
-        transform: translateY(50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-h1 {
-    font-size: 4rem;
-    color: #d4a017;
-    text-shadow: 3px 3px 6px #000;
-}
-.tagline {
-    font-size: 1.8rem;
-    margin: 1rem 0;
-}
 
-/* Sections */
+    /* Rest of mobile styles unchanged */
+}
+/* ==========================================================================
+   Content Sections
+   ========================================================================== */
+
+/* General section styling */
 section {
-    padding: 3rem 2rem; /* Reduced padding to minimize gap */
+    padding: 3rem 2rem; /* Reduced padding for tighter layout */
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto; /* Centered content */
 }
+
+/* Section headings */
 h2 {
     font-size: 2.8rem;
-    color: #d4a017;
+    color: #d4a017; /* Gold for prominence */
     text-align: center;
-    margin-bottom: 2rem; /* Reduced margin to minimize gap */
+    margin-bottom: 2rem; /* Space below */
 }
 
-/* Enhanced Documents Grid */
+/* Documents Grid */
 .document-grid {
     display: grid;
     gap: 2rem;
-    padding: 1rem 0; /* Reduced padding to minimize gap */
+    padding: 1rem 0; /* Minimal padding */
 }
+
 .document {
-    background: #1f1f1f;
+    background: #1f1f1f; /* Dark card background */
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Lifted shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Hover animation */
 }
+
 .document:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(212, 160, 23, 0.3);
+    transform: translateY(-5px); /* Slight lift */
+    box-shadow: 0 12px 24px rgba(212, 160, 23, 0.3); /* Gold shadow */
 }
-.document h3 {
-    font-size: 2rem; /* Larger, medieval title */
-    color: #d4a017; /* Gold color for titles */
-    margin-bottom: 0.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Stronger shadow for medieval effect */
-    text-transform: uppercase; /* Bold, medieval title style */
-}
-.document p {
-    font-size: 1.1rem;
-    color: #b0b0b0;
-    margin-bottom: 1rem;
-    line-height: 1.6;
-}
+
 .document-img {
     width: 100%;
-    max-width: 200px; /* Matches smaller thumbnail size */
+    max-width: 200px; /* Thumbnail size */
     height: auto;
     border-radius: 10px;
-    border: 2px solid #d4a017; /* Gold border like features */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Shadow like features */
-    margin-bottom: 1rem; /* Space below image */
-    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover like features */
+    border: 2px solid #d4a017; /* Gold border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+    margin-bottom: 1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .document:hover .document-img {
-    transform: scale(1.05); /* Slight scale on hover like features */
-    box-shadow: 0 8px 16px rgba(212, 160, 23, 0.3); /* Enhanced gold shadow like features */
+    transform: scale(1.05); /* Slight scale */
+    box-shadow: 0 8px 16px rgba(212, 160, 23, 0.3); /* Enhanced shadow */
 }
+
+.document h3 {
+    font-size: 2rem;
+    color: #d4a017;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    text-transform: uppercase;
+}
+
+.document p {
+    font-size: 1.1rem;
+    color: #b0b0b0; /* Lighter grey for text */
+    margin-bottom: 1rem;
+}
+
 .download-btn {
     display: inline-block;
     padding: 0.5rem 1rem;
@@ -363,18 +409,90 @@ h2 {
     font-weight: 400;
     transition: background 0.3s, transform 0.3s;
 }
+
 .download-btn:hover {
-    background: #f5c442; /* Lighter gold on hover */
+    background: #f5c442; /* Lighter gold */
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(212, 160, 23, 0.4);
 }
 
-/* Enhanced Updates Timeline */
+/* Locations Grid (Updated for Two-Column Layout) */
+.location-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two-column layout */
+    gap: 2rem;
+    padding: 1rem 0; /* Matches other grids */
+}
+
+.location {
+    background: #1f1f1f;
+    padding: 2.5rem; /* Slightly more padding like features */
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center; /* Center like features */
+}
+
+.location:hover {
+    transform: scale(1.05); /* Matches feature hover scale */
+    box-shadow: 0 12px 24px rgba(212, 160, 23, 0.3);
+}
+
+.location-img {
+    width: 100%;
+    height: 300px; /* Bigger like feature img (250px + adjustment) */
+    object-fit: cover; /* Ensures image fills space */
+    border-radius: 10px;
+    border: 2px solid #d4a017; /* Gold border like features */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    margin-bottom: 1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.location:hover .location-img {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(212, 160, 23, 0.3);
+}
+
+.location h3 {
+    font-size: 1.8rem; /* Matches feature h3 */
+    color: #e6e6e6; /* Matches feature color */
+    margin: 1rem 0; /* Matches feature spacing */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.location p {
+    font-size: 1.1rem;
+    color: #b0b0b0;
+    line-height: 1.8; /* Matches feature line height */
+    margin-bottom: 1rem;
+}
+
+.explore-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #d4a017;
+    color: #0d0d0d;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: "MedievalSharp", cursive, Arial;
+    font-weight: 400;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.explore-btn:hover {
+    background: #f5c442;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(212, 160, 23, 0.4);
+}
+
+/* Updates Grid */
 .update-grid {
     display: grid;
     gap: 2rem;
-    padding: 1rem 0; /* Reduced padding to minimize gap */
+    padding: 1rem 0;
 }
+
 .update {
     background: #1f1f1f;
     padding: 2rem;
@@ -382,65 +500,76 @@ h2 {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
     transition: transform 0.3s, box-shadow 0.3s;
 }
+
 .update:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 24px rgba(212, 160, 23, 0.3);
 }
+
 .update h3 {
-    font-size: 2rem; /* Larger, medieval title */
-    color: #d4a017; /* Gold color for titles */
+    font-size: 2rem;
+    color: #d4a017;
     margin-bottom: 0.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Stronger shadow for medieval effect */
-    text-transform: uppercase; /* Bold, medieval title style */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    text-transform: uppercase;
 }
+
 .update .date {
-    font-size: 1rem; /* Larger, medieval date */
+    font-size: 1rem;
     color: #b0b0b0;
     margin-bottom: 1rem;
-    font-style: italic; /* Medieval flourish */
+    font-style: italic;
 }
+
 .update p {
     font-size: 1.1rem;
     color: #b0b0b0;
     line-height: 1.8;
 }
+
 .update .media {
     margin-top: 1rem;
     text-align: center;
 }
+
 .update .media img {
     width: 100%;
     max-width: 400px;
     height: auto;
     border-radius: 10px;
-    border: 2px solid #d4a017; /* Gold border like features */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Shadow like features */
-    transition: transform 0.3s, box-shadow 0.3s; /* Animation like features */
-}
-.update .media img:hover {
-    transform: scale(1.05); /* Slight scale on hover like features */
-    box-shadow: 0 8px 16px rgba(212, 160, 23, 0.3); /* Enhanced shadow on hover */
+    border: 2px solid #d4a017;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Enhanced Features Carousel */
+.update .media img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(212, 160, 23, 0.3);
+}
+
+/* Features Carousel */
 .feature-grid {
     display: flex;
     overflow-x: auto;
     gap: 2rem;
-    padding: 1rem 0; /* Reduced padding to minimize gap */
-    scrollbar-width: thin; /* Firefox */
-    scrollbar-color: #d4a017 #1f1f1f; /* Firefox */
+    padding: 1rem 0;
+    scrollbar-width: thin;
+    scrollbar-color: #d4a017 #1f1f1f;
 }
+
 .feature-grid::-webkit-scrollbar {
     height: 8px;
 }
+
 .feature-grid::-webkit-scrollbar-track {
     background: #1f1f1f;
 }
+
 .feature-grid::-webkit-scrollbar-thumb {
     background: #d4a017;
     border-radius: 4px;
 }
+
 .feature {
     flex: 0 0 400px;
     background: #1f1f1f;
@@ -450,10 +579,12 @@ h2 {
     transition: transform 0.3s, box-shadow 0.3s;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
 }
+
 .feature:hover {
     transform: scale(1.1);
     box-shadow: 0 12px 24px rgba(212, 160, 23, 0.3);
 }
+
 .feature img {
     width: 100%;
     height: 250px;
@@ -463,43 +594,58 @@ h2 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s, box-shadow 0.3s;
 }
+
 .feature img:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(212, 160, 23, 0.3);
 }
+
 .feature h3 {
     font-size: 1.8rem;
     color: #e6e6e6;
     margin: 1rem 0;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
+
 .feature p {
     font-size: 1.1rem;
     color: #b0b0b0;
     line-height: 1.8;
 }
 
-/* Footer */
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+/* Footer styling */
 footer {
-    background: #080808;
+    background: #080808; /* Darker base */
     padding: 2rem;
     text-align: center;
     font-size: 1rem;
 }
+
 footer a {
     color: #d4a017;
     text-decoration: none;
 }
+
 footer a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Simple hover effect */
 }
 
-/* Responsive */
+/* ==========================================================================
+   Responsive Design (Mobile Adjustments)
+   ========================================================================== */
+
 @media (max-width: 767px) {
+    /* Mobile nav toggle visibility */
     .nav-toggle-label {
         display: block;
-        z-index: 1002; /* Ensure above all */
+        z-index: 1002;
     }
+
+    /* Mobile menu collapse */
     .main-menu {
         display: none;
         flex-direction: column;
@@ -509,11 +655,14 @@ footer a:hover {
         width: 100%;
         background: rgba(0, 0, 0, 0.95);
         padding: 1rem 0;
-        z-index: 1000; /* Above header media */
+        z-index: 1000;
     }
+
     .nav-toggle:checked ~ .main-menu {
-        display: flex;
+        display: flex; /* Show when toggled */
     }
+
+    /* Hamburger animation */
     .nav-toggle:checked + .nav-toggle-label span:nth-child(1) {
         transform: rotate(45deg) translate(6px, 6px);
     }
@@ -523,8 +672,10 @@ footer a:hover {
     .nav-toggle:checked + .nav-toggle-label span:nth-child(3) {
         transform: rotate(-45deg) translate(8px, -8px);
     }
+
+    /* Mobile dropdown adjustments */
     .dropdown-content {
-        display: none; /* Collapsed by default on mobile */
+        display: none; /* Hidden by default */
         position: static;
         transform: none;
         width: 100%;
@@ -539,72 +690,105 @@ footer a:hover {
     }
     .dropdown:hover .dropdown-content {
         display: none;
-    } /* Disable hover on mobile */
-    .header-media {
-        top: 4rem;
-        height: calc(100% - 4rem);
-    }
-    .hero {
-        margin-top: 50vh; /* Adjusted for mobile, matching earlier versions for updates */
-    }
-    .hero.index {
-        /* Specific rule for index.shtml on mobile */
-        margin-top: 20vh; /* Reduced for mobile to fix gap, adjust as needed (e.g., 15vh or 25vh) */
-    }
-    .hero.updates {
-        /* Specific rule for updates.shtml on mobile */
-        margin-top: 50vh; /* Maintain mobile spacing for updates, no gap needed here */
-    }
-    .hero.documents {
-        /* Specific rule for documents.html on mobile */
-        margin-top: 50vh; /* Match updates.shtml mobile spacing, adjust as needed */
-    }
-    .feature-grid,
-    .update-grid,
-    .document-grid {
-        gap: 1rem;
-        padding: 1rem 0; /* Reduced padding to minimize gap */
-    }
-    .feature,
-    .update,
-    .document {
-        flex: 0 0 280px;
-        padding: 1.5rem;
-    }
-    .feature img,
-    .update .media img {
-        height: 200px;
-    }
-    .feature h3,
+    } /* No hover on mobile */
+
+    /* Mobile typography adjustments */
+    h1,
+    h2,
+    .tagline,
+    nav a,
+    .dropbtn,
+    .dropdown-content a,
     .update h3,
-    .document h3 {
-        font-size: 1.5rem;
-    }
-    .feature p,
-    .update p,
-    .document p {
-        font-size: 1rem;
+    .document h3,
+    .location h3 {
+        font-family: "EB Garamond", serif, Arial; /* Mobile font switch */
+        font-weight: 400;
     }
     h1 {
         font-size: 2.2rem;
-    } /* Reduced for mobile readability */
+    }
+    h2 {
+        font-size: 2rem;
+    } /* Added for consistency */
     .tagline {
         font-size: 1.2rem;
-    } /* Reduced for mobile readability */
-    nav a {
-        font-size: 1.2rem;
     }
+    nav a,
     .dropbtn {
         font-size: 1.2rem;
     }
     .dropdown-content a {
         font-size: 1rem;
     }
-    .download-btn {
+    .update h3,
+    .document h3,
+    .location h3 {
+        font-size: 1.6rem;
+    }
+    .update .date,
+    .document p,
+    .location p {
+        font-size: 1rem;
+    }
+
+    /* Mobile header adjustments */
+    .header-media {
+        top: 4rem;
+        height: calc(100% - 4rem);
+    }
+    .hero {
+        margin-top: 50vh;
+    }
+    .hero.index {
+        margin-top: 20vh;
+    }
+    .hero.updates,
+    .hero.documents {
+        margin-top: 50vh;
+    }
+
+    /* Mobile grid and card adjustments */
+    .feature-grid,
+    .update-grid,
+    .document-grid,
+    .location-grid {
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+    .feature,
+    .update,
+    .document,
+    .location {
+        flex: 0 0 280px; /* Smaller cards */
+        padding: 1.5rem;
+    }
+    .feature img,
+    .update .media img,
+    .location-img {
+        height: 200px; /* Smaller images */
+    }
+    .feature h3,
+    .update h3,
+    .document h3,
+    .location h3 {
+        font-size: 1.5rem;
+    }
+    .feature p,
+    .update p,
+    .document p,
+    .location p {
+        font-size: 1rem;
+    }
+    .download-btn,
+    .explore-btn {
         font-size: 0.9rem;
         padding: 0.4rem 0.8rem;
     }
     section {
         padding: 2rem 1rem;
-    } /* Further reduced padding to minimize gap on mobile */
+    } /* Tighter padding */
+    .location-grid {
+        grid-template-columns: 1fr;
+    } /* Single column on mobile */
 }
