@@ -253,6 +253,10 @@ nav a:hover {
     /* Specific rule for updates.shtml on desktop */
     margin-top: 60vh; /* Match index.shtml spacing on desktop to fix title at top */
 }
+.hero.documents {
+    /* Specific rule for documents.html on desktop */
+    margin-top: 60vh; /* Match index.shtml and updates.shtml spacing on desktop */
+}
 @media (max-width: 767px) {
     .hero {
         margin-top: 50vh; /* Adjusted for mobile, matching earlier versions for updates */
@@ -264,6 +268,10 @@ nav a:hover {
     .hero.updates {
         /* Specific rule for updates.shtml on mobile */
         margin-top: 50vh; /* Maintain mobile spacing for updates, no gap needed here */
+    }
+    .hero.documents {
+        /* Specific rule for documents.html on mobile */
+        margin-top: 20vh; /* Match index.shtml for consistency on mobile */
     }
 }
 @keyframes slideUp {
@@ -531,6 +539,10 @@ footer a:hover {
     .hero.updates {
         /* Specific rule for updates.shtml on mobile */
         margin-top: 50vh; /* Maintain mobile spacing for updates, no gap needed here */
+    }
+    .hero.documents {
+        /* Specific rule for documents.html on mobile */
+        margin-top: 20vh; /* Match index.shtml for consistency on mobile */
     }
     .feature-grid,
     .update-grid,

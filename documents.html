@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Documents - Echoes of the Ancients</title>
+        <link rel="stylesheet" href="/styles.css" />
+        <link rel="icon" type="image/png" href="/images/favicon.png" />
+    </head>
+    <body>
+        <header>
+            <!--#include virtual="/nav.shtml" -->
+            <div class="header-media">
+                <video autoplay muted loop playsinline>
+                    <source src="/videos/hero_teaser.mp4" type="video/mp4" />
+                </video>
+                <img
+                    src="/images/hero_fallback.jpg"
+                    alt="Valley of the Ancients"
+                />
+            </div>
+            <div class="hero documents">
+                <!-- Add 'documents' class for specific styling -->
+                <h1>Documents</h1>
+                <p class="tagline">Scrolls of the valley’s secrets</p>
+            </div>
+        </header>
+        <section id="documents">
+            <h2>Game Archives</h2>
+            <div class="document-grid">
+                <article class="document">
+                    <h3>Pitch Document</h3>
+                    <p>
+                        A concise overview of *Echoes of the Ancients*, its
+                        story, and vision.
+                    </p>
+                    <a
+                        href="/documents/pitch.pdf"
+                        download="echoes_pitch.pdf"
+                        class="download-btn"
+                        >Download PDF</a
+                    >
+                </article>
+                <article class="document">
+                    <h3>Game Design Document (GDD)</h3>
+                    <p>
+                        Detailed design for gameplay, world, characters, and
+                        mechanics.
+                    </p>
+                    <a
+                        href="/documents/gdd.pdf"
+                        download="echoes_gdd.pdf"
+                        class="download-btn"
+                        >Download PDF</a
+                    >
+                </article>
+                <article class="document">
+                    <h3>Project Plan</h3>
+                    <p>
+                        Timeline and milestones for development, targeting Q4
+                        2027 release.
+                    </p>
+                    <a
+                        href="/documents/project_plan.pdf"
+                        download="echoes_project_plan.pdf"
+                        class="download-btn"
+                        >Download PDF</a
+                    >
+                </article>
+            </div>
+        </section>
+        <footer>
+            <p>
+                © 2025 Echoes of the Ancients. Crafted with wisdom by Grok,
+                created by xAI.
+            </p>
+            <p>
+                Contact:
+                <a href="mailto:echoesgame@KdeanGames.net"
+                    >echoesgame@KdeanGames.net</a
+                >
+            </p>
+        </footer>
+        <script>
+            // Fallback: Show image if video fails or isn't present
+            const video = document.querySelector("video");
+            const img = document.querySelector(".header-media img");
+            if (!video.querySelector("source").src || video.readyState === 0) {
+                video.style.display = "none";
+                img.style.display = "block";
+            }
+            video.onloadeddata = () => {
+                video.style.display = "block";
+                img.style.display = "none";
+            };
+            video.onerror = () => {
+                video.style.display = "none";
+                img.style.display = "block";
+            };
+        </script>
+    </body>
+</html>
