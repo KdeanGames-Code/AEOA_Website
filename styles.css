@@ -359,7 +359,7 @@ h2 {
 /* Locations Grid */
 .location-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two-column layout */
+    grid-template-columns: repeat(2, 1fr); /* Two-column layout on desktop */
     gap: 2rem;
     padding: 1rem 0; /* Matches other grids */
 }
@@ -410,12 +410,12 @@ h2 {
 
 .explore-btn {
     display: inline-block;
-    padding: 0.5rem 1rem;
+    padding: 0.8rem 1.5rem; /* Larger tap target on mobile */
     background: #d4a017;
     color: #0d0d0d;
     text-decoration: none;
     border-radius: 5px;
-    font-family: "MedievalSharp", cursive, Arial;
+    font-family: "MedievalSharp", cursive, Arial; /* Desktop font */
     font-weight: 400;
     transition: background 0.3s, transform 0.3s;
 }
@@ -699,6 +699,18 @@ footer a:hover {
     .hero.spireofdawn,
     .hero.livingjungle {
         margin-top: 50vh;
+    }
+
+    /* Mobile location grid adjustment to single column */
+    .location-grid {
+        grid-template-columns: 1fr; /* Single-column layout on mobile */
+    }
+
+    /* Mobile button font adjustment for readability */
+    .explore-btn {
+        font-family: "Arial", sans-serif; /* More legible sans-serif on mobile */
+        font-size: 1rem; /* Ensure readability */
+        padding: 0.8rem 1.5rem; /* Maintain large tap target */
     }
 
     /* Mobile grid and card adjustments */
