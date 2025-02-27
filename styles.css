@@ -2,29 +2,29 @@
    Reset and Base Styles
    ========================================================================== */
 
-/* Reset default margins, padding, and box-sizing for all elements */
+/* Reset default margins, padding, and box-sizing for all elements to ensure consistency */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Ensures padding/margins don’t bloat elements */
+    box-sizing: border-box; /* Ensures padding/margins don’t bloat elements, maintaining layout control */
 }
 
-/* Base body styling for consistent look across site */
+/* Base body styling for consistent look across site, with fallback font for broad compatibility */
 body {
-    font-family: "Arial", sans-serif; /* Default fallback font */
+    font-family: "Arial", sans-serif; /* Default fallback font for wide support */
     background: #0d0d0d; /* Dark background for medieval fantasy vibe */
-    color: #e6e6e6; /* Light text for contrast */
-    line-height: 1.6; /* Improved readability */
-    overflow-x: hidden; /* Prevents horizontal scroll issues */
+    color: #e6e6e6; /* Light text for contrast against dark background */
+    line-height: 1.6; /* Improved readability with spacious line height */
+    overflow-x: hidden; /* Prevents horizontal scroll issues, ensuring clean mobile layout */
 }
 
 /* ==========================================================================
    Fonts and Typography
    ========================================================================== */
 
-/* Import custom fonts for medieval aesthetic */
-@import url("https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap"); /* Desktop */
-@import url("https://fonts.googleapis.com/css2?family=Garamond&display=swap"); /* Mobile replacement */
+/* Import custom fonts for medieval aesthetic, optimized for performance and theme */
+@import url("https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap"); /* Desktop: MedievalSharp for a medieval, handwritten look */
+@import url("https://fonts.googleapis.com/css2?family=Garamond&display=swap"); /* Mobile: Garamond for readability, replacing Cardo for legibility */
 
 /* Headings and navigation typography (desktop default) */
 h1,
@@ -36,61 +36,63 @@ nav a,
 .update h3,
 .document h3,
 .location h3 {
-    font-family: "MedievalSharp", cursive, Arial; /* MedievalSharp for titles/nav on desktop */
-    font-weight: 400; /* Normal weight for readability */
+    font-family: "MedievalSharp", cursive, Arial; /* MedievalSharp for titles/nav on desktop, with Arial fallback */
+    font-weight: 400; /* Normal weight for readability, avoiding heavy distortion */
 }
 
 /* Body text for updates, documents, and locations (desktop default) */
 .update .date,
 .document p,
 .location p {
-    font-family: "MedievalSharp", cursive, Arial; /* Consistent medieval style */
-    font-weight: 400;
+    font-family: "MedievalSharp", cursive, Arial; /* Consistent medieval style for body text on desktop */
+    font-weight: 400; /* Normal weight for readability */
 }
 
 /* ==========================================================================
    Header and Hero Section
    ========================================================================== */
 
-/* Header container for full-screen background media */
+/* Header container for full-screen background media, ensuring responsive height */
 header {
-    height: 100vh; /* Full viewport height */
+    height: 100vh; /* Full viewport height for immersive effect */
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-    overflow: hidden; /* Contains media overflow */
+    overflow: hidden; /* Contains media overflow, preventing layout issues */
 }
 
-/* Media layer for video/image background */
+/* Media layer for video/image background, positioned below nav */
 .header-media {
     position: absolute;
-    top: 4rem; /* Offset for nav height */
+    top: 4rem; /* Offset for fixed nav height */
     left: 0;
     width: 100%;
-    height: calc(100% - 4rem); /* Full height minus nav */
-    z-index: 0; /* Below nav and hero */
+    height: calc(
+        100% - 4rem
+    ); /* Full height minus nav, maintaining proportions */
+    z-index: 0; /* Below nav and hero for layering */
 }
 
-/* Video styling with fallback logic */
+/* Video styling with fallback logic, optimized for performance */
 header video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Covers area without distortion */
-    animation: fadeIn 2s ease-in; /* Fade-in animation */
-    display: none; /* Hidden until loaded */
+    object-fit: cover; /* Covers area without distortion, ideal for responsive design */
+    animation: fadeIn 2s ease-in; /* Smooth fade-in for user experience */
+    display: none; /* Hidden until loaded, managed by script */
 }
 
-/* Fallback image styling */
+/* Fallback image styling, visible by default until video loads */
 header img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     animation: fadeIn 2s ease-in;
-    display: block; /* Default visible */
+    display: block; /* Default visible, replaced by video if available */
 }
 
-/* Fade-in animation for header media */
+/* Fade-in animation for header media, enhancing visual flow */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -100,40 +102,45 @@ header img {
     }
 }
 
-/* Hero overlay for titles and taglines */
+/* Hero overlay for titles and taglines, styled for medieval theme */
 .hero {
-    background: rgba(0, 0, 0, 0.7); /* Semi-transparent dark overlay */
+    background: rgba(
+        0,
+        0,
+        0,
+        0.7
+    ); /* Semi-transparent dark overlay for readability */
     padding: 2.5rem;
     border-radius: 15px;
-    animation: slideUp 1s ease-out; /* Slide-up entry */
+    animation: slideUp 1s ease-out; /* Slide-up entry for engagement */
     position: relative;
-    z-index: 1; /* Above media */
-    margin-top: 60vh; /* Positions below nav on desktop */
+    z-index: 1; /* Above media for visibility */
+    margin-top: 60vh; /* Positions below nav on desktop for balance */
     width: 80%;
     max-width: 800px;
 }
 
-/* Page-specific hero adjustments (desktop) */
+/* Page-specific hero adjustments (desktop), maintaining consistency */
 .hero.index {
-    margin-top: 60vh; /* Consistent spacing for index */
+    margin-top: 60vh; /* Consistent spacing for index homepage */
 }
 .hero.updates {
-    margin-top: 60vh; /* Matches index for updates */
+    margin-top: 60vh; /* Matches index for updates page */
 }
 .hero.documents {
-    margin-top: 60vh; /* Matches others for documents */
+    margin-top: 60vh; /* Matches others for documents page */
 }
 .hero.locations {
-    margin-top: 60vh; /* Matches others for locations */
+    margin-top: 60vh; /* Matches others for locations summary */
 }
 .hero.spireofdawn {
-    margin-top: 60vh; /* Matches others for Spire */
+    margin-top: 60vh; /* Matches others for Spire detail */
 }
 .hero.livingjungle {
-    margin-top: 60vh; /* Matches others for Jungle */
+    margin-top: 60vh; /* Matches others for Jungle detail */
 }
 
-/* Slide-up animation for hero */
+/* Slide-up animation for hero, enhancing page entry */
 @keyframes slideUp {
     from {
         transform: translateY(50px);
@@ -145,14 +152,14 @@ header img {
     }
 }
 
-/* Main heading styling */
+/* Main heading styling, prominent and thematic */
 h1 {
-    font-size: 4rem; /* Large, bold titles */
-    color: #d4a017; /* Gold for medieval flair */
-    text-shadow: 3px 3px 6px #000; /* Deep shadow for depth */
+    font-size: 4rem; /* Large, bold titles for impact */
+    color: #d4a017; /* Gold for medieval flair, matching theme */
+    text-shadow: 3px 3px 6px #000; /* Deep shadow for depth and readability */
 }
 
-/* Tagline styling */
+/* Tagline styling, supporting the hero with subtle emphasis */
 .tagline {
     font-size: 1.8rem;
     margin: 1rem 0;
@@ -162,86 +169,86 @@ h1 {
    Navigation
    ========================================================================== */
 
-/* Fixed navigation bar */
+/* Fixed navigation bar, ensuring visibility across pages */
 nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.9); /* Dark, semi-transparent */
+    background: rgba(0, 0, 0, 0.9); /* Dark, semi-transparent for modern look */
     padding: 1rem 0;
-    z-index: 1000; /* Above all but burger toggle */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7); /* Subtle shadow */
+    z-index: 1000; /* Above all but burger toggle for layering */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7); /* Subtle shadow for depth */
 }
 
-/* Hidden checkbox for main menu toggle */
+/* Hidden checkbox for main menu toggle, enabling mobile behavior */
 .nav-toggle {
     display: none;
 }
 
-/* Hidden checkbox for World submenu toggle */
+/* Hidden checkbox for World submenu toggle, supporting mobile navigation */
 .world-toggle {
     display: none;
 }
 
-/* Hamburger menu toggle label (mobile) */
+/* Hamburger menu toggle label (mobile), hidden on desktop */
 .nav-toggle-label {
-    display: none; /* Hidden on desktop */
+    display: none; /* Hidden on desktop, appears on mobile */
     position: absolute;
     top: 1rem;
     right: 1rem;
     cursor: pointer;
-    z-index: 1002; /* Above everything */
+    z-index: 1002; /* Above everything for accessibility */
     padding: 0.5rem;
-    background: transparent; /* No background, just lines */
+    background: transparent; /* No background, just lines for minimalism */
 }
 
-/* Hamburger lines */
+/* Hamburger lines, styled for thematic gold and smooth transitions */
 .nav-toggle-label span {
     display: block;
     width: 30px;
     height: 4px;
-    background: #d4a017; /* Gold lines */
+    background: #d4a017; /* Gold lines matching theme */
     margin: 6px 0;
-    transition: all 0.3s ease; /* Smooth animation */
-    z-index: 1003; /* Above all */
+    transition: all 0.3s ease; /* Smooth animation for user interaction */
+    z-index: 1003; /* Above all for visibility during toggle */
 }
 
-/* Main menu layout */
+/* Main menu layout, centered and spaced for desktop */
 .main-menu {
     display: flex;
     justify-content: center;
-    gap: 2rem; /* Space between items */
+    gap: 2rem; /* Space between items for clarity */
     list-style: none;
 }
 
-/* Nav link styling */
+/* Nav link styling, ensuring readability and theme consistency */
 nav a {
     color: #e6e6e6;
     text-decoration: none;
     font-size: 1.3rem;
-    transition: color 0.3s, text-shadow 0.3s; /* Hover effects */
+    transition: color 0.3s, text-shadow 0.3s; /* Hover effects for interactivity */
 }
 
 nav a:hover {
-    color: #d4a017; /* Gold on hover */
-    text-shadow: 0 0 5px rgba(212, 160, 23, 0.8); /* Glow effect */
+    color: #d4a017; /* Gold on hover, thematic highlight */
+    text-shadow: 0 0 5px rgba(212, 160, 23, 0.8); /* Glow effect for emphasis */
 }
 
-/* Dropdown container */
+/* Dropdown container, enabling hierarchical navigation */
 .dropdown {
     position: relative;
 }
 
-/* Dropdown button (label for toggle on mobile) */
+/* Dropdown button (label for toggle on mobile), styled for desktop */
 .dropbtn {
     color: #e6e6e6;
     font-size: 1.3rem;
-    padding: 0; /* No extra padding on desktop */
-    display: block; /* Full click area */
-    cursor: pointer; /* Clickable feel */
+    padding: 0; /* No extra padding on desktop for clean look */
+    display: block; /* Full click area for usability */
+    cursor: pointer; /* Clickable feel for user feedback */
 }
 
-/* Dropdown menu */
+/* Dropdown menu, hidden by default on desktop */
 .dropdown-content {
     display: none;
     position: absolute;
@@ -252,76 +259,81 @@ nav a:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
     border-radius: 5px;
     padding: 0.5rem 0;
-    z-index: 1001; /* Above nav, below burger */
+    z-index: 1001; /* Above nav, below burger for layering */
 }
 
 .dropdown:hover .dropdown-content {
-    display: block; /* Shows on hover (desktop) */
+    display: block; /* Shows on hover (desktop) for accessibility */
 }
 
 .dropdown-content a {
     padding: 0.5rem 1rem;
     font-size: 1.1rem;
-    display: block; /* Ensures full click area */
+    display: block; /* Ensures full click area for usability */
 }
 
 .dropdown-content a:hover {
-    background: rgba(212, 160, 23, 0.2); /* Subtle gold on hover */
+    background: rgba(
+        212,
+        160,
+        23,
+        0.2
+    ); /* Subtle gold on hover, thematic consistency */
 }
 
 /* ==========================================================================
    Content Sections
    ========================================================================== */
 
-/* General section styling */
+/* General section styling, centered and spacious for readability */
 section {
-    padding: 3rem 2rem; /* Reduced padding for tighter layout */
+    padding: 3rem 2rem; /* Reduced padding for tighter layout, balanced design */
     max-width: 1200px;
-    margin: 0 auto; /* Centered content */
+    margin: 0 auto; /* Centered content for clean presentation */
 }
 
-/* Section headings */
+/* Section headings, prominent and thematic */
 h2 {
     font-size: 2.8rem;
-    color: #d4a017; /* Gold for prominence */
+    color: #d4a017; /* Gold for prominence, matching theme */
     text-align: center;
-    margin-bottom: 2rem; /* Space below */
+    margin-bottom: 2rem; /* Space below for visual hierarchy */
 }
 
-/* Documents Grid */
+/* Documents Grid, organized for desktop and mobile */
 .document-grid {
     display: grid;
     gap: 2rem;
-    padding: 1rem 0; /* Minimal padding */
+    padding: 1rem 0; /* Minimal padding for alignment with other grids */
 }
 
 .document {
-    background: #1f1f1f; /* Dark card background */
+    background: #1f1f1f; /* Dark card background for thematic consistency */
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Lifted shadow */
-    transition: transform 0.3s, box-shadow 0.3s; /* Hover animation */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Lifted shadow for depth */
+    transition: transform 0.3s, box-shadow 0.3s; /* Hover animation for interactivity */
 }
 
 .document:hover {
-    transform: translateY(-5px); /* Slight lift */
-    box-shadow: 0 12px 24px rgba(212, 160, 23, 0.3); /* Gold shadow */
+    transform: translateY(-5px); /* Slight lift on hover for engagement */
+    box-shadow: 0 12px 24px rgba(212, 160, 23, 0.3); /* Gold shadow for thematic highlight */
 }
 
 .document-img {
     width: 100%;
-    max-width: 200px; /* Thumbnail size */
+    max-width: 200px; /* Thumbnail size for consistency */
     height: auto;
     border-radius: 10px;
-    border: 2px solid #d4a017; /* Gold border */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+    border: 2px solid #d4a017; /* Gold border, thematic touch */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
     margin-bottom: 1rem;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .document:hover .document-img {
-    transform: scale(1.05); /* Slight scale */
-    box-shadow: 0 8px 16px rgba(212, 160, 23, 0.3); /* Enhanced shadow */
+    transform: scale(1.05); /* Slight scale on hover for emphasis */
+    box-shadow: 0 8px 16px rgba(212, 160, 23, 0.3); /* Enhanced shadow for visual feedback */
 }
 
 .document h3 {
@@ -334,7 +346,7 @@ h2 {
 
 .document p {
     font-size: 1.1rem;
-    color: #b0b0b0; /* Lighter grey for text */
+    color: #b0b0b0; /* Lighter grey for text, ensuring contrast */
     margin-bottom: 1rem;
 }
 
@@ -351,17 +363,20 @@ h2 {
 }
 
 .download-btn:hover {
-    background: #f5c442; /* Lighter gold */
+    background: #f5c442; /* Lighter gold on hover, thematic consistency */
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(212, 160, 23, 0.4);
 }
 
-/* Locations Grid */
+/* Locations Grid, key for location detail pages */
 .location-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two-column layout on desktop */
+    grid-template-columns: repeat(
+        2,
+        1fr
+    ); /* Two-column layout on desktop for spacious design */
     gap: 2rem;
-    padding: 1rem 0; /* Matches other grids */
+    padding: 1rem 0; /* Matches other grids for consistency */
 }
 
 .location {
@@ -370,20 +385,20 @@ h2 {
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
     transition: transform 0.3s, box-shadow 0.3s;
-    text-align: center; /* Center like features */
+    text-align: center; /* Center like features for aesthetic balance */
 }
 
 .location:hover {
-    transform: scale(1.05); /* Matches feature hover */
+    transform: scale(1.05); /* Matches feature hover for thematic consistency */
     box-shadow: 0 12px 24px rgba(212, 160, 23, 0.3);
 }
 
 .location-img {
     width: 100%;
-    height: 300px; /* Matches location-img size */
-    object-fit: cover; /* Ensures image fills space */
+    height: 300px; /* Fixed height for consistent visuals */
+    object-fit: cover; /* Ensures image fills space without distortion */
     border-radius: 10px;
-    border: 2px solid #d4a017; /* Gold border like features */
+    border: 2px solid #d4a017; /* Gold border, thematic touch */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     margin-bottom: 1rem;
     transition: transform 0.3s, box-shadow 0.3s;
@@ -395,7 +410,7 @@ h2 {
 }
 
 .location h3 {
-    font-size: 1.8rem; /* Matches feature h3 */
+    font-size: 1.8rem; /* Matches feature h3 for hierarchy */
     color: #e6e6e6;
     margin: 1rem 0;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
@@ -404,29 +419,29 @@ h2 {
 .location p {
     font-size: 1.1rem;
     color: #b0b0b0;
-    line-height: 1.8; /* Matches feature line height */
+    line-height: 1.8; /* Matches feature line height for readability */
     margin-bottom: 1rem;
 }
 
 .explore-btn {
     display: inline-block;
-    padding: 0.8rem 1.5rem; /* Larger tap target on mobile */
+    padding: 0.8rem 1.5rem; /* Larger tap target, optimized for mobile usability */
     background: #d4a017;
     color: #0d0d0d;
     text-decoration: none;
     border-radius: 5px;
-    font-family: "MedievalSharp", cursive, Arial; /* Desktop font */
+    font-family: "MedievalSharp", cursive, Arial; /* Desktop font for thematic consistency */
     font-weight: 400;
     transition: background 0.3s, transform 0.3s;
 }
 
 .explore-btn:hover {
-    background: #f5c442; /* Lighter gold on hover */
+    background: #f5c442; /* Lighter gold on hover, thematic highlight */
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(212, 160, 23, 0.4);
 }
 
-/* Updates Grid */
+/* Updates Grid, for news and announcements */
 .update-grid {
     display: grid;
     gap: 2rem;
@@ -487,7 +502,7 @@ h2 {
     box-shadow: 0 8px 16px rgba(212, 160, 23, 0.3);
 }
 
-/* Features Carousel */
+/* Features Carousel, for homepage highlights */
 .feature-grid {
     display: flex;
     overflow-x: auto;
@@ -557,9 +572,9 @@ h2 {
    Footer
    ========================================================================== */
 
-/* Footer styling */
+/* Footer styling, minimal and thematic */
 footer {
-    background: #080808; /* Darker base */
+    background: #080808; /* Darker base for contrast */
     padding: 2rem;
     text-align: center;
     font-size: 1rem;
@@ -571,21 +586,22 @@ footer a {
 }
 
 footer a:hover {
-    text-decoration: underline; /* Simple hover effect */
+    text-decoration: underline; /* Simple hover effect for interaction */
 }
 
 /* ==========================================================================
    Responsive Design (Mobile Adjustments)
    ========================================================================== */
 
+/* Mobile adjustments for screens below 767px, ensuring readability and usability */
 @media (max-width: 767px) {
-    /* Show hamburger toggle */
+    /* Hamburger menu toggle, visible on mobile for navigation */
     .nav-toggle-label {
         display: block;
-        z-index: 1002;
+        z-index: 1002; /* Above other elements for accessibility */
     }
 
-    /* Collapse main menu */
+    /* Collapse main menu into vertical list on mobile */
     .main-menu {
         display: none;
         flex-direction: column;
@@ -593,16 +609,17 @@ footer a:hover {
         top: 4rem;
         left: 0;
         width: 100%;
-        background: rgba(0, 0, 0, 0.95);
+        background: rgba(0, 0, 0, 0.95); /* Dark, semi-transparent for theme */
         padding: 1rem 0;
-        z-index: 1000; /* Above header media */
+        z-index: 1000; /* Above header media for visibility */
     }
 
+    /* Show main menu when toggled, enabling mobile navigation */
     .nav-toggle:checked ~ .main-menu {
-        display: flex; /* Show when toggled */
+        display: flex; /* Show when toggled for usability */
     }
 
-    /* Hamburger animation */
+    /* Hamburger animation for smooth mobile interaction */
     .nav-toggle:checked + .nav-toggle-label span:nth-child(1) {
         transform: rotate(45deg) translate(6px, 6px);
     }
@@ -613,15 +630,15 @@ footer a:hover {
         transform: rotate(-45deg) translate(8px, -8px);
     }
 
-    /* Submenu (World) adjustments */
+    /* Submenu adjustments for mobile, simplifying dropdown behavior */
     .dropdown-content {
-        display: none; /* Hidden by default */
+        display: none; /* Hidden by default on mobile */
         position: static;
         transform: none;
         width: 100%;
         box-shadow: none;
         background: rgba(0, 0, 0, 0.95);
-        padding-left: 1rem; /* Indent for hierarchy */
+        padding-left: 1rem; /* Indent for hierarchy, improving readability */
     }
 
     .dropdown {
@@ -629,19 +646,19 @@ footer a:hover {
     }
 
     .dropbtn {
-        padding: 0.5rem; /* Padding for click area */
+        padding: 0.5rem; /* Padding for better tap area on mobile */
     }
 
     .dropdown:hover .dropdown-content {
-        display: none; /* Disable hover on mobile */
+        display: none; /* Disable hover on mobile, use toggle instead */
     }
 
-    /* Show World submenu when toggled */
+    /* Show World submenu when toggled, enhancing mobile navigation */
     #world-toggle:checked ~ .dropdown-content {
-        display: block; /* Expands when clicked on mobile */
+        display: block; /* Expands when clicked for usability on mobile */
     }
 
-    /* Mobile typography adjustments (switch to Garamond) */
+    /* Mobile typography adjustments, switching to Garamond for readability */
     h1,
     h2,
     .tagline,
@@ -651,15 +668,15 @@ footer a:hover {
     .update h3,
     .document h3,
     .location h3 {
-        font-family: "Garamond", serif, Arial; /* Mobile font switch to Garamond */
-        font-weight: 400;
+        font-family: "Garamond", serif, Arial; /* Mobile font switch to Garamond for legibility */
+        font-weight: 400; /* Normal weight for clarity on small screens */
     }
     h1 {
         font-size: 2.2rem;
     }
     h2 {
         font-size: 2rem;
-    } /* Added for consistency */
+    } /* Maintains hierarchy, adjusted for mobile */
     .tagline {
         font-size: 1.2rem;
     }
@@ -678,79 +695,81 @@ footer a:hover {
     .update .date,
     .document p,
     .location p {
-        font-family: "Garamond", serif, Arial; /* Mobile font for body text */
+        font-family: "Garamond", serif, Arial; /* Mobile font for body text, ensuring readability */
         font-size: 1rem;
     }
 
-    /* Mobile header adjustments */
+    /* Mobile header adjustments, optimizing for smaller screens */
     .header-media {
         top: 4rem;
-        height: calc(100% - 4rem);
+        height: calc(
+            100% - 4rem
+        ); /* Adjusts for nav, maintaining full coverage */
     }
     .hero {
-        margin-top: 50vh;
+        margin-top: 50vh; /* Positions hero lower on mobile for balance */
     }
     .hero.index {
-        margin-top: 20vh;
+        margin-top: 20vh; /* Shorter spacing for homepage on mobile */
     }
     .hero.updates,
     .hero.documents,
     .hero.locations,
     .hero.spireofdawn,
     .hero.livingjungle {
-        margin-top: 50vh;
+        margin-top: 50vh; /* Consistent spacing for detail pages */
     }
 
-    /* Mobile location grid adjustment to single column */
+    /* Mobile location grid adjustment, critical for single-column readability */
     .location-grid {
-        grid-template-columns: 1fr; /* Single-column layout on mobile */
+        grid-template-columns: 1fr; /* Single-column layout on mobile for better space and readability, fixing two-column issue */
     }
 
-    /* Mobile button font adjustment for readability */
+    /* Mobile button font adjustment, ensuring legibility for interactive elements */
     .explore-btn {
-        font-family: "Arial", sans-serif; /* More legible sans-serif on mobile */
-        font-size: 1rem; /* Ensure readability */
-        padding: 0.8rem 1.5rem; /* Maintain large tap target */
+        font-family: "Arial", sans-serif; /* More legible sans-serif on mobile, replacing Garamond for clarity */
+        font-size: 1rem; /* Ensures readability on small screens */
+        padding: 0.8rem 1.5rem; /* Maintains large tap target for usability */
     }
 
-    /* Mobile grid and card adjustments */
+    /* Mobile grid and card adjustments, optimizing for touch and space */
     .feature-grid,
     .update-grid,
     .document-grid,
     .location-grid {
-        gap: 1rem;
-        padding: 1rem 0;
+        gap: 1rem; /* Reduced gap for tighter layout on mobile */
+        padding: 1rem 0; /* Minimal padding for alignment */
     }
     .feature,
     .update,
     .document,
     .location {
-        flex: 0 0 280px; /* Smaller cards */
-        padding: 2rem; /* Larger padding for touch */
+        flex: 0 0 280px; /* Smaller cards for mobile fit */
+        padding: 2rem; /* Larger padding for better touch interaction */
     }
     .feature img,
     .update .media img,
     .location-img {
-        height: 200px; /* Smaller images */
+        height: 200px; /* Smaller images for mobile screens */
     }
     .feature h3,
     .update h3,
     .document h3,
     .location h3 {
-        font-size: 1.5rem;
+        font-size: 1.5rem; /* Reduced for mobile readability */
     }
     .feature p,
     .update p,
     .document p,
     .location p {
-        font-size: 1rem;
+        font-size: 1rem; /* Adjusted for mobile text size */
     }
     .download-btn,
     .explore-btn {
-        padding: 0.8rem 1.5rem; /* Larger tap target */
-        font-size: 1rem; /* Ensure readability */
+        padding: 0.8rem 1.5rem; /* Larger tap targets for all buttons on mobile */
+        font-size: 1rem; /* Ensures button text readability */
     }
     section {
         padding: 2rem 1rem;
-    } /* Tighter padding */
+    } /* Tighter padding for mobile, improving space usage */
 }
