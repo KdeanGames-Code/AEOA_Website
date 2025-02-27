@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Development Updates - Echoes of the Ancients</title>
+        <link rel="stylesheet" href="/styles.css" />
+        <link rel="icon" type="image/png" href="/images/favicon.png" />
+    </head>
+    <body>
+        <header>
+            <!--#include virtual="/nav.shtml" --><!--#echo var="" -->
+            <div class="header-media">
+                <video autoplay muted loop playsinline>
+                    <source src="/videos/hero_teaser.mp4" type="video/mp4" />
+                </video>
+                <img
+                    src="/images/hero_fallback.jpg"
+                    alt="Valley of the Ancients"
+                />
+            </div>
+            <div class="hero updates">
+                <!-- Add 'updates' class for specific styling -->
+                <h1>Development Updates</h1>
+                <p class="tagline">Echoes from the forge of the valley</p>
+            </div>
+        </header>
+        <section id="updates">
+            <h2>Latest News</h2>
+            <div class="update-grid">
+                <!--#include virtual="/news/legacy-forged.html" --><!--#echo var="" -->
+                <!--#include virtual="/news/forthcoming-shadows.html" --><!--#echo var="" -->
+                <!--#include virtual="/news/current-progress.html" --><!--#echo var="" -->
+            </div>
+        </section>
+        <footer>
+            <p>
+                © 2025 Echoes of the Ancients. Crafted with wisdom by Grok,
+                created by xAI.
+            </p>
+            <p>
+                Contact:
+                <a href="mailto:echoesgame@KdeanGames.net"
+                    >echoesgame@KdeanGames.net</a
+                >
+            </p>
+        </footer>
+    </body>
+</html>

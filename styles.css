@@ -20,9 +20,16 @@ h2,
 .tagline,
 nav a,
 .dropbtn,
-.dropdown-content a {
-    font-family: "MedievalSharp", cursive, Arial; /* Desktop default */
+.dropdown-content a,
+.update h3,
+.document h3 {
+    font-family: "MedievalSharp", cursive, Arial; /* Desktop default, including document titles */
     font-weight: 400; /* Normal weight for MedievalSharp */
+}
+.update .date,
+.document p {
+    font-family: "MedievalSharp", cursive, Arial; /* Same for dates and document text */
+    font-weight: 400;
 }
 
 /* Header */
@@ -195,16 +202,18 @@ nav a:hover {
     .tagline,
     nav a,
     .dropbtn,
-    .dropdown-content a {
-        font-family: "EB Garamond", serif, Arial; /* Mobile font */
+    .dropdown-content a,
+    .update h3,
+    .document h3 {
+        font-family: "EB Garamond", serif, Arial; /* Mobile font, including documents */
         font-weight: 400; /* Normal weight for EB Garamond */
     }
     h1 {
-        font-size: 2.8rem;
-    } /* Larger for mobile readability */
+        font-size: 2.2rem;
+    } /* Reduced for mobile readability */
     .tagline {
-        font-size: 1.4rem;
-    } /* Larger for mobile */
+        font-size: 1.2rem;
+    } /* Reduced for mobile readability */
     nav a {
         font-size: 1.2rem;
     } /* Smaller nav text on mobile */
@@ -214,6 +223,14 @@ nav a:hover {
     .dropdown-content a {
         font-size: 1rem;
     }
+    .update h3,
+    .document h3 {
+        font-size: 1.6rem;
+    } /* Adjusted for mobile readability */
+    .update .date,
+    .document p {
+        font-size: 1rem;
+    } /* Adjusted for mobile */
 }
 
 /* Hero */
@@ -224,9 +241,30 @@ nav a:hover {
     animation: slideUp 1s ease-out;
     position: relative;
     z-index: 1; /* Above media */
-    margin-top: 60vh; /* Adjusted for desktop */
+    margin-top: 4rem; /* Default for updates.shtml, matching nav height on desktop */
     width: 80%;
     max-width: 800px;
+}
+.hero.index {
+    /* Specific rule for index.shtml */
+    margin-top: 60vh; /* Ensure proper spacing below nav for index on desktop */
+}
+.hero.updates {
+    /* Specific rule for updates.shtml on desktop */
+    margin-top: 60vh; /* Match index.shtml spacing on desktop to fix title at top */
+}
+@media (max-width: 767px) {
+    .hero {
+        margin-top: 50vh; /* Adjusted for mobile, matching earlier versions for updates */
+    }
+    .hero.index {
+        /* Specific rule for index.shtml on mobile */
+        margin-top: 20vh; /* Reduced for mobile to fix gap, adjust as needed (e.g., 15vh or 25vh) */
+    }
+    .hero.updates {
+        /* Specific rule for updates.shtml on mobile */
+        margin-top: 50vh; /* Maintain mobile spacing for updates, no gap needed here */
+    }
 }
 @keyframes slideUp {
     from {
@@ -250,7 +288,7 @@ h1 {
 
 /* Sections */
 section {
-    padding: 5rem 2rem;
+    padding: 3rem 2rem; /* Reduced padding to minimize gap */
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -258,7 +296,107 @@ h2 {
     font-size: 2.8rem;
     color: #d4a017;
     text-align: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem; /* Reduced margin to minimize gap */
+}
+
+/* Enhanced Documents Grid */
+.document-grid {
+    display: grid;
+    gap: 2rem;
+    padding: 1rem 0; /* Reduced padding to minimize gap */
+}
+.document {
+    background: #1f1f1f;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.document:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(212, 160, 23, 0.3);
+}
+.document h3 {
+    font-size: 2rem; /* Larger, medieval title */
+    color: #d4a017; /* Gold color for titles */
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Stronger shadow for medieval effect */
+    text-transform: uppercase; /* Bold, medieval title style */
+}
+.document p {
+    font-size: 1.1rem;
+    color: #b0b0b0;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+.download-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #d4a017;
+    color: #0d0d0d;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: "MedievalSharp", cursive, Arial;
+    font-weight: 400;
+    transition: background 0.3s, transform 0.3s;
+}
+.download-btn:hover {
+    background: #f5c442; /* Lighter gold on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(212, 160, 23, 0.4);
+}
+
+/* Enhanced Updates Timeline */
+.update-grid {
+    display: grid;
+    gap: 2rem;
+    padding: 1rem 0; /* Reduced padding to minimize gap */
+}
+.update {
+    background: #1f1f1f;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.update:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(212, 160, 23, 0.3);
+}
+.update h3 {
+    font-size: 2rem; /* Larger, medieval title */
+    color: #d4a017; /* Gold color for titles */
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Stronger shadow for medieval effect */
+    text-transform: uppercase; /* Bold, medieval title style */
+}
+.update .date {
+    font-size: 1rem; /* Larger, medieval date */
+    color: #b0b0b0;
+    margin-bottom: 1rem;
+    font-style: italic; /* Medieval flourish */
+}
+.update p {
+    font-size: 1.1rem;
+    color: #b0b0b0;
+    line-height: 1.8;
+}
+.update .media {
+    margin-top: 1rem;
+    text-align: center;
+}
+.update .media img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #d4a017; /* Gold border like features */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Shadow like features */
+    transition: transform 0.3s, box-shadow 0.3s; /* Animation like features */
+}
+.update .media img:hover {
+    transform: scale(1.05); /* Slight scale on hover like features */
+    box-shadow: 0 8px 16px rgba(212, 160, 23, 0.3); /* Enhanced shadow on hover */
 }
 
 /* Enhanced Features Carousel */
@@ -266,7 +404,7 @@ h2 {
     display: flex;
     overflow-x: auto;
     gap: 2rem;
-    padding: 2rem 0;
+    padding: 1rem 0; /* Reduced padding to minimize gap */
     scrollbar-width: thin; /* Firefox */
     scrollbar-color: #d4a017 #1f1f1f; /* Firefox */
 }
@@ -299,6 +437,12 @@ h2 {
     object-fit: cover;
     border-radius: 10px;
     border: 2px solid #d4a017;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.feature img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(212, 160, 23, 0.3);
 }
 .feature h3 {
     font-size: 1.8rem;
@@ -378,33 +522,48 @@ footer a:hover {
         height: calc(100% - 4rem);
     }
     .hero {
-        margin-top: 50vh; /* Adjusted for mobile */
-        width: 90%;
-        padding: 1.5rem;
+        margin-top: 50vh; /* Adjusted for mobile, matching earlier versions for updates */
     }
-    .feature-grid {
+    .hero.index {
+        /* Specific rule for index.shtml on mobile */
+        margin-top: 20vh; /* Reduced for mobile to fix gap, adjust as needed (e.g., 15vh or 25vh) */
+    }
+    .hero.updates {
+        /* Specific rule for updates.shtml on mobile */
+        margin-top: 50vh; /* Maintain mobile spacing for updates, no gap needed here */
+    }
+    .feature-grid,
+    .update-grid,
+    .document-grid {
         gap: 1rem;
-        padding: 1rem 0;
+        padding: 1rem 0; /* Reduced padding to minimize gap */
     }
-    .feature {
+    .feature,
+    .update,
+    .document {
         flex: 0 0 280px;
         padding: 1.5rem;
     }
-    .feature img {
+    .feature img,
+    .update .media img {
         height: 200px;
     }
-    .feature h3 {
+    .feature h3,
+    .update h3,
+    .document h3 {
         font-size: 1.5rem;
     }
-    .feature p {
+    .feature p,
+    .update p,
+    .document p {
         font-size: 1rem;
     }
     h1 {
-        font-size: 2.8rem;
-    }
+        font-size: 2.2rem;
+    } /* Reduced for mobile readability */
     .tagline {
-        font-size: 1.4rem;
-    }
+        font-size: 1.2rem;
+    } /* Reduced for mobile readability */
     nav a {
         font-size: 1.2rem;
     }
@@ -414,7 +573,11 @@ footer a:hover {
     .dropdown-content a {
         font-size: 1rem;
     }
-    section {
-        padding: 3rem 1rem;
+    .download-btn {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
     }
+    section {
+        padding: 2rem 1rem;
+    } /* Further reduced padding to minimize gap on mobile */
 }
