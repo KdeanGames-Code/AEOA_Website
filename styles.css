@@ -241,7 +241,7 @@ nav a:hover {
     animation: slideUp 1s ease-out;
     position: relative;
     z-index: 1; /* Above media */
-    margin-top: 4rem; /* Default for updates.shtml, matching nav height on desktop */
+    margin-top: 60vh; /* 4rem Default for updates.shtml, matching nav height on desktop */
     width: 80%;
     max-width: 800px;
 }
@@ -271,7 +271,7 @@ nav a:hover {
     }
     .hero.documents {
         /* Specific rule for documents.html on mobile */
-        margin-top: 20vh; /* Match index.shtml for consistency on mobile */
+        margin-top: 50vh; /* Match updates.shtml mobile spacing, adjust as needed */
     }
 }
 @keyframes slideUp {
@@ -336,6 +336,21 @@ h2 {
     color: #b0b0b0;
     margin-bottom: 1rem;
     line-height: 1.6;
+}
+.document-img {
+    width: 100%;
+    max-width: 200px; /* Matches smaller thumbnail size */
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #d4a017; /* Gold border like features */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Shadow like features */
+    margin-bottom: 1rem; /* Space below image */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover like features */
+}
+
+.document:hover .document-img {
+    transform: scale(1.05); /* Slight scale on hover like features */
+    box-shadow: 0 8px 16px rgba(212, 160, 23, 0.3); /* Enhanced gold shadow like features */
 }
 .download-btn {
     display: inline-block;
@@ -542,7 +557,7 @@ footer a:hover {
     }
     .hero.documents {
         /* Specific rule for documents.html on mobile */
-        margin-top: 20vh; /* Match index.shtml for consistency on mobile */
+        margin-top: 50vh; /* Match updates.shtml mobile spacing, adjust as needed */
     }
     .feature-grid,
     .update-grid,
