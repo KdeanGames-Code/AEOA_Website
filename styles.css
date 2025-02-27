@@ -23,10 +23,10 @@ body {
    ========================================================================== */
 
 /* Import custom fonts for medieval aesthetic */
-@import url("https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap"); /* Mobile replacement */
+@import url("https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap"); /* Desktop */
+@import url("https://fonts.googleapis.com/css2?family=Garamond&display=swap"); /* Mobile replacement */
 
-/* Headings and navigation typography (desktop) */
+/* Headings and navigation typography (desktop default) */
 h1,
 h2,
 .tagline,
@@ -40,7 +40,7 @@ nav a,
     font-weight: 400; /* Normal weight for readability */
 }
 
-/* Body text for updates and documents (desktop) */
+/* Body text for updates, documents, and locations (desktop default) */
 .update .date,
 .document p,
 .location p {
@@ -325,6 +325,47 @@ nav a:hover {
     /* Show World submenu when toggled */
     #world-toggle:checked ~ .dropdown-content {
         display: block; /* Expands when clicked on mobile */
+    }
+
+    /* Mobile typography adjustments (switch to Garamond) */
+    h1,
+    h2,
+    .tagline,
+    nav a,
+    .dropbtn,
+    .dropdown-content a,
+    .update h3,
+    .document h3,
+    .location h3 {
+        font-family: "Garamond", serif, Arial; /* Mobile font switch to Garamond */
+        font-weight: 400;
+    }
+    h1 {
+        font-size: 2.2rem;
+    }
+    h2 {
+        font-size: 2rem;
+    } /* Added for consistency */
+    .tagline {
+        font-size: 1.2rem;
+    }
+    nav a,
+    .dropbtn {
+        font-size: 1.2rem;
+    }
+    .dropdown-content a {
+        font-size: 1rem;
+    }
+    .update h3,
+    .document h3,
+    .location h3 {
+        font-size: 1.6rem;
+    }
+    .update .date,
+    .document p,
+    .location p {
+        font-family: "Garamond", serif, Arial; /* Mobile font for body text */
+        font-size: 1rem;
     }
 
     /* Rest of mobile styles unchanged */
