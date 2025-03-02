@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Echoes of the Ancients</title>
+        <link rel="stylesheet" href="/styles.css" />
+        <link rel="icon" type="image/png" href="/images/favicon.png" />
+    </head>
+    <body>
+        <header>
+            <!--#include virtual="/nav.shtml" -->
+            <div class="header-media">
+                <video autoplay muted loop playsinline>
+                    <source src="/videos/hero_teaser.mp4" type="video/mp4" />
+                </video>
+                <img
+                    src="/images/hero_fallback.jpg"
+                    alt="Valley of the Ancients"
+                />
+            </div>
+            <div class="hero">
+                <h1>Echoes of the Ancients</h1>
+                <p class="tagline">
+                    Forge your legend in a valley scarred by sacrifice
+                </p>
+            </div>
+        </header>
+        <section id="about">
+            <h2>About the Game</h2>
+            <p>
+                Beneath the Teeth of the Sky, the Valley of the Ancients hums
+                with forgotten magic and lurking dread. As Aria, the Last
+                Guardian, wield relics and steel to banish Umbraeth—the shadow
+                that consumed her mother Elyra’s light. A reactive world bends
+                to your will; every choice echoes through time. Q4 2027.
+            </p>
+        </section>
+        <section id="features">
+            <h2>Key Features</h2>
+            <div class="feature-grid">
+                <article class="feature">
+                    <img
+                        src="/images/locations/livingjungle_1.jpg"
+                        alt="Jungle ignited by torch"
+                    />
+                    <h3>Living Valley</h3>
+                    <p>Jungles burn, sands shift—your mark shapes the wild.</p>
+                </article>
+                <article class="feature">
+                    <img
+                        src="/images/weapons/glyphblade_action.jpg"
+                        alt="Aria with Glyph-Blade"
+                    />
+                    <h3>Relic Might</h3>
+                    <p>Blades hum, gauntlets roar—power from a lost age.</p>
+                </article>
+                <article class="feature">
+                    <img
+                        src="/images/locations/templeofechoes_3.jpg"
+                        alt="Wind chime puzzle"
+                    />
+                    <h3>Deadly Puzzles</h3>
+                    <p>Wind sings, fire dances—solve or perish.</p>
+                </article>
+                <article class="feature">
+                    <img
+                        src="/images/enemies/warden_action.jpg"
+                        alt="Warden in rift"
+                    />
+                    <h3>Ancient Foes</h3>
+                    <p>Shadows swarm, titans rise—test your steel.</p>
+                </article>
+                <article class="feature">
+                    <img
+                        src="/images/locations/sunkensands_1.jpg"
+                        alt="Aria navigating quicksand"
+                    />
+                    <h3>Dynamic Choices</h3>
+                    <p>Shape the valley’s fate—light or shadow paths.</p>
+                </article>
+                <article class="feature">
+                    <img
+                        src="/images/locations/spireofdawn_3.jpg"
+                        alt="Aria using wind gust"
+                    />
+                    <h3>Environmental Mastery</h3>
+                    <p>Harness wind, fire, and sand—nature as ally.</p>
+                </article>
+                <article class="feature">
+                    <img
+                        src="/images/locations/highpeaks_1.jpg"
+                        alt="Valley whispers"
+                    />
+                    <h3>Epic Soundscape</h3>
+                    <p>Valley whispers guide you—hear the Ancients’ echoes.</p>
+                </article>
+            </div>
+        </section>
+        <footer>
+            <p>
+                © 2025 Echoes of the Ancients. Crafted with wisdom by Grok,
+                created by xAI.
+            </p>
+            <p>
+                Contact:
+                <a href="mailto:echoesgame@KdeanGames.net"
+                    >echoesgame@KdeanGames.net</a
+                >
+            </p>
+        </footer>
+        <script>
+            // Fallback: Show image if video fails or isn't present
+            const video = document.querySelector("video");
+            const img = document.querySelector(".header-media img");
+            if (!video.querySelector("source").src || video.readyState === 0) {
+                video.style.display = "none";
+                img.style.display = "block";
+            }
+            video.onloadeddata = () => {
+                video.style.display = "block";
+                img.style.display = "none";
+            };
+            video.onerror = () => {
+                video.style.display = "none";
+                img.style.display = "block";
+            };
+        </script>
+    </body>
+</html>

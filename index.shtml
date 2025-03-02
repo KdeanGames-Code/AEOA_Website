@@ -26,16 +26,40 @@
                 </p>
             </div>
         </header>
-        <section id="about">
-            <h2>About the Game</h2>
+        <!-- ==========================================================================
+           Tales of the Ancients Section
+           ========================================================================== -->
+        <!-- Primary narrative section, introducing gamers to the game’s story and world -->
+        <section id="ancients">
+            <h2>Tales of the Ancients</h2>
             <p>
-                Beneath the Teeth of the Sky, the Valley of the Ancients hums
-                with forgotten magic and lurking dread. As Aria, the Last
-                Guardian, wield relics and steel to banish Umbraeth—the shadow
-                that consumed her mother Elyra’s light. A reactive world bends
-                to your will; every choice echoes through time. Q4 2027.
+                Venture into the Valley of the Ancients, a realm where the
+                echoes of a fallen civilization linger in jagged ruins, wild
+                jungles, and scorched sands, their forgotten magic pulsing
+                beneath Umbraeth’s oppressive shadow. As the Last Guardian, Aria
+                wields her fiery resolve and ancient relics—the Heartstone,
+                Glyph-Blade, and Gauntlet of Storms—to banish the darkness that
+                claimed her mother Elyra’s light sixteen winters past. Explore a
+                reactive open world where every slash of your blade, every
+                puzzle solved, and every choice shapes the valley’s fate, from
+                the Spire of Dawn’s fractured monolith to the Abyssal Rift’s
+                festering wound. Traverse wind-swept peaks, navigate
+                thorn-choked jungles, and brave fiery caves, mastering dynamic
+                combat against gruntlings, raptors, and casters, while
+                harnessing environmental forces—wind, fire, and sand—to uncover
+                the Ancients’ secrets. Gamers will revel in epic quests,
+                strategic depth, and immersive soundscapes that whisper the
+                valley’s ancient wrath, forging a legend in a land scarred by
+                sacrifice. Coming Q4 2027 to Windows, this dark fantasy epic,
+                crafted with wisdom by Grok, created by xAI, promises a saga
+                where every step echoes through time.
             </p>
+            <a href="/documents.html" class="explore-btn">Unveil the Saga</a>
         </section>
+        <!-- ==========================================================================
+           Key Features Section
+           ========================================================================== -->
+        <!-- Highlighting core gameplay elements in a carousel for visual engagement -->
         <section id="features">
             <h2>Key Features</h2>
             <div class="feature-grid">
@@ -97,6 +121,192 @@
                 </article>
             </div>
         </section>
+        <!-- ==========================================================================
+           Latest Revelations from the Valley Section
+           ========================================================================== -->
+        <!-- First teaser section, showcasing location highlights in staggered layout, focusing solely on locations, fixing content display issue -->
+        <section id="teasers">
+            <h2>Latest Revelations from the Valley</h2>
+            <div class="teaser-zigzag">
+                <article class="teaser-card">
+                    <img
+                        src="/images/teasers/spire_of_dawn.jpg"
+                        alt="Spire of Dawn Teaser"
+                    />
+                    <h3>Spire of Dawn’s Whisper</h3>
+                    <p>
+                        The fractured monolith in the northwest hums with
+                        ancient light, its ruins shadowed by Umbraeth’s
+                        corruption and jagged vines.
+                    </p>
+                    <a
+                        href="/world/locations/spireofdawn.html"
+                        class="explore-btn"
+                        >Explore</a
+                    >
+                </article>
+                <article class="teaser-card">
+                    <img
+                        src="/images/teasers/livingjungle.jpg"
+                        alt="Living Jungle Teaser"
+                    />
+                    <h3>Living Jungle’s Thorns</h3>
+                    <p>
+                        A verdant maze of kapok and crimson orchids, choked by
+                        rot and raptor nests under Umbraeth’s creeping shadow.
+                    </p>
+                    <a
+                        href="/world/locations/livingjungle.html"
+                        class="explore-btn"
+                        >Explore</a
+                    >
+                </article>
+                <article class="teaser-card">
+                    <img
+                        src="/images/teasers/sunkensands.jpg"
+                        alt="Sunken Sands Teaser"
+                    />
+                    <h3>Sunken Sands’ Peril</h3>
+                    <p>
+                        Golden dunes ripple with quicksand pits and scouring
+                        winds, where Umbraeth’s curse scars the shifting sands.
+                    </p>
+                    <a
+                        href="/world/locations/sunkensands.html"
+                        class="explore-btn"
+                        >Explore</a
+                    >
+                </article>
+                <article class="teaser-card">
+                    <img
+                        src="/images/teasers/templeofechoes.jpg"
+                        alt="Temple of Echoes Teaser"
+                    />
+                    <h3>Temple of Echoes’ Song</h3>
+                    <p>
+                        A wind-sung cathedral of mirrors and chimes, its ancient
+                        halls haunted by Umbraeth’s casters and echoing shadows.
+                    </p>
+                    <a
+                        href="/world/locations/templeofechoes.html"
+                        class="explore-btn"
+                        >Explore</a
+                    >
+                </article>
+                <article class="teaser-card">
+                    <img
+                        src="/images/teasers/abyssalrift.jpg"
+                        alt="Abyssal Rift Teaser"
+                    />
+                    <h3>Abyssal Rift’s Shadow</h3>
+                    <p>
+                        A festering wound at the valley’s heart, pulsing with
+                        black ichor and Umbraeth’s corruption, shrouded in
+                        sickly mist.
+                    </p>
+                    <a
+                        href="/world/locations/abyssalrift.html"
+                        class="explore-btn"
+                        >Explore</a
+                    >
+                </article>
+                <article class="teaser-card">
+                    <img
+                        src="/images/teasers/tribalenclave.jpg"
+                        alt="Tribal Enclave Teaser"
+                    />
+                    <h3>Tribal Enclave’s Struggle</h3>
+                    <p>
+                        Rocky foothills gripped by shadow, where campfires
+                        flicker amidst Umbraeth’s corruption and gruntling
+                        raids.
+                    </p>
+                    <a
+                        href="/world/locations/tribalenclave.html"
+                        class="explore-btn"
+                        >Explore</a
+                    >
+                </article>
+                <article class="teaser-card">
+                    <img
+                        src="/images/teasers/highpeaks.jpg"
+                        alt="High Peaks Teaser"
+                    />
+                    <h3>High Peaks’ Fury</h3>
+                    <p>
+                        Jagged spires of frost and wind along the northern edge,
+                        scarred by raptor dives and Umbraeth’s lingering curse.
+                    </p>
+                    <a
+                        href="/world/locations/highpeaks.html"
+                        class="explore-btn"
+                        >Explore</a
+                    >
+                </article>
+                <article class="teaser-card">
+                    <img
+                        src="/images/teasers/windsroost.jpg"
+                        alt="Wind’s Roost Teaser"
+                    />
+                    <h3>Wind’s Roost’s Gale</h3>
+                    <p>
+                        An icy summit atop the Peaks, carved by gales and
+                        glowing with glyphs, where Umbraeth’s shadow battles the
+                        dawn.
+                    </p>
+                    <a
+                        href="/world/locations/windsroost.html"
+                        class="explore-btn"
+                        >Explore</a
+                    >
+                </article>
+                <article class="teaser-card">
+                    <img
+                        src="/images/teasers/caveofflames.jpg"
+                        alt="Cave of Flames Teaser"
+                    />
+                    <h3>Cave of Flames’ Ember</h3>
+                    <p>
+                        A charred refuge within the Jungle, burning with ancient
+                        embers and Umbraeth’s corrupted roots amidst raptor
+                        nests.
+                    </p>
+                    <a
+                        href="/world/locations/caveofflames.html"
+                        class="explore-btn"
+                        >Explore</a
+                    >
+                </article>
+            </div>
+        </section>
+        <!-- ==========================================================================
+           Placeholder for Future Sections
+           ========================================================================== -->
+        <!-- Placeholder sections for Characters, Weapons, etc., to be added when categories are complete -->
+        <section id="characters" class="future-section">
+            <!-- Section will be added after Characters are completed -->
+        </section>
+        <section id="weapons" class="future-section">
+            <!-- Section will be added after Weapons are completed -->
+        </section>
+        <section id="armor" class="future-section">
+            <!-- Section will be added after Armor is completed -->
+        </section>
+        <section id="magic" class="future-section">
+            <!-- Section will be added after Magic is completed -->
+        </section>
+        <section id="items" class="future-section">
+            <!-- Section will be added after Items are completed -->
+        </section>
+        <section id="enemies" class="future-section">
+            <!-- Section will be added after Enemies are completed -->
+        </section>
+        <section id="gameplay" class="future-section">
+            <!-- Section will be added after Gameplay is completed -->
+        </section>
+        <section id="hubs" class="future-section">
+            <!-- Section will be added after Hubs are completed -->
+        </section>
         <footer>
             <p>
                 © 2025 Echoes of the Ancients. Crafted with wisdom by Grok,
@@ -110,7 +320,6 @@
             </p>
         </footer>
         <script>
-            // Fallback: Show image if video fails or isn't present
             const video = document.querySelector("video");
             const img = document.querySelector(".header-media img");
             if (!video.querySelector("source").src || video.readyState === 0) {
