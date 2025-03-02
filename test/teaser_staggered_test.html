@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Teaser Staggered Test - Echoes of the Ancients</title>
+        <link rel="stylesheet" href="/styles.css" />
+        <link rel="icon" type="image/png" href="/images/favicon.png" />
+        <style>
+            #teasers {
+                padding: 2rem;
+                background: #1f1f1f;
+            }
+            .teaser-zigzag {
+                display: grid;
+                gap: 2rem;
+                padding: 1rem 0;
+            }
+            .teaser-card:nth-child(odd) {
+                transform: translateX(-10px);
+            }
+            .teaser-card:nth-child(even) {
+                transform: translateX(10px);
+            }
+            @media (min-width: 768px) {
+                .teaser-zigzag {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+            @media (max-width: 767px) {
+                .teaser-zigzag {
+                    grid-template-columns: 1fr;
+                }
+                .teaser-card {
+                    transform: translateX(0);
+                }
+            }
+            .teaser-card {
+                background: #1f1f1f;
+                border: 2px solid #d4a017;
+                border-radius: 15px;
+                padding: 2rem;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+                transition: transform 0.3s, box-shadow 0.3s;
+                text-align: center;
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            }
+            .teaser-card.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .teaser-card:hover {
+                transform: scale(1.05);
+                box-shadow: 0 12px 24px rgba(212, 160, 23, 0.3);
+            }
+            .teaser-card img {
+                width: 100%;
+                height: 300px;
+                object-fit: cover;
+                border-radius: 10px;
+                border: 2px solid #d4a017;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+                transition: transform 0.3s, box-shadow 0.3s;
+                animation: pulse 2s infinite ease-in-out;
+            }
+            .teaser-card img:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 16px rgba(212, 160, 23, 0.3);
+            }
+            .teaser-card h3 {
+                font-size: 1.8rem;
+                color: #e6e6e6;
+                margin: 1rem 0;
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            }
+            .teaser-card p {
+                font-size: 1.5rem;
+                color: #b0b0b0;
+                line-height: 1.8;
+                margin-bottom: 1rem;
+            }
+            .teaser-card a {
+                display: inline-block;
+                padding: 0.8rem 1.5rem;
+                background: #d4a017;
+                color: #0d0d0d;
+                text-decoration: none;
+                border-radius: 5px;
+                font-family: "MedievalSharp", cursive, Arial;
+                font-weight: 400;
+                transition: background 0.3s, transform 0.3s;
+            }
+            .teaser-card a:hover {
+                background: #f5c442;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba(212, 160, 23, 0.4);
+            }
+            @media (max-width: 767px) {
+                .teaser-card img {
+                    height: 200px;
+                }
+                .teaser-card h3 {
+                    font-size: 1.5rem;
+                }
+                .teaser-card p {
+                    font-size: 1rem;
+                }
+                .teaser-card a {
+                    font-family: "Arial", sans-serif;
+                    font-size: 1rem;
+                    padding: 0.8rem 1.5rem;
+                }
+            }
+            #teasers h2 {
+                font-size: 2.5rem;
+                color: #e6e6e6;
+                text-align: center;
+                margin-bottom: 2rem;
+                text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+                opacity: 0;
+                transform: translateX(-50px);
+                animation: slideIn 1s ease-out forwards;
+            }
+            @keyframes slideIn {
+                from {
+                    opacity: 0;
+                    transform: translateX(-50px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+            @keyframes pulse {
+                0% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(1.05);
+                }
+                100% {
+                    transform: scale(1);
+                }
+            }
+            .teaser-card:hover img,
+            .teaser-card:hover h3,
+            .teaser-card:hover p {
+                text-shadow: 0 0 10px #d4a017;
+                transition: text-shadow 0.3s ease-in-out;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <!--#include virtual="/nav.shtml" -->
+            <div class="header-media">
+                <video autoplay muted loop playsinline>
+                    <source src="/videos/hero_teaser.mp4" type="video/mp4" />
+                </video>
+                <img
+                    src="/images/hero_fallback.jpg"
+                    alt="Valley of the Ancients"
+                />
+            </div>
+        </header>
+        <section id="teasers">
+            <h2>Latest Revelations from the Valley</h2>
+            <div class="teaser-zigzag">
+                <article class="teaser-card">
+                    <img
+                        src="/images/teasers/spire_of_dawn.jpg"
+                        alt="Spire of Dawn Teaser"
+                    />
+                    <h3>Spire of Dawn Awakens</h3>
+                    <p>
+                        Aria’s fiery resolve ignites the Spire, where the
+                        Heartstone pulses with ancient light, guarded by
+                        gruntlings in the shadow of Umbraeth’s corruption.
+                    </p>
+                    <a
+                        href="/world/locations/spireofdawn.html"
+                        class="explore-btn"
+                        >Explore</a
+                    >
+                </article>
+                <article class="teaser-card">
+                    <img
+                        src="/images/teasers/abyssal_rift.jpg"
+                        alt="Abyssal Rift Teaser"
+                    />
+                    <h3>Abyssal Rift’s Shadow</h3>
+                    <p>
+                        Descend into the Rift’s dark heart, where Luna’s Shadow
+                        Pulse battles Umbraeth’s warden, the air thick with
+                        corruption’s reek.
+                    </p>
+                    <a
+                        href="/world/locations/abyssalrift.html"
+                        class="explore-btn"
+                        >Explore</a
+                    >
+                </article>
+            </div>
+        </section>
+        <footer>
+            <p>
+                © 2025 Echoes of the Ancients. Crafted with wisdom by Grok,
+                created by xAI.
+            </p>
+            <p>
+                Contact:
+                <a href="mailto:echoesgame@KdeanGames.net"
+                    >echoesgame@KdeanGames.net</a
+                >
+            </p>
+        </footer>
+        <script>
+            const video = document.querySelector("video");
+            const img = document.querySelector(".header-media img");
+            if (!video.querySelector("source").src || video.readyState === 0) {
+                video.style.display = "none";
+                img.style.display = "block";
+            }
+            video.onloadeddata = () => {
+                video.style.display = "block";
+                img.style.display = "none";
+            };
+            video.onerror = () => {
+                video.style.display = "none";
+                img.style.display = "block";
+            };
+            document.addEventListener("DOMContentLoaded", () => {
+                const cards = document.querySelectorAll(".teaser-card");
+                const observer = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add("visible");
+                            }
+                        });
+                    },
+                    { threshold: 0.1 }
+                );
+                cards.forEach((card) => observer.observe(card));
+            });
+        </script>
+    </body>
+</html>
