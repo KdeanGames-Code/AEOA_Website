@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Talyn - Echoes of the Ancients</title>
+        <link rel="stylesheet" href="/styles.css" />
+        <link rel="icon" type="image/png" href="/images/favicon.png" />
+    </head>
+    <body>
+        <header>
+            <!--#include virtual="/nav.shtml" -->
+            <div class="header-media">
+                <video autoplay muted loop playsinline>
+                    <source src="/videos/hero_teaser.mp4" type="video/mp4" />
+                </video>
+                <img
+                    src="/images/hero_fallback.jpg"
+                    alt="Valley of the Ancients"
+                />
+            </div>
+            <div class="hero talyn">
+                <h1>Talyn</h1>
+                <p class="tagline">The Jungle’s Wry Survivor</p>
+            </div>
+        </header>
+        <!-- ==========================================================================
+           Talyn Overview Section
+           ========================================================================== -->
+        <!-- Primary narrative section, introducing Talyn’s role and backstory in the game -->
+        <section id="talyn">
+            <h2>The Jungle’s Wry Guardian</h2>
+            <p>
+                Talyn, a wiry and scarred survivor of the Living Jungle, brings
+                a wry humor and jungle-honed savvy to Aria’s quest in *Echoes of
+                the Ancients*. Raised among the kapok trees and crimson orchids,
+                he wields the Vinewood Pick, a relic pulsing with green light,
+                to strike raptors and navigate Umbraeth’s creeping rot. His
+                brown eyes glint with resilience, his jerkin patched with hides
+                and vine thread a testament to years dodging gruntlings and
+                surviving the valley’s wild heart. A reluctant ally at first,
+                Talyn’s loyalty grows as he sees Aria’s fiery resolve, guiding
+                her through the Jungle’s verdant maze and fiery caves with a mix
+                of dry wit and deadly precision, per Story Chapter 2 and GDD’s
+                companion mechanics.
+            </p>
+        </section>
+        <!-- ==========================================================================
+           Talyn Key Moments Section
+           ========================================================================== -->
+        <!-- Highlighting Talyn’s pivotal moments in staggered layout for visual engagement -->
+        <section id="talyn-moments">
+            <h2>Talyn’s Trials</h2>
+            <div class="location-grid">
+                <article class="location">
+                    <img
+                        src="/images/characters/talyn_moment1.jpg"
+                        alt="Talyn Facing Raptors"
+                        class="location-img"
+                    />
+                    <h3>Strike in the Jungle’s Heart</h3>
+                    <p>
+                        In the Living Jungle’s dense core, Talyn’s Vinewood Pick
+                        pulses green, felling diving raptors as he clears a path
+                        for Aria, his wry laugh cutting through the rot’s musk,
+                        per Story Chapter 2 and Map’s central-west expanse.
+                    </p>
+                    <a href="/world/characters/talyn.html" class="explore-btn"
+                        >Relive</a
+                    >
+                </article>
+                <article class="location">
+                    <img
+                        src="/images/characters/talyn_moment2.jpg"
+                        alt="Talyn Igniting Braziers"
+                        class="location-img"
+                    />
+                    <h3>Fire in the Cave of Flames</h3>
+                    <p>
+                        Deep in the Cave of Flames, Talyn’s quick wit ignites
+                        braziers with Aria, battling raptor nests amidst
+                        smoldering embers, his scars glowing under the ancient
+                        fire’s light, per Story Chapter 2 and Map’s central-west
+                        jungle.
+                    </p>
+                    <a href="/world/characters/talyn.html" class="explore-btn"
+                        >Relive</a
+                    >
+                </article>
+                <article class="location">
+                    <img
+                        src="/images/characters/talyn_moment3.jpg"
+                        alt="Talyn Navigating Quicksand"
+                        class="location-img"
+                    />
+                    <h3>Sands of Trust</h3>
+                    <p>
+                        In the Sunken Sands, Talyn’s jungle knowledge saves Aria
+                        from quicksand, his dry humor easing tension as they
+                        face Umbraeth’s golems, per Story Chapter 2 and Map’s
+                        southwest dunes.
+                    </p>
+                    <a href="/world/characters/talyn.html" class="explore-btn"
+                        >Relive</a
+                    >
+                </article>
+            </div>
+        </section>
+        <footer>
+            <p>
+                © 2025 Echoes of the Ancients. Crafted with wisdom by Grok,
+                created by xAI.
+            </p>
+            <p>
+                Contact:
+                <a href="mailto:echoesgame@KdeanGames.net"
+                    >echoesgame@KdeanGames.net</a
+                >
+            </p>
+        </footer>
+        <script>
+            const video = document.querySelector("video");
+            const img = document.querySelector(".header-media img");
+            if (!video.querySelector("source").src || video.readyState === 0) {
+                video.style.display = "none";
+                img.style.display = "block";
+            }
+            video.onloadeddata = () => {
+                video.style.display = "block";
+                img.style.display = "none";
+            };
+            video.onerror = () => {
+                video.style.display = "none";
+                img.style.display = "block";
+            };
+        </script>
+    </body>
+</html>

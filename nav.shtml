@@ -14,7 +14,7 @@
             <ul class="dropdown-content">
                 <li><a href="/world/locations.html">Locations</a></li>
                 <li>
-                    <a href="/world/characters/characters.html">Characters</a>
+                    <a href="/world/characters.html">Characters</a>
                 </li>
                 <li><a href="/world/weapons/weapons.html">Weapons</a></li>
                 <li><a href="/world/armor/armor.html">Armor</a></li>
