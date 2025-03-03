@@ -424,6 +424,133 @@ h2 {
     margin-bottom: 1rem;
 }
 
+/* Character Sheet Layout */
+#character-sheet {
+    padding: 2rem;
+    background: #0d0d0d; /* Dark background for a medieval fantasy vibe */
+}
+
+/* Container for the two-column layout */
+.sheet-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Left column narrower, right column wider */
+    gap: 2rem; /* Space between columns */
+    max-width: 1200px;
+    margin: 0 auto; /* Center the layout on the page */
+}
+
+/* Left Column: Image and Stats */
+.left-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center contents horizontally */
+}
+
+/* ==========================================================================
+   Character Image Styling
+   ========================================================================== */
+.characterpage-img {
+    width: 800px; /* Fixed width for desktop screens */
+    height: 600px; /* Fixed height for desktop screens (4:3 ratio) */
+    object-fit: cover; /* Ensures the image fills the space without stretching */
+    border-radius: 10px; /* Rounded corners for a polished look */
+    border: 2px solid #d4a017; /* Gold border to match the medieval theme */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Shadow for depth */
+    margin-bottom: 1rem; /* Space below the image */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover animations */
+}
+
+/* Hover effect for interactivity */
+.characterpage-img:hover {
+    transform: scale(1.05); /* Slight enlargement on hover */
+    box-shadow: 0 8px 16px rgba(212, 160, 23, 0.3); /* Golden glow effect */
+}
+
+/* Stats Box Styling */
+.stats-box {
+    background: #1f1f1f; /* Dark background for contrast */
+    border: 2px solid #d4a017; /* Gold border for thematic consistency */
+    padding: 1rem;
+    border-radius: 10px;
+    width: 100%; /* Full width of the column */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
+}
+
+.stats-box h3 {
+    font-family: "MedievalSharp", cursive; /* Medieval font for headers */
+    color: #d4a017; /* Gold text for headers */
+    margin-bottom: 1rem;
+}
+
+.stats-box p {
+    font-size: 1.2rem;
+    color: #e6e6e6; /* Light text for readability */
+    margin: 0.5rem 0;
+}
+
+.stats-box p strong {
+    color: #d4a017; /* Gold for stat labels */
+}
+
+/* Right Column: Descriptive Sections */
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Space between sections (rows) */
+}
+
+.right-column section {
+    background: #1f1f1f; /* Dark background for each section */
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
+}
+
+.right-column h2 {
+    font-family: "MedievalSharp", cursive; /* Medieval font for section headers */
+    color: #d4a017; /* Gold text for headers */
+    margin-bottom: 1rem;
+}
+
+.right-column p {
+    max-width: 700px; /* Narrows text for readability on desktop */
+    font-size: 1.1rem;
+    color: #e6e6e6; /* Light text for readability */
+}
+/* Adjusted font sizes for better readability */
+.left-column h2,
+.right-column h2 {
+    font-size: 1.8rem; /* Smaller header size */
+}
+
+.left-column p,
+.right-column p {
+    font-size: 1rem; /* Smaller paragraph text */
+}
+.ability-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(212, 160, 23, 0.3);
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 767px) {
+    .sheet-container {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+    .left-column,
+    .right-column {
+        width: 100%; /* Full width on mobile */
+    }
+    .characterpage-img {
+        width: 100%; /* Full width on mobile */
+        height: auto; /* Maintain aspect ratio */
+    }
+    .right-column p {
+        max-width: 100%; /* Full width text on mobile */
+    }
+}
+
 .explore-btn {
     display: inline-block;
     padding: 0.8rem 1.5rem; /* Larger tap target, optimized for mobile usability */
@@ -618,6 +745,14 @@ h2 {
 
 /* Mobile adjustments for screens below 767px, ensuring readability, usability, and visibility */
 @media (max-width: 767px) {
+    .left-column h2,
+    .right-column h2 {
+        font-size: 1.6rem;
+    }
+    .left-column p,
+    .right-column p {
+        font-size: 0.9rem;
+    }
     .teaser-zigzag {
         grid-template-columns: 1fr; /* Single-column layout on mobile for better space and readability, content visible */
         visibility: visible; /* Ensures grid is visible on mobile */

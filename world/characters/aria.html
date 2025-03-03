@@ -3,12 +3,12 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Aria - Echoes of the Ancients</title>
+        <title>Aria, the Last Guardian - Echoes of the Ancients</title>
         <link rel="stylesheet" href="/styles.css" />
-        <link rel="icon" type="image/png" href="/images/favicon.png" />
     </head>
     <body>
         <header>
+            <!-- Server-Side Include for navigation consistency -->
             <!--#include virtual="/nav.shtml" -->
             <div class="header-media">
                 <video autoplay muted loop playsinline>
@@ -19,180 +19,187 @@
                     alt="Valley of the Ancients"
                 />
             </div>
-            <div class="hero aria">
-                <h1>Aria</h1>
-                <p class="tagline">The Last Guardian</p>
+            <div class="hero characters">
+                <h1>Aria, the Last Guardian</h1>
+                <p class="tagline">A Flame Forged in Shadow and Steel</p>
             </div>
         </header>
-        <!-- ==========================================================================
-           Aria Portrait Section
-           ========================================================================== -->
-        <!-- Large portrait image of Aria, styled with gold borders and dark background, linking to stats -->
-        <section id="aria-portrait">
-            <img
-                src="/images/characters/aria_portrait.jpg"
-                alt="Aria Portrait"
-                class="location-img"
-                style="
-                    width: 600px;
-                    height: 800px;
-                    border: 2px solid #d4a017;
-                    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
-                    margin: 2rem auto;
-                    display: block;
-                "
-            />
-            <a href="#aria-stats" class="explore-btn">Explore Aria’s Legacy</a>
+
+        <section id="character-sheet">
+            <div class="sheet-container">
+                <!-- Left Column: Portrait and Descriptive Sections -->
+                <div class="left-column">
+                    <img
+                        src="/images/characters/aria_landscape.jpg"
+                        alt="Aria Portrait"
+                        class="characterpage-img"
+                    />
+                    <section class="personality">
+                        <h2>Personality</h2>
+                        <p>
+                            Aria is a blazing force of resolve, her spirit
+                            tempered by Elyra’s sacrifice and the Valley’s
+                            whispers. Agile and resourceful, she cuts through
+                            peril with a sharp mind and sharper blade, her guilt
+                            over her mother’s fall fueling a relentless drive to
+                            banish Umbraeth’s shadow. Quick-witted and
+                            steadfast, she trusts allies like Ryn and faces foes
+                            like Kael with unyielding steel, her bond with the
+                            land a quiet strength that hums through her every
+                            step.
+                        </p>
+                        <blockquote>
+                            "I’ll burn away the dark, Mother—no shadow will
+                            snuff this flame."
+                        </blockquote>
+                    </section>
+                    <section class="appearance">
+                        <h2>Appearance</h2>
+                        <p>
+                            Aria stands fierce and scarred, her fiery
+                            reddish-orange hair streaked with silver flowing
+                            like wildfire in the Valley’s winds. She wears a
+                            battle-worn leather jerkin, patched with hides and
+                            etched with faint gold runes that pulse with azure
+                            light. Beneath, a faded blue tunic clings to her
+                            sweat-soaked frame, while scuffed leather arm guards
+                            and leggings bear vine motifs, scarred from raptor
+                            talons and jungle thorns. Her sturdy boots, muddied
+                            from the Living Jungle, ground her as she wields the
+                            Glyph-Blade, its ghostly edge humming with ancient
+                            magic.
+                        </p>
+                    </section>
+                    <section class="background">
+                        <h2>Background</h2>
+                        <p>
+                            Born of Elyra’s blood, Aria was a child when
+                            tendrils dragged her mother into the Abyssal Rift,
+                            the Heartstone’s glow fading in her grasp. Hidden in
+                            a Spire crevice, she survived on instinct, growing
+                            amidst kapok jungles and fractured ruins. Elyra’s
+                            sacrifice—her life for the Heartstone—etched a vow
+                            into Aria’s soul: reclaim her lineage and purify the
+                            land. Raised by the Valley’s echoes, she learned its
+                            secrets—glyphs, mechanisms, shadows—emerging as the
+                            Last Guardian to face Umbraeth’s hunger.
+                        </p>
+                    </section>
+                    <section class="abilities">
+                        <h2>Abilities & Skills</h2>
+                        <p>
+                            Aria’s prowess is a dance of blade and cunning. Her
+                            Glyph-Blade sings with melee mastery, chaining swift
+                            combos or shattering stone with precise strikes, its
+                            azure glow flaring with the Heartstone’s light. Her
+                            Rune-Etched Quiver looses arrows tipped with ember
+                            or ice, piercing raptor wings or golem cores. Relics
+                            like the Gauntlet of Storms summon gusts, the
+                            Vineweaver’s Cord swings her through jungles, and
+                            the Shadowfang Claw leeches life from foes. She
+                            bends the Valley’s hazards—quicksand, fires,
+                            winds—to her will, a guardian’s art honed in blood
+                            and shadow.
+                        </p>
+                        <div class="ability-list">
+                            <div class="ability-item">
+                                <h3>Glyph-Blade Mastery</h3>
+                                <p>
+                                    Swift, chained melee strikes with
+                                    light-based damage.
+                                </p>
+                            </div>
+                            <div class="ability-item">
+                                <h3>Rune-Etched Quiver</h3>
+                                <p>
+                                    Arrows tipped with elemental fury—fire, ice,
+                                    or shadow.
+                                </p>
+                            </div>
+                            <div class="ability-item">
+                                <h3>Gauntlet of Storms</h3>
+                                <p>
+                                    Summons wind to scatter foes or reveal
+                                    paths.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Right Column: Stats and Additional Sections -->
+                <div class="right-column">
+                    <div class="stats-box">
+                        <h3>Stats</h3>
+                        <p><strong>Strength:</strong> 18</p>
+                        <p><strong>Agility:</strong> 16</p>
+                        <p><strong>Endurance:</strong> 14</p>
+                        <p><strong>Essence:</strong> 12</p>
+                    </div>
+                    <section class="narrative">
+                        <h2>Role in the Narrative</h2>
+                        <p>
+                            Aria’s quest drives the Valley’s heartbeat. From
+                            claiming the Heartstone at the Spire of Dawn to
+                            confronting Umbraeth’s grotesque shadow in the
+                            Abyssal Rift, she battles to banish corruption. Each
+                            step—jungle trials, desert crucibles, temple
+                            mazes—shapes her into a legend, her choices at the
+                            Tribal Enclave forging peace or ruin. Elyra’s vision
+                            guides her, Umbraeth’s taunts test her, and the
+                            Valley’s rebirth crowns her tale, a flame eternal
+                            etched into the Spire’s ochre mural.
+                        </p>
+                    </section>
+                    <section class="relationships">
+                        <h2>Relationships</h2>
+                        <ul>
+                            <li>
+                                <strong>Elyra (Mother)</strong>: “Burn away the
+                                dark, my eternal flame.”
+                            </li>
+                            <li>
+                                <strong>Ryn (Ally)</strong>: “You’re damn good
+                                trouble, fire-hair.”
+                            </li>
+                            <li>
+                                <strong>Talyn (Ally)</strong>: “Keep that blade
+                                hot; valley’s watching.”
+                            </li>
+                            <li>
+                                <strong>Zara (Ally)</strong>: “Make those golems
+                                bleed dust.”
+                            </li>
+                            <li>
+                                <strong>Kael (Enemy)</strong>: “Join me, or I’ll
+                                carve my will into your bones.”
+                            </li>
+                            <li>
+                                <strong>Umbraeth (Enemy)</strong>: “Yours will
+                                flood my rift, child.”
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="development">
+                        <h2>Development Arc</h2>
+                        <p>
+                            Aria begins as a survivor, haunted by Elyra’s fall,
+                            her blade a desperate shield. Through jungle thorns,
+                            desert sands, and temple echoes, she grows—claiming
+                            relics, solving puzzles, felling foes. At the Rift,
+                            she faces Umbraeth, her guilt burning into defiance
+                            as Elyra’s vision lifts her. Her triumph atop the
+                            Wind’s Roost crowns her a legend, the Valley’s song
+                            restored, her fiery hair etched among the Ancients—a
+                            guardian reborn from shadow into light.
+                        </p>
+                    </section>
+                </div>
+            </div>
         </section>
-        <!-- ==========================================================================
-           Aria Stats Section
-           ========================================================================== -->
-        <!-- Detailed stats inspired by Echoes docs, using metric measurements -->
-        <section id="aria-stats">
-            <h2>Aria’s Strength</h2>
-            <p>
-                <strong>Ancestery:</strong> Human (Versatile) – Born of the
-                Valley’s ancient guardians, Aria’s lineage pulses with the Spire
-                of Dawn’s light, per Story Chapter 1 and GDD’s narrative
-                depth.<br />
-                <strong>Background:</strong> Guardian – Tasked with safeguarding
-                the Valley from Umbraeth’s corruption, shaped by sixteen winters
-                of loss, per Story and Map’s northwest clearing.<br />
-                <strong>Speed:</strong> 7.6 meters per second – Aria’s agility
-                allows her to navigate treacherous landscapes and dodge swift
-                attacks, per GDD’s melee mastery.<br />
-                <strong>Alignment:</strong> Chaotic Good – Driven by resolve to
-                banish darkness and reclaim her heritage, her moral stance
-                battles Umbraeth’s shadow, per Story Chapter 1.<br />
-                <strong>Languages:</strong> Common, Halflit – Speaks the
-                Valley’s dialects, echoing ancient whispers in jungles and
-                ruins, per Map’s lore.<br />
-                <strong>Attributes:</strong><br />
-                - Strength: 14 m/s reaction – Fuels her Glyph-Blade strikes
-                against gruntlings and raptors, per GDD’s combat dynamics.<br />
-                - Dexterity: 7.6 m/s dodge – Enables her to outmaneuver
-                Umbraeth’s foes in jungles and sands, per GDD’s agility.<br />
-                - Constitution: 15 minutes endurance – Sustains her through
-                battles in the Valley’s harsh climates, per Story Chapter 2.<br />
-                - Intelligence: 5 seconds problem-solving – Deciphers ancient
-                puzzles in the Spire and Temple, per GDD’s puzzle mechanics.<br />
-                - Wisdom: 10 meters perception – Spots Umbraeth’s corruption in
-                the Rift and Peaks, per Story Chapter 4.<br />
-                - Charisma: 8 meters influence – Inspires allies like Ryn and
-                Talyn, rallying them against darkness, per GDD’s leadership.<br />
-                <strong>Strikes:</strong> Glyph-Blade Strike – A 1.2-meter relic
-                of azure light, slashing at 7.6 m/s, chaining devastating combos
-                against Valley foes, per GDD’s melee mastery and Story Chapter
-                1.
-            </p>
-        </section>
-        <!-- ==========================================================================
-           Aria Abilities Section
-           ========================================================================== -->
-        <!-- Key abilities, feats, and skills from Echoes docs, in metric -->
-        <section id="aria-abilities">
-            <h2>Aria’s Powers</h2>
-            <p>
-                <strong>Ancestery Abilities:</strong> Fire Resistance –
-                Withstands temperatures up to 50°C in the Cave of Flames,
-                shielding her from Umbraeth’s heat, per Story Chapter 2 and
-                GDD’s environmental interaction.<br />
-                <strong>Class Feats:</strong> Guardian’s Resolve – Boosts morale
-                within a 5-meter radius, rallying Ryn, Talyn, and others against
-                gruntlings, per GDD’s leadership and Story Chapter 3.<br />
-                <strong>General Feats:</strong> Leadership – Inspires allies
-                within 8 meters, turning the tide in the Tribal Enclave, per
-                Story Chapter 3 and GDD’s narrative depth.<br />
-                <strong>Skill Feats:</strong> Diplomacy – Negotiates within 7
-                meters, calming Kael’s rivalry in the Enclave, per GDD’s social
-                mechanics and Story Chapter 3.
-            </p>
-        </section>
-        <!-- ==========================================================================
-           Aria History Section
-           ========================================================================== -->
-        <!-- Detailed backstory, role, and relevance to Aria’s quest, drawn from docs -->
-        <section id="aria-history">
-            <h2>Aria’s Legacy</h2>
-            <p>
-                Aria is the last of her lineage, a 28-year-old descendant of the
-                ancient guardians tasked with safeguarding the Valley of the
-                Ancients from the darkness that seeks to consume it. Born in the
-                shadow of the Spire of Dawn, 15 meters tall in the northwest,
-                she grew up amidst the whispers of a once-glorious civilization,
-                her mother Elyra’s sacrifice sixteen winters past haunting her
-                steps—Elyra’s blood failed to hold Umbraeth, leaving a
-                blood-stained tunic in the 10-meter ruins, per Story Chapter 1.
-                The Valley’s jungles, sands, and ruins shaped her—scarred by
-                raptor dives at 12 m/s, gruntling raids at 5 m/s, and Umbraeth’s
-                curse, she hides in crevices like the Cavern of the Heartstone,
-                20 meters deep, her fiery reddish-orange hair with silver
-                streaks a beacon against the rot, per Story Chapter 2 and Map’s
-                central-west expanse. Meeting foes like raptors, their amber
-                eyes locking on as prey, and casters, their green eyes binding
-                Umbraeth’s curse, she sees them as threats to banish, their
-                shrieks and pulses echoing Umbraeth’s will, per Raptor and
-                Caster profiles in Story Chapters 2-3. Umbraeth, her nemesis,
-                looms with hollow yellow voids and stolen screams, its 2.5-meter
-                shadow a tide she burns away with Elyra’s legacy, per Story
-                Chapter 4. Elyra’s vision, a spectral guide with fiery love and
-                tear-soaked pleas, drives Aria’s resolve, her blood-stained
-                tunic a reminder of past failure, per Story Chapter 4. Allies
-                like Ryn, the Silent Hunter, bolster her with sharp grit, his
-                9.1 m/s agility outpacing raptors in the Living Jungle, per
-                Story Chapter 2. Talyn, the Jungle’s Wry Survivor, adds wry
-                toughness, his 7.3 m/s dodge evading gruntlings in the Cave of
-                Flames, per Story Chapter 2. Mirra, the Enclave’s Hopeful
-                Healer, offers frail hope, her 12-meter perception healing burns
-                in the Tribal Enclave, per Story Chapter 3. Dren, the Enclave’s
-                Fierce Warrior, brings desperate fire, his 8.2 m/s reaction
-                shielding Mirra from raids, per Story Chapter 3. Their voices
-                thread her journey with camaraderie, per GDD’s companion
-                mechanics and Map’s dynamic locations. Aria’s quest, ignited in
-                Story Chapter 1, drives *Echoes of the Ancients*—she explores
-                the Spire of Dawn, Living Jungle, Sunken Sands, Temple of
-                Echoes, Abyssal Rift, Tribal Enclave, and High Peaks, uncovering
-                relics like the Heartstone, Vineweaver’s Cord, and Rune-Etched
-                Quiver, solving puzzles that weave her heritage into light and
-                darkness, per GDD’s open-world exploration and narrative depth.
-                Her battles with raptors, gruntlings, and casters test her
-                leadership, her choices shaping the Valley—freeing tribes or
-                facing Umbraeth’s wrath, per Map’s locations and Story Chapters
-                2-8. Her development arc transforms her from a survivor haunted
-                by Elyra’s failure to a legend reborn, her leather jerkin
-                scarred but unyielding, gold accents pulsing, her fiery hair a
-                symbol of redemption, banishing corruption by the Epilogue’s
-                flame eternal, her 1.2-meter Glyph-Blade echoing through a
-                valley cleansed of shadow, per Story Epilogue.
-            </p>
-        </section>
+
         <footer>
-            <p>
-                © 2025 Echoes of the Ancients. Crafted with wisdom by Grok,
-                created by xAI.
-            </p>
-            <p>
-                Contact:
-                <a href="mailto:echoesgame@KdeanGames.net"
-                    >echoesgame@KdeanGames.net</a
-                >
-            </p>
+            <p>© 2023 Echoes of the Ancients. All rights reserved.</p>
         </footer>
-        <script>
-            const video = document.querySelector("video");
-            const img = document.querySelector(".header-media img");
-            if (!video.querySelector("source").src || video.readyState === 0) {
-                video.style.display = "none";
-                img.style.display = "block";
-            }
-            video.onloadeddata = () => {
-                video.style.display = "block";
-                img.style.display = "none";
-            };
-            video.onerror = () => {
-                video.style.display = "none";
-                img.style.display = "block";
-            };
-        </script>
     </body>
 </html>
