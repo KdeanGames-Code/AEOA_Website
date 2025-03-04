@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Zephyr, the High Wind Dancer - Echoes of the Ancients</title>
+        <link rel="stylesheet" href="/styles.css" />
+    </head>
+    <body>
+        <header>
+            <!--#include virtual="/nav.shtml" -->
+            <div class="header-media">
+                <video autoplay muted loop playsinline>
+                    <source src="/videos/hero_teaser.mp4" type="video/mp4" />
+                </video>
+                <img
+                    src="/images/hero_fallback.jpg"
+                    alt="Valley of the Ancients"
+                />
+            </div>
+            <div class="hero characters">
+                <h1>Zephyr, the High Wind Dancer</h1>
+                <p class="tagline">
+                    A Lithe Survivor Shaped by the Valley’s Icy Gales
+                </p>
+            </div>
+        </header>
+
+        <section id="character-sheet">
+            <div class="sheet-container">
+                <!-- Left Column -->
+                <div class="left-column">
+                    <img
+                        src="/images/characters/zephyr_portrait.jpg"
+                        alt="Zephyr Portrait"
+                        class="characterpage-img"
+                    />
+                    <section class="description">
+                        <h2>Description</h2>
+                        <p>
+                            Zephyr is a lithe, weathered woman, her silver-white
+                            hair flowing wild like a blizzard’s breath, tied
+                            with a raptor feather strip. Her violet eyes gleam
+                            with a dancer’s agility, shadowed by vigilance
+                            against Umbraeth’s curse. Graceful and vigilant, her
+                            soft whistle carries northern winds, edged with
+                            playful humor. She’s swift to leap risks, her
+                            agility both strength and flaw—evading icy gales
+                            with ease, yet prone to overconfidence.
+                        </p>
+                    </section>
+                    <section class="background">
+                        <h2>Background</h2>
+                        <p>
+                            Born in the High Peaks, Zephyr was raised by her
+                            wind dancer mother, Nia, who taught her to leap
+                            cliffs and guard against shadow: "Dance the skies,
+                            child—shadow stills all else." At 20, Nia fell to
+                            raptor dives, leaving Zephyr her Wind Ribbon and a
+                            creed. Decades under Umbraeth’s curse honed her,
+                            until meeting Aria in Chapters 6-7, where she sees
+                            Elyra’s fiery legacy: "Your fire blazes—I’ll dance
+                            with you."
+                        </p>
+                    </section>
+                </div>
+
+                <!-- Right Column -->
+                <div class="right-column">
+                    <div class="stats-box">
+                        <h3>Stats</h3>
+                        <p><strong>Strength:</strong> 4</p>
+                        <p><strong>Agility:</strong> 9</p>
+                        <p><strong>Intelligence:</strong> 7</p>
+                        <p><strong>Endurance:</strong> 6</p>
+                    </div>
+                    <section class="abilities">
+                        <h2>Abilities</h2>
+                        <ul>
+                            <li>
+                                <strong>Wind Ribbon Gust:</strong> Stuns foes
+                                with a swirling gust.
+                            </li>
+                            <li>
+                                <strong>Cliff Leap:</strong> Evades danger with
+                                dancer’s grace.
+                            </li>
+                            <li>
+                                <strong>Wind Lore Insight:</strong> Reveals
+                                paths with wind’s guidance.
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="role">
+                        <h2>Role in the Story</h2>
+                        <p>
+                            Zephyr aids Aria in Chapters 6-7, guarding the High
+                            Peaks with wind lore. Her Wind Ribbon solves the
+                            Wind’s Roost Puzzle, her recklessness testing Aria’s
+                            resolve. From solitary dancer to steadfast ally, her
+                            winds sing hope by the tale’s end.
+                        </p>
+                    </section>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>
+                © 2025 Echoes of the Ancients. Crafted with wisdom by Grok,
+                created by xAI.
+            </p>
+            <p>
+                Contact:
+                <a href="mailto:echoesgame@KdeanGames.net"
+                    >echoesgame@KdeanGames.net</a
+                >
+            </p>
+        </footer>
+
+        <script>
+            const video = document.querySelector("video");
+            const img = document.querySelector(".header-media img");
+            if (!video.querySelector("source").src || video.readyState === 0) {
+                video.style.display = "none";
+                img.style.display = "block";
+            }
+            video.onloadeddata = () => {
+                video.style.display = "block";
+                img.style.display = "none";
+            };
+            video.onerror = () => {
+                video.style.display = "none";
+                img.style.display = "block";
+            };
+        </script>
+    </body>
+</html>
