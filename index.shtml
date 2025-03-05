@@ -6,6 +6,11 @@
         <title>Echoes of the Ancients</title>
         <link rel="stylesheet" href="/styles.css" />
         <link rel="icon" type="image/png" href="/images/favicon.png" />
+        <!-- SEO meta description (150-160 chars) attracts search engine users -->
+    <meta name="description" content="Explore Echoes of the Ancients, a medieval dark fantasy RPG set in the Valley of the Ancients, filled with shadow and secrets.">
+    <!-- SEO keywords target relevant search terms for the game -->
+    <meta name="keywords" content="Echoes of the Ancients, medieval fantasy, RPG, dark fantasy, Valley of the Ancients">
+</head>
     </head>
     <body>
         <header>
@@ -318,6 +323,8 @@
                     >echoesgame@KdeanGames.net</a
                 >
             </p>
+            <!-- Social media link to X, opens in new tab for usability -->
+        <p><a href="https://x.com/KdeanGames" target="_blank" rel="noopener">Follow us on X</a></p>
         </footer>
         <script>
             const video = document.querySelector("video");
