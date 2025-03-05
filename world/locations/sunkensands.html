@@ -1,234 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Ensures proper text rendering across browsers, supporting special characters -->
         <meta charset="UTF-8" />
+        <!-- Sets viewport for responsive design, scaling to device width -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Page title for browser tab and SEO, thematic and concise -->
         <title>Sunken Sands - Echoes of the Ancients</title>
+        <!-- Links to external stylesheet for consistent site-wide styling -->
         <link rel="stylesheet" href="/styles.css" />
+        <!-- Favicon enhances branding with a thematic glyph or sand icon -->
         <link rel="icon" type="image/png" href="/images/favicon.png" />
+        <!-- SEO meta description (150-160 chars) to attract search engine users -->
+        <meta
+            name="description"
+            content="Explore Sunken Sands in Echoes of the Ancients, a desolate desert hiding ancient ruins and Umbraeth’s buried corruption."
+        />
+        <!-- SEO keywords target relevant search terms for discoverability -->
+        <meta
+            name="keywords"
+            content="Sunken Sands, Echoes of the Ancients, Valley of the Ancients, medieval fantasy, RPG, dark fantasy, locations"
+        />
     </head>
     <body>
+        <!-- Includes navigation from nav.shtml for consistent site-wide menu -->
+        <!--#include virtual="/nav.shtml" -->
         <header>
-            <!--#include virtual="/nav.shtml" -->
+            <!-- Container for background media (video/image), fills header dynamically -->
             <div class="header-media">
+                <!-- Video provides immersive intro, muted and looped for seamless playback -->
                 <video autoplay muted loop playsinline>
-                    <source src="/videos/hero_teaser.mp4" type="video/mp4" />
+                    <!-- Video source for Sunken Sands, stored in /videos/locations -->
+                    <source
+                        src="/videos/locations/sunkensands_teaser.mp4"
+                        type="video/mp4"
+                    />
+                    <!-- Fallback text for browsers that don’t support video -->
+                    Your browser does not support the video tag.
                 </video>
+                <!-- Fallback image in /images/locations, 1920x1080px to match video -->
                 <img
-                    src="/images/hero_fallback.jpg"
-                    alt="Valley of the Ancients"
+                    src="/images/locations/sunkensands_fallback.jpg"
+                    alt="Sunken Sands under stormy dunes"
                 />
             </div>
+            <!-- Hero section overlays media with title and tagline, styled for impact -->
             <div class="hero sunkensands">
                 <h1>Sunken Sands</h1>
-                <p class="tagline">Where dunes swallow the unwary</p>
+                <p class="tagline">A Desert Grave Where Shadows Whisper</p>
             </div>
         </header>
-        <section id="sunkensands">
-            <h2>The Golden Abyss</h2>
-            <p>
-                The Sunken Sands stretch across the southwest Valley, a searing
-                expanse of golden dunes rippling under a merciless sun, laced
-                with quicksand pits and mirage-shrouded ruins. Scorpions skitter
-                through the heat, while raptor shadows circle overhead, their
-                cries echoing off ancient obelisks half-buried in sand. Here,
-                Aria navigates the desert’s deadly embrace, her Glyph-Blade
-                cutting through grit to uncover the Ancients’ secrets—Sandstone
-                Compass, Quicksand Crucible, Dune Vault—guided by Kael’s keen
-                eyes, their steps sinking into a crucible of endurance against
-                Umbraeth’s creeping corruption.
-            </p>
-            <h2>Key Landmarks</h2>
-            <div class="location-grid">
-                <article class="location">
+        <!-- Main content section with two-column layout for location details -->
+        <section id="location-sheet">
+            <div class="sheet-container">
+                <!-- Left column: Main image and initial sections with smaller images -->
+                <div class="left-column">
+                    <!-- Main image (800x600px) at top of left column -->
                     <img
-                        src="/images/locations/sunkensands_1.jpg"
-                        alt="Sands Overview"
-                        class="location-img"
+                        src="/images/locations/sunkensands_main.jpg"
+                        alt="Sunken Sands with buried ruins"
+                        class="locationpage-img"
                     />
-                    <h3>Golden Dunes</h3>
-                    <p>
-                        A shimmering desert of golden sand, its dunes shifting
-                        under a blistering sun, dotted with mirage-like ruins.
-                        Quicksand pits lurk beneath, testing Aria’s footing with
-                        every step.
-                    </p>
-                    <a
-                        href="/world/locations/sunkensands.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/sunkensands_2.jpg"
-                        alt="Sandstone Compass"
-                        class="location-img"
-                    />
-                    <h3>Sandstone Compass</h3>
-                    <p>
-                        A weathered stone dial buried in sand, its golden needle
-                        humming with the Ancients’ lore. Aria clears debris with
-                        Gauntlet Gust, aligning it to reveal a buried path,
-                        raptors diving to disrupt her focus.
-                    </p>
-                    <a
-                        href="/world/locations/sunkensands.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/sunkensands_3.jpg"
-                        alt="Quicksand Crucible"
-                        class="location-img"
-                    />
-                    <h3>Quicksand Crucible</h3>
-                    <p>
-                        A treacherous pit of shifting sand, its center harboring
-                        a chest. Aria lures scorpions into the mire, using the
-                        Vineweaver’s Cord to swing across, unlocking the Sunken
-                        Shard amidst their hissing fury.
-                    </p>
-                    <a
-                        href="/world/locations/sunkensands.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/sunkensands_4.jpg"
-                        alt="Dune Vault"
-                        class="location-img"
-                    />
-                    <h3>Dune Vault</h3>
-                    <p>
-                        A buried chamber beneath a dune, its entrance revealed
-                        by collapsing sand after a storm. Aria lights torches in
-                        a pattern—north, east, south, west—unlocking the
-                        Sandwalker’s Cloak, scorpions skittering in the dark.
-                    </p>
-                    <a
-                        href="/world/locations/sunkensands.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/sunkensands_5.jpg"
-                        alt="Raptor Nests"
-                        class="location-img"
-                    />
-                    <h3>Foes of the Sky</h3>
-                    <p>
-                        Raptors nest on high dunes, their amber eyes piercing
-                        the haze, talons slicing sand. Aria parries their swoops
-                        with the Glyph-Blade, their souls shimmering as they
-                        fall, a dance of survival under the sun.
-                    </p>
-                    <a
-                        href="/world/locations/sunkensands.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/sunkensands_6.jpg"
-                        alt="Scorpion Swarms"
-                        class="location-img"
-                    />
-                    <h3>Venomous Peril</h3>
-                    <p>
-                        Scorpions—black carapaces glinting—burst from sand,
-                        their stingers deadly. Kael’s Sand Staff conjures gusts
-                        to scatter them, while Aria harvests their souls, each
-                        sting a trial of her resilience.
-                    </p>
-                    <a
-                        href="/world/locations/sunkensands.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/sunkensands_7.jpg"
-                        alt="Sunken Shard"
-                        class="location-img"
-                    />
-                    <h3>Sunken Shard</h3>
-                    <p>
-                        A crystal pulsing with desert heat, found in the
-                        Quicksand Crucible’s chest. It enhances Aria’s stamina
-                        (+10), its golden glow a beacon through the sands,
-                        gifted by Kael’s wisdom.
-                    </p>
-                    <a
-                        href="/world/locations/sunkensands.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/sunkensands_8.jpg"
-                        alt="Kael’s Outpost"
-                        class="location-img"
-                    />
-                    <h3>Kael’s Vigil</h3>
-                    <p>
-                        Kael’s sun-bleached outpost—a sand-scoured tent—holds
-                        his Sand Staff and a water cache. “The dunes hide more
-                        than heat,” he warns, revealing a hidden vault with
-                        healing salts (+15 Health), forged in desert survival.
-                    </p>
-                    <a
-                        href="/world/locations/sunkensands.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/characters/kael_action.jpg"
-                        alt="Kael Wielding Sand Staff"
-                        class="location-img"
-                    />
-                    <h3>Companions</h3>
-                    <p>
-                        Kael, the stoic Desert Scholar, stands amidst golden
-                        dunes, his sun-weathered face framed by a sand-colored
-                        robe. “The dunes hide more than heat, fire-hair,” he
-                        intones, wielding his Sand Staff to summon gusts against
-                        scorpions, guiding Aria through the Sands’ deadly
-                        embrace.
-                    </p>
-                    <a
-                        href="/world/locations/sunkensands.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
+                    <!-- Overview with 400x300px image to the left -->
+                    <section class="overview">
+                        <img
+                            src="/images/locations/sunkensands_overview.jpg"
+                            alt="Sunken Sands dunes"
+                            class="section-img"
+                        />
+                        <div class="section-text">
+                            <h2>Overview</h2>
+                            <p>
+                                The Sunken Sands stretch across the southern
+                                reaches of the Valley of the Ancients, a
+                                desolate expanse of shifting dunes and cracked
+                                earth. Beneath its surface lie buried ruins of a
+                                once-great city, now tainted by Umbraeth’s
+                                shadow, whispering secrets of the Ancients’
+                                downfall to those who dare to dig.
+                            </p>
+                        </div>
+                    </section>
+                    <!-- Geography with 400x300px image to the left -->
+                    <section class="geography">
+                        <img
+                            src="/images/locations/sunkensands_geography.jpg"
+                            alt="Sandstone cliffs and storms"
+                            class="section-img"
+                        />
+                        <div class="section-text">
+                            <h2>Geography</h2>
+                            <p>
+                                Towering sandstone cliffs rise from endless
+                                dunes, weathered by relentless sandstorms. Dry
+                                riverbeds carve the landscape, their banks
+                                dotted with petrified trees and Umbraeth’s black
+                                ichor seeping from cracked earth. Scattered
+                                glyphs glow faintly atop buried spires, visible
+                                only under a stormy sky.
+                            </p>
+                        </div>
+                    </section>
+                    <!-- History with 400x300px image to the left -->
+                    <section class="history">
+                        <img
+                            src="/images/locations/sunkensands_history.jpg"
+                            alt="Ancient city ruins"
+                            class="section-img"
+                        />
+                        <div class="section-text">
+                            <h2>History</h2>
+                            <p>
+                                Centuries ago, the Sunken Sands were a thriving
+                                oasis city, its spires gleaming under the sun
+                                until Umbraeth’s corruption sank it beneath the
+                                dunes. The Ancients’ final stand here left the
+                                Echo Shard buried deep, a relic Aria must
+                                reclaim to unravel their lost legacy.
+                            </p>
+                        </div>
+                    </section>
+                </div>
+                <!-- Closes left-column -->
+                <!-- Right column: Remaining detailed sections -->
+                <div class="right-column">
+                    <!-- Inhabitants lists creatures and characters -->
+                    <section class="inhabitants">
+                        <h2>Inhabitants</h2>
+                        <p>
+                            Sand wraiths drift through the dunes, their hollow
+                            wails carried by the wind, while burrowing scarabs
+                            guard buried treasures with razor mandibles.
+                            Umbraeth’s shadow stirs petrified sentinels to life,
+                            and a mysterious wanderer, Kael, roams the sands,
+                            offering cryptic guidance.
+                        </p>
+                    </section>
+                    <!-- Puzzles highlight gameplay challenges -->
+                    <section class="puzzles">
+                        <h2>Puzzles</h2>
+                        <p>
+                            The Dune Mirror Array challenges Aria to align three
+                            sandstone mirrors using wind bursts from the
+                            Gauntlet of Storms, reflecting a beam through a
+                            sandstorm to reveal the Echo Shard’s crypt, all
+                            while dodging scarab swarms.
+                        </p>
+                    </section>
+                    <!-- Relics detail key items -->
+                    <section class="relics">
+                        <h2>Relics</h2>
+                        <p>
+                            The Echo Shard, a jagged crystal pulsing with golden
+                            light, rests in a buried crypt, amplifying Aria’s
+                            Glyph-Blade against Umbraeth’s minions. A Sand-Worn
+                            Compass, found amidst petrified trees, points to
+                            hidden caches when held aloft.
+                        </p>
+                    </section>
+                    <!-- Companions note potential allies -->
+                    <section class="companions">
+                        <h2>Companions</h2>
+                        <p>
+                            Kael, the Sand Wanderer, emerges from the dunes, his
+                            weathered cloak hiding sharp grey eyes. Wielding a
+                            curved dune blade, he aids Aria against wraiths and
+                            sentinels, his knowledge of the Sands guiding her to
+                            the Echo Shard.
+                        </p>
+                    </section>
+                    <!-- Narrative ties the Sands to Aria’s story -->
+                    <section class="narrative">
+                        <h2>Role in the Narrative</h2>
+                        <p>
+                            The Sunken Sands push Aria to confront the Ancients’
+                            hubris, unearthing the Echo Shard to weaken
+                            Umbraeth’s hold. Kael’s alliance here deepens her
+                            resolve, revealing the desert’s buried truths as she
+                            strides toward the Valley’s redemption.
+                        </p>
+                    </section>
+                </div>
+                <!-- Closes right-column -->
             </div>
         </section>
+        <!-- Footer provides site info and links, consistent across pages -->
         <footer>
+            <!-- Copyright with future-proof year and Grok/xAI attribution -->
             <p>
                 © 2025 Echoes of the Ancients. Crafted with wisdom by Grok,
                 created by xAI.
             </p>
+            <!-- Contact email link for user engagement -->
             <p>
                 Contact:
                 <a href="mailto:echoesgame@KdeanGames.net"
                     >echoesgame@KdeanGames.net</a
                 >
             </p>
+            <!-- X link opens in new tab for social media connectivity -->
+            <p>
+                <a
+                    href="https://x.com/KdeanGames"
+                    target="_blank"
+                    rel="noopener"
+                    >Follow us on X</a
+                >
+            </p>
         </footer>
+        <!-- Script ensures video fallback to image for reliable display -->
         <script>
-            // Fallback: Show image if video fails or isn’t present
             const video = document.querySelector("video");
             const img = document.querySelector(".header-media img");
             if (!video.querySelector("source").src || video.readyState === 0) {
