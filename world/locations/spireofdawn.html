@@ -1,245 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Ensures proper text rendering across browsers, supporting special characters -->
         <meta charset="UTF-8" />
+        <!-- Sets viewport for responsive design, scaling to device width -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Page title for browser tab and SEO, thematic and concise -->
         <title>Spire of Dawn - Echoes of the Ancients</title>
+        <!-- Links to external stylesheet for consistent site-wide styling -->
         <link rel="stylesheet" href="/styles.css" />
+        <!-- Favicon enhances branding with a thematic glyph or monolith icon -->
         <link rel="icon" type="image/png" href="/images/favicon.png" />
+        <!-- SEO meta description (150-160 chars) to attract search engine users -->
+        <meta
+            name="description"
+            content="Explore Spire of Dawn, a fractured monolith in Echoes of the Ancients where Aria’s quest begins against Umbraeth’s shadow."
+        />
+        <!-- SEO keywords target relevant search terms for discoverability -->
+        <meta
+            name="keywords"
+            content="Spire of Dawn, Echoes of the Ancients, Valley of the Ancients, medieval fantasy, RPG, dark fantasy, locations"
+        />
     </head>
     <body>
+        <!-- Includes navigation from nav.shtml for consistent site-wide menu -->
+        <!--#include virtual="/nav.shtml" -->
         <header>
-            <!--#include virtual="/nav.shtml" -->
+            <!-- Container for background media (video/image), fills header dynamically -->
             <div class="header-media">
+                <!-- Video provides immersive intro, muted and looped for seamless playback -->
                 <video autoplay muted loop playsinline>
-                    <source src="/videos/hero_teaser.mp4" type="video/mp4" />
+                    <!-- Video source for Spire of Dawn, stored in /videos/locations -->
+                    <source
+                        src="/videos/locations/spireofdawn_teaser.mp4"
+                        type="video/mp4"
+                    />
+                    <!-- Fallback text for browsers that don’t support video -->
+                    Your browser does not support the video tag.
                 </video>
+                <!-- Fallback image in /images/locations ensures visual if video fails -->
                 <img
-                    src="/images/hero_fallback.jpg"
-                    alt="Valley of the Ancients"
+                    src="/images/locations/spireofdawn_fallback.jpg"
+                    alt="Spire of Dawn under stormy skies"
                 />
             </div>
+            <!-- Hero section overlays media with title and tagline, styled for impact -->
             <div class="hero spireofdawn">
                 <h1>Spire of Dawn</h1>
-                <p class="tagline">Where Elyra’s light guttered</p>
+                <p class="tagline">
+                    The Whispering Ruins Where Light Battles Shadow
+                </p>
             </div>
         </header>
-        <section id="spireofdawn">
-            <h2>The Fractured Monolith</h2>
-            <p>
-                The Spire of Dawn pierces the northwest jungle, a fractured
-                monolith leaning like a broken vow over a clearing choked with
-                glistening, venomous vines. Once a beacon of the Ancients’
-                elemental might, its marble crown now crumbles, wind howling
-                through vine-draped ruins as azure glyphs flicker with fading
-                light. Here, Aria kneels at Elyra’s mossy grave—“The blood of
-                the Guardians will rise again”—claiming the Heartstone, its
-                fiery pulse syncing with her own. The cavern below hums with
-                crystal veins, a labyrinth of puzzles (Crystal Lens Matrix,
-                Sonic Resonator Array, Wind Chime Lock) guarding her legacy,
-                gruntlings swarming as she bends light and sound to her will—a
-                requiem igniting her fiery resolve against Umbraeth’s shadow.
-            </p>
-            <h2>Key Landmarks</h2>
-            <div class="location-grid">
-                <article class="location">
+        <!-- Main content section with two-column layout for location details -->
+        <section id="location-sheet">
+            <div class="sheet-container">
+                <!-- Left column contains image and initial sections (Overview, Geography, History) -->
+                <div class="left-column">
+                    <!-- Main image (800x600px) in /images/locations, showcases the Spire -->
                     <img
-                        src="/images/locations/spireofdawn_1.jpg"
-                        alt="Spire of Dawn Overview"
-                        class="location-img"
+                        src="/images/locations/spireofdawn_main.jpg"
+                        alt="Spire of Dawn amidst kapok trees"
+                        class="locationpage-img"
                     />
-                    <h3>A Tower Broken</h3>
-                    <p>
-                        A jagged spire claws at the northwest sky, its marble
-                        crown shattered over a jungle clearing snarled with
-                        thorns. Its azure glyphs flicker like dying embers,
-                        mourning the Ancients’ hubris.
-                    </p>
-                    <a
-                        href="/world/locations/spireofdawn.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/spireofdawn_2.jpg"
-                        alt="Guardian’s Grave"
-                        class="location-img"
-                    />
-                    <h3>Elyra’s Grave</h3>
-                    <p>
-                        A moss-draped slab at its roots whispers, “The blood of
-                        the Guardians will rise again.” Beneath, a stairwell
-                        plunges into shadow, where Aria claims her mother’s
-                        legacy with the Heartstone’s glow.
-                    </p>
-                    <a
-                        href="/world/locations/spireofdawn.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/spireofdawn_3.jpg"
-                        alt="Crystal Lens Puzzle"
-                        class="location-img"
-                    />
-                    <h3>Crystal Lens Matrix</h3>
-                    <p>
-                        Seven lenses scatter light across a cavern of weeping
-                        stalactites. Aria aligns beams amidst gruntling attacks,
-                        each shift a chime of rising pitch, forged in the
-                        Ancients’ radiant wisdom.
-                    </p>
-                    <a
-                        href="/world/locations/spireofdawn.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/spireofdawn_4.jpg"
-                        alt="Sonic Resonator Array"
-                        class="location-img"
-                    />
-                    <h3>Sonic Resonator Array</h3>
-                    <p>
-                        Five nodes hum a dirge from crystal walls. A rune-etched
-                        flute sings a seven-note
-                        hymn—high-low-mid-high-low-mid-high—shattering barriers,
-                        with shadowspawn testing her rhythm.
-                    </p>
-                    <a
-                        href="/world/locations/spireofdawn.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/spireofdawn_5.jpg"
-                        alt="Wind Chime Lock"
-                        class="location-img"
-                    />
-                    <h3>Wind Chime Lock</h3>
-                    <p>
-                        Three chimes sway above gusting vents, their tones
-                        unlocking the Heartstone’s cage. Aria strikes—left,
-                        center, right—as gruntlings lunge, her dance luring them
-                        to quicksand graves.
-                    </p>
-                    <a
-                        href="/world/locations/spireofdawn.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/spireofdawn_6.jpg"
-                        alt="Gruntling Ambush"
-                        class="location-img"
-                    />
-                    <h3>Foes of Shadow</h3>
-                    <p>
-                        Gruntlings swarm from shadows, their cursed eyes like
-                        void stars, claws raking stone. Aria’s blade quakes with
-                        each cut, their souls shimmering into her grasp amidst
-                        wet gurgles.
-                    </p>
-                    <a
-                        href="/world/locations/spireofdawn.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/spireofdawn_7.jpg"
-                        alt="Heartstone Relic"
-                        class="location-img"
-                    />
-                    <h3>The Heartstone</h3>
-                    <p>
-                        A fiery crystal pulses in the cavern’s heart—Elyra’s
-                        soul in light. Aria’s touch binds it to her blood, its
-                        warmth a beacon unveiling glyphs, defying Umbraeth’s
-                        shadow.
-                    </p>
-                    <a
-                        href="/world/locations/spireofdawn.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/spireofdawn_8.jpg"
-                        alt="Ryn’s Encounter"
-                        class="location-img"
-                    />
-                    <h3>Ryn’s Watch</h3>
-                    <p>
-                        Ryn, a lean scout, perches on a beam—his flint-sharp
-                        voice cuts, “Got Elyra’s fire in you.” His telescope
-                        spies a starry chest atop the Spire, yielding healing
-                        moss (+20 Health).
-                    </p>
-                    <a
-                        href="/world/locations/spireofdawn.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/characters/ryn_action.jpg"
-                        alt="Ryn Slashing with Vinewood Dagger"
-                        class="location-img"
-                    />
-                    <h3>Companions</h3>
-                    <p>
-                        Ryn, the wiry Jungle Scout, perches on a fallen beam,
-                        his flint-sharp voice cutting the wind: “Got Elyra’s
-                        fire in you, fire-hair.” His Vinewood Dagger flashes as
-                        he scouts gruntling nests, a lifeline in the Spire’s
-                        shadows.
-                    </p>
-                    <a
-                        href="/world/locations/spireofdawn.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
+                    <!-- Overview introduces the Spire’s role and significance -->
+                    <section class="overview">
+                        <h2>Overview</h2>
+                        <p>
+                            The Spire of Dawn stands in the Northwest Clearing
+                            of the Valley of the Ancients, a fractured monolith
+                            of pale stone wrapped in jagged vines, glowing with
+                            azure glyphs. As an ancient relic and the starting
+                            point of Aria’s quest, it bears the scars of
+                            Umbraeth’s creeping shadow, a testament to the
+                            eternal struggle between light and darkness.
+                        </p>
+                    </section>
+                    <!-- Geography details the physical environment, enhancing immersion -->
+                    <section class="geography">
+                        <h2>Geography</h2>
+                        <p>
+                            Located in a lush, green clearing, the Spire is
+                            cradled by towering kapok trees, their roots
+                            twisting around its base, choked by Umbraeth’s black
+                            ichor. The ground is damp and moss-grown, fractured
+                            by time, with raptor nests lurking in the shadows
+                            under a stormy sky, creating a medieval dark fantasy
+                            landscape.
+                        </p>
+                    </section>
+                    <!-- History provides lore from Story Chapter 1 and Location Profile -->
+                    <section class="history">
+                        <h2>History</h2>
+                        <p>
+                            Sixteen winters ago, Elyra fell here, struck by
+                            Umbraeth’s tendrils, her blood staining the Spire’s
+                            ruins as she fought to seal its corruption. Once a
+                            beacon of the Ancients’ power, its azure glyphs now
+                            whisper of their hubris, marking the beginning of
+                            Aria’s journey to reclaim her heritage.
+                        </p>
+                    </section>
+                </div>
+                <!-- Right column contains remaining detailed sections -->
+                <div class="right-column">
+                    <!-- Inhabitants lists creatures and characters from Story and Profiles -->
+                    <section class="inhabitants">
+                        <h2>Inhabitants</h2>
+                        <p>
+                            Gruntlings skitter from the shadows, their guttural
+                            snarls echoing, while raptors dive from nests with
+                            amber eyes. Umbraeth’s looming presence haunts the
+                            ruins, and Aria may encounter Ryn, the Silent
+                            Hunter, offering aid amidst the chaos.
+                        </p>
+                    </section>
+                    <!-- Puzzles highlight gameplay challenges from GDD and Map -->
+                    <section class="puzzles">
+                        <h2>Puzzles</h2>
+                        <p>
+                            The Light Prism Array challenges Aria’s agility,
+                            requiring her to align three crystal lenses with
+                            wind from the Gauntlet of Storms (found later) to
+                            focus a beam onto the Heartstone’s pedestal,
+                            unlocking its power amidst gruntling ambushes.
+                        </p>
+                    </section>
+                    <!-- Relics detail key items from Story and GDD -->
+                    <section class="relics">
+                        <h2>Relics</h2>
+                        <p>
+                            The Heartstone, a palm-sized gem pulsing red, rests
+                            within the Spire’s cavern, countering Umbraeth’s
+                            shadow. The Shattered Blade Fragment, hidden near a
+                            crevice, ties to Elyra’s legacy, requiring a precise
+                            wind-blown jump to claim.
+                        </p>
+                    </section>
+                    <!-- Companions note potential allies from Story Chapter 2 -->
+                    <section class="companions">
+                        <h2>Companions</h2>
+                        <p>
+                            Ryn, the Silent Hunter, emerges near the Spire with
+                            sharp green eyes and a camouflaged cloak, wielding a
+                            kapok bow to aid Aria against raptors and
+                            gruntlings, his agility bolstering her quest.
+                        </p>
+                    </section>
+                    <!-- Narrative ties the Spire to Aria’s story arc from Story Chapter 1 -->
+                    <section class="narrative">
+                        <h2>Role in the Narrative</h2>
+                        <p>
+                            The Spire of Dawn ignites Aria’s journey, its
+                            whispers driving her to reclaim the Heartstone and
+                            banish Umbraeth’s corruption. As the Last Guardian,
+                            her battles here set the stage for a valley-wide
+                            redemption, testing her resolve and leadership.
+                        </p>
+                    </section>
+                </div>
             </div>
         </section>
+        <!-- Footer provides site info and links, consistent across pages -->
         <footer>
+            <!-- Copyright with future-proof year and Grok/xAI attribution -->
             <p>
                 © 2025 Echoes of the Ancients. Crafted with wisdom by Grok,
                 created by xAI.
             </p>
+            <!-- Contact email link for user engagement -->
             <p>
                 Contact:
                 <a href="mailto:echoesgame@KdeanGames.net"
                     >echoesgame@KdeanGames.net</a
                 >
             </p>
+            <!-- X link opens in new tab for social media connectivity -->
+            <p>
+                <a
+                    href="https://x.com/KdeanGames"
+                    target="_blank"
+                    rel="noopener"
+                    >Follow us on X</a
+                >
+            </p>
         </footer>
+        <!-- Script ensures video fallback to image for reliable display -->
         <script>
-            // Fallback: Show image if video fails or isn’t present
+            // Selects video and fallback image for dynamic handling
             const video = document.querySelector("video");
             const img = document.querySelector(".header-media img");
+            // Hides video and shows image if source is missing or not ready
             if (!video.querySelector("source").src || video.readyState === 0) {
                 video.style.display = "none";
                 img.style.display = "block";
             }
+            // Shows video and hides image once loaded
             video.onloadeddata = () => {
                 video.style.display = "block";
                 img.style.display = "none";
             };
+            // Reverts to image on video error
             video.onerror = () => {
                 video.style.display = "none";
                 img.style.display = "block";

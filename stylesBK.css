@@ -294,10 +294,11 @@ section {
 
 /* Section headings, prominent and thematic */
 h2 {
-    font-size: 2.8rem;
+    font-size: 2.8rem; /* Large, bold titles for impact */
     color: #d4a017; /* Gold for prominence, matching theme */
     text-align: center;
     margin-bottom: 2rem; /* Space below for visual hierarchy */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* Deep shadow for depth and readability */
 }
 
 /* Documents Grid, organized for desktop and mobile */
@@ -421,6 +422,133 @@ h2 {
     color: #b0b0b0;
     line-height: 1.8; /* Matches feature line height for readability */
     margin-bottom: 1rem;
+}
+
+/* Character Sheet Layout */
+#character-sheet {
+    padding: 2rem;
+    background: #0d0d0d; /* Dark background for a medieval fantasy vibe */
+}
+
+/* Container for the two-column layout */
+.sheet-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Left column narrower, right column wider */
+    gap: 2rem; /* Space between columns */
+    max-width: 1200px;
+    margin: 0 auto; /* Center the layout on the page */
+}
+
+/* Left Column: Image and Stats */
+.left-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center contents horizontally */
+}
+
+/* ==========================================================================
+   Character Image Styling
+   ========================================================================== */
+.characterpage-img {
+    width: 800px; /* Fixed width for desktop screens */
+    height: 600px; /* Fixed height for desktop screens (4:3 ratio) */
+    object-fit: cover; /* Ensures the image fills the space without stretching */
+    border-radius: 10px; /* Rounded corners for a polished look */
+    border: 2px solid #d4a017; /* Gold border to match the medieval theme */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Shadow for depth */
+    margin-bottom: 1rem; /* Space below the image */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover animations */
+}
+
+/* Hover effect for interactivity */
+.characterpage-img:hover {
+    transform: scale(1.05); /* Slight enlargement on hover */
+    box-shadow: 0 8px 16px rgba(212, 160, 23, 0.3); /* Golden glow effect */
+}
+
+/* Stats Box Styling */
+.stats-box {
+    background: #1f1f1f; /* Dark background for contrast */
+    border: 2px solid #d4a017; /* Gold border for thematic consistency */
+    padding: 1rem;
+    border-radius: 10px;
+    width: 100%; /* Full width of the column */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
+}
+
+.stats-box h3 {
+    font-family: "MedievalSharp", cursive; /* Medieval font for headers */
+    color: #d4a017; /* Gold text for headers */
+    margin-bottom: 1rem;
+}
+
+.stats-box p {
+    font-size: 1.2rem;
+    color: #e6e6e6; /* Light text for readability */
+    margin: 0.5rem 0;
+}
+
+.stats-box p strong {
+    color: #d4a017; /* Gold for stat labels */
+}
+
+/* Right Column: Descriptive Sections */
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Space between sections (rows) */
+}
+
+.right-column section {
+    background: #1f1f1f; /* Dark background for each section */
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
+}
+
+.right-column h2 {
+    font-family: "MedievalSharp", cursive; /* Medieval font for section headers */
+    color: #d4a017; /* Gold text for headers */
+    margin-bottom: 1rem;
+}
+
+.right-column p {
+    max-width: 700px; /* Narrows text for readability on desktop */
+    font-size: 1.1rem;
+    color: #e6e6e6; /* Light text for readability */
+}
+/* Adjusted font sizes for better readability */
+.left-column h2,
+.right-column h2 {
+    font-size: 1.8rem; /* Smaller header size */
+}
+
+.left-column p,
+.right-column p {
+    font-size: 1rem; /* Smaller paragraph text */
+}
+.ability-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(212, 160, 23, 0.3);
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 767px) {
+    .sheet-container {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+    .left-column,
+    .right-column {
+        width: 100%; /* Full width on mobile */
+    }
+    .characterpage-img {
+        width: 100%; /* Full width on mobile */
+        height: auto; /* Maintain aspect ratio */
+    }
+    .right-column p {
+        max-width: 100%; /* Full width text on mobile */
+    }
 }
 
 .explore-btn {
@@ -566,6 +694,256 @@ h2 {
     font-size: 1.1rem;
     color: #b0b0b0;
     line-height: 1.8;
+}
+
+/* ==========================================================================
+   Teaser Section Styling
+   ========================================================================== */
+
+/* Teaser section container, centered and spacious for readability, matching site theme */
+#teasers {
+    padding: 2rem; /* Reduced padding for tighter layout, balanced design */
+    background: #1f1f1f; /* Dark card background for thematic consistency */
+    max-width: 1200px;
+    margin: 0 auto; /* Centered content for clean presentation */
+    display: block; /* Ensures section is visible, overriding any hidden state */
+}
+
+/* Teaser zigzag grid, key for dynamic layout on desktop and mobile, fixing content display */
+.teaser-zigzag {
+    display: grid;
+    gap: 2rem; /* Space between cards for clarity, matching other grids */
+    padding: 1rem 0; /* Minimal padding for alignment with other sections */
+    /* Desktop: Two-column staggered layout for visual appeal, ensuring content visibility */
+    visibility: visible; /* Ensures grid and content are visible, fixing display issue */
+}
+
+/* Staggered effect for odd-numbered cards, creating visual depth on desktop, now visible */
+.teaser-card:nth-child(odd) {
+    transform: translateX(-10px); /* Slight left shift for zigzag effect */
+    visibility: visible; /* Ensures content is visible, overriding any hidden state */
+    opacity: 1; /* Ensures full opacity for visibility */
+}
+
+/* Staggered effect for even-numbered cards, balancing the layout on desktop, now visible */
+.teaser-card:nth-child(even) {
+    transform: translateX(10px); /* Slight right shift for zigzag effect */
+    visibility: visible; /* Ensures content is visible, overriding any hidden state */
+    opacity: 1; /* Ensures full opacity for visibility */
+}
+
+/* Desktop layout, two columns for spacious design, ensuring content displays */
+@media (min-width: 768px) {
+    .teaser-zigzag {
+        grid-template-columns: repeat(
+            2,
+            1fr
+        ); /* Two-column layout on desktop, content visible */
+        visibility: visible; /* Ensures grid is visible on desktop */
+    }
+}
+
+/* Mobile adjustments for screens below 767px, ensuring readability, usability, and visibility */
+@media (max-width: 767px) {
+    .left-column h2,
+    .right-column h2 {
+        font-size: 1.6rem;
+    }
+    .left-column p,
+    .right-column p {
+        font-size: 0.9rem;
+    }
+    .teaser-zigzag {
+        grid-template-columns: 1fr; /* Single-column layout on mobile for better space and readability, content visible */
+        visibility: visible; /* Ensures grid is visible on mobile */
+    }
+    .teaser-card {
+        transform: translateX(
+            0
+        ); /* Removes stagger on mobile for clean stacking */
+        visibility: visible; /* Ensures content is visible on mobile */
+        opacity: 1; /* Ensures full opacity for visibility */
+    }
+}
+
+/* Teaser card styling, thematic and interactive for user engagement, fixing visibility issue */
+.teaser-card {
+    background: #1f1f1f; /* Dark card background for thematic consistency */
+    border: 2px solid #d4a017; /* Gold border, matching medieval theme */
+    border-radius: 15px;
+    padding: 2rem; /* Larger padding for better touch interaction on mobile */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Lifted shadow for depth */
+    transition: transform 0.3s, box-shadow 0.3s; /* Hover animation for interactivity */
+    text-align: center; /* Center like features for aesthetic balance */
+    opacity: 1; /* Ensures cards are fully visible by default, overriding hidden state */
+    transform: translateY(
+        0
+    ); /* Default position for visibility, removing initial offset until animated */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Smooth fade-in for user experience */
+    visibility: visible; /* Ensures cards are visible, fixing display issue */
+    display: block; /* Ensures cards are displayed, overriding any hidden state */
+}
+
+/* Visible state for teaser cards, triggered on scroll, ensuring content shows */
+.teaser-card.visible {
+    opacity: 1; /* Fully visible when in view */
+    transform: translateY(0); /* Reset offset for final position */
+    visibility: visible; /* Ensures content remains visible after animation */
+}
+
+/* Hover effect for teaser cards, enhancing user interaction, content visible */
+.teaser-card:hover {
+    transform: scale(1.05); /* Slight scale on hover for engagement */
+    box-shadow: 0 12px 24px rgba(212, 160, 23, 0.3); /* Enhanced shadow for thematic highlight */
+    visibility: visible; /* Ensures content stays visible on hover */
+    opacity: 1; /* Ensures full opacity on hover */
+}
+
+/* Teaser image styling, optimized for consistent visuals and interactivity, fixing display */
+.teaser-card img {
+    width: 100%;
+    height: 300px; /* Fixed height for consistent visuals on desktop */
+    object-fit: cover; /* Ensures image fills space without distortion */
+    border-radius: 10px;
+    border: 2px solid #d4a017; /* Gold border, thematic touch */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
+    transition: transform 0.3s, box-shadow 0.3s; /* Hover animation for interactivity */
+    animation: pulse 2s infinite ease-in-out; /* Subtle pulse for magical vibe */
+    visibility: visible; /* Ensures images are visible, fixing display issue */
+    opacity: 1; /* Ensures full opacity for visibility */
+}
+
+/* Hover effect for teaser images, enhancing visual feedback, content visible */
+.teaser-card img:hover {
+    transform: scale(1.05); /* Slight scale on hover for emphasis */
+    box-shadow: 0 8px 16px rgba(212, 160, 23, 0.3); /* Enhanced shadow for thematic highlight */
+    visibility: visible; /* Ensures images stay visible on hover */
+    opacity: 1; /* Ensures full opacity on hover */
+}
+
+/* Teaser heading styling, prominent and thematic, ensuring visibility */
+.teaser-card h3 {
+    font-size: 1.8rem; /* Matches feature h3 for hierarchy */
+    color: #e6e6e6; /* Light text for contrast against dark background */
+    margin: 1rem 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+    visibility: visible; /* Ensures headings are visible, fixing display issue */
+    opacity: 1; /* Ensures full opacity for visibility */
+}
+
+/* Teaser paragraph styling, readable and thematic, ensuring visibility */
+.teaser-card p {
+    font-size: 1.5rem; /* Larger text for readability on desktop */
+    color: #b0b0b0; /* Lighter grey for text, ensuring contrast */
+    line-height: 1.8; /* Improved readability with spacious line height */
+    margin-bottom: 1rem;
+    visibility: visible; /* Ensures paragraphs are visible, fixing display issue */
+    opacity: 1; /* Ensures full opacity for visibility */
+}
+
+/* Teaser button styling, interactive and thematic, ensuring visibility */
+.teaser-card a {
+    display: inline-block;
+    padding: 0.8rem 1.5rem; /* Larger tap target, optimized for mobile usability */
+    background: #d4a017; /* Gold for medieval flair, matching theme */
+    color: #0d0d0d; /* Dark text for contrast on gold */
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: "MedievalSharp", cursive, Arial; /* Desktop font for thematic consistency */
+    font-weight: 400;
+    transition: background 0.3s, transform 0.3s; /* Smooth hover effects for interactivity */
+    visibility: visible; /* Ensures buttons are visible, fixing display issue */
+    opacity: 1; /* Ensures full opacity for visibility */
+}
+
+/* Hover effect for teaser buttons, enhancing user interaction, content visible */
+.teaser-card a:hover {
+    background: #f5c442; /* Lighter gold on hover, thematic consistency */
+    transform: translateY(-2px); /* Slight lift for engagement */
+    box-shadow: 0 4px 8px rgba(212, 160, 23, 0.4); /* Subtle shadow for depth */
+    visibility: visible; /* Ensures buttons stay visible on hover */
+    opacity: 1; /* Ensures full opacity on hover */
+}
+
+/* Mobile adjustments for teaser cards, ensuring legibility, usability, and visibility */
+@media (max-width: 767px) {
+    .teaser-card img {
+        height: 200px; /* Smaller images for mobile screens */
+        visibility: visible; /* Ensures images are visible on mobile */
+        opacity: 1; /* Ensures full opacity for visibility */
+    }
+    .teaser-card h3 {
+        font-size: 1.5rem; /* Reduced for mobile readability */
+        visibility: visible; /* Ensures headings are visible on mobile */
+        opacity: 1; /* Ensures full opacity for visibility */
+    }
+    .teaser-card p {
+        font-size: 1rem; /* Adjusted for mobile text size */
+        visibility: visible; /* Ensures paragraphs are visible on mobile */
+        opacity: 1; /* Ensures full opacity for visibility */
+    }
+    .teaser-card a {
+        font-family: "Arial", sans-serif; /* More legible sans-serif on mobile, replacing MedievalSharp for clarity */
+        font-size: 1rem; /* Ensures readability on small screens */
+        padding: 0.8rem 1.5rem; /* Maintains large tap target for usability */
+        visibility: visible; /* Ensures buttons are visible on mobile */
+        opacity: 1; /* Ensures full opacity for visibility */
+    }
+}
+
+/* Teaser header styling, prominent and thematic, ensuring visibility */
+#teasers h2 {
+    font-size: 2.8rem; /* Large, bold title for impact, matching other h2 */
+    color: #d4a017; /* Gold for prominence, matching theme */
+    text-align: center;
+    margin-bottom: 2rem; /* Space below for visual hierarchy */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* Deep shadow for depth and readability */
+    opacity: 1; /* Ensures heading is fully visible by default, fixing display issue */
+    transform: translateX(
+        0
+    ); /* Default position for visibility, removing initial offset until animated */
+    animation: slideIn 1s ease-out forwards; /* Smooth slide-in for engagement */
+    visibility: visible; /* Ensures heading is visible, fixing display issue */
+}
+
+/* Slide-in animation for teaser header, enhancing page entry */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Pulse animation for teaser images, enhancing magical vibe, ensuring visibility */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Hover glow effect for teaser elements, matching medieval theme, ensuring visibility */
+.teaser-card:hover img,
+.teaser-card:hover h3,
+.teaser-card:hover p {
+    text-shadow: 0 0 10px #d4a017; /* Gold glow for thematic highlight */
+    transition: text-shadow 0.3s ease-in-out; /* Smooth transition for interactivity */
+    visibility: visible; /* Ensures hover effects don’t hide content */
+    opacity: 1; /* Ensures full opacity on hover */
+}
+
+/* Future section placeholder styling, ensuring visibility and consistency */
+.future-section {
+    display: none; /* Hidden by default until content is added, ensuring no display issues */
 }
 
 /* ==========================================================================
@@ -736,32 +1114,37 @@ footer a:hover {
     .feature-grid,
     .update-grid,
     .document-grid,
-    .location-grid {
+    .location-grid,
+    .teaser-zigzag {
         gap: 1rem; /* Reduced gap for tighter layout on mobile */
         padding: 1rem 0; /* Minimal padding for alignment */
     }
     .feature,
     .update,
     .document,
-    .location {
+    .location,
+    .teaser-card {
         flex: 0 0 280px; /* Smaller cards for mobile fit */
         padding: 2rem; /* Larger padding for better touch interaction */
     }
     .feature img,
     .update .media img,
-    .location-img {
+    .location-img,
+    .teaser-card img {
         height: 200px; /* Smaller images for mobile screens */
     }
     .feature h3,
     .update h3,
     .document h3,
-    .location h3 {
+    .location h3,
+    .teaser-card h3 {
         font-size: 1.5rem; /* Reduced for mobile readability */
     }
     .feature p,
     .update p,
     .document p,
-    .location p {
+    .location p,
+    .teaser-card p {
         font-size: 1rem; /* Adjusted for mobile text size */
     }
     .download-btn,

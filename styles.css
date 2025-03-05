@@ -445,7 +445,80 @@ h2 {
     flex-direction: column;
     align-items: center; /* Center contents horizontally */
 }
+/* ==========================================================================
+   Location Sheet Layout (New Section for Location Pages)
+   ========================================================================== */
 
+/* Main container for two-column layout, distinct from character sheets */
+#location-sheet {
+    padding: 2rem; /* Consistent padding with character sheets */
+    background: #0d0d0d; /* Dark background matches site theme */
+}
+
+/* Container for two-column layout, shared with character sheets but scoped to location-sheet */
+.sheet-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Left narrower, right wider for balance */
+    gap: 2rem; /* Spacing between columns for clarity */
+    max-width: 1200px; /* Caps width for large screens */
+    margin: 0 auto; /* Centers layout horizontally */
+}
+
+/* Left column styles the main image, reused from character layout */
+.left-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers image horizontally */
+}
+
+/* Specific styling for location main image, distinct from characterpage-img */
+.locationpage-img {
+    width: 800px; /* Fixed width for desktop, per design spec */
+    height: 600px; /* Fixed height for 4:3 ratio, photorealistic visuals */
+    object-fit: cover; /* Fills space without distortion */
+    border-radius: 10px; /* Rounded corners for medieval polish */
+    border: 2px solid #d4a017; /* Gold border for thematic consistency */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
+    margin-bottom: 1rem; /* Space below for separation */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
+}
+
+/* Hover effect for location image, enhancing interactivity */
+.locationpage-img:hover {
+    transform: scale(1.05); /* Slight enlargement on hover */
+    box-shadow: 0 8px 16px rgba(212, 160, 23, 0.3); /* Gold-tinted shadow */
+}
+
+/* Right column stacks sections vertically, reused from character layout */
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Vertical spacing between sections */
+}
+
+/* Individual sections within right column, styled for consistency */
+.right-column section {
+    background: #1f1f1f; /* Dark background for contrast */
+    padding: 1.5rem; /* Comfortable padding for content */
+    border-radius: 10px; /* Rounded corners match site aesthetic */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
+}
+
+/* Section headings use MedievalSharp on desktop for thematic flair */
+.right-column h2 {
+    font-family: "MedievalSharp", cursive, Arial; /* Desktop font */
+    color: #d4a017; /* Gold text aligns with theme */
+    font-size: 1.8rem; /* Slightly smaller for hierarchy */
+    margin-bottom: 1rem; /* Space below header */
+}
+
+/* Paragraphs constrained for readability on desktop */
+.right-column p {
+    max-width: 700px; /* Limits line length for optimal reading */
+    font-size: 1rem; /* Smaller text for dense info */
+    color: #e6e6e6; /* Light text contrasts with dark background */
+    font-family: "MedievalSharp", cursive, Arial; /* Desktop font */
+}
 /* ==========================================================================
    Character Image Styling
    ========================================================================== */
@@ -743,26 +816,62 @@ h2 {
     }
 }
 
-/* Mobile adjustments for screens below 767px, ensuring readability, usability, and visibility */
+/* ==========================================================================
+   Responsive Design (Mobile Adjustments)
+   ========================================================================== */
+
+/* Mobile adjustments for screens below 767px */
 @media (max-width: 767px) {
-    .left-column h2,
-    .right-column h2 {
-        font-size: 1.6rem;
+    /* Ensure all headings and navigation use Garamond on mobile */
+    h1,
+    h2,
+    .tagline,
+    nav a,
+    .dropbtn,
+    .dropdown-content a,
+    .update h3,
+    .document h3,
+    .location h3 {
+        font-family: "Garamond", serif, Arial; /* Mobile font, no script */
+        font-weight: 400; /* Normal weight for clarity */
     }
-    .left-column p,
+
+    /* Body text uses Garamond on mobile, overriding any script font */
+    .update .date,
+    .document p,
+    .location p,
     .right-column p {
-        font-size: 0.9rem;
+        font-family: "Garamond", serif, Arial; /* Mobile font consistency */
+        font-size: 0.9rem; /* Adjusted for mobile readability */
     }
-    .teaser-zigzag {
-        grid-template-columns: 1fr; /* Single-column layout on mobile for better space and readability, content visible */
-        visibility: visible; /* Ensures grid is visible on mobile */
+
+    /* Buttons use Garamond instead of Arial for mobile consistency */
+    .explore-btn,
+    .download-btn,
+    .teaser-card a {
+        font-family: "Garamond", serif, Arial; /* Mobile font, no sans-serif */
+        font-size: 1rem; /* Readable on small screens */
+        padding: 0.8rem 1.5rem; /* Large tap target */
     }
-    .teaser-card {
-        transform: translateX(
-            0
-        ); /* Removes stagger on mobile for clean stacking */
-        visibility: visible; /* Ensures content is visible on mobile */
-        opacity: 1; /* Ensures full opacity for visibility */
+
+    /* Location-specific mobile adjustments */
+    .sheet-container {
+        grid-template-columns: 1fr; /* Single column for mobile */
+    }
+    .left-column,
+    .right-column {
+        width: 100%; /* Full width on mobile */
+    }
+    .locationpage-img {
+        width: 100%; /* Full width adapts to screen */
+        height: auto; /* Maintains aspect ratio */
+    }
+    .right-column h2 {
+        font-size: 1.6rem; /* Smaller headers for mobile */
+    }
+    .right-column p {
+        max-width: 100%; /* Full width text on mobile */
+        font-size: 0.9rem; /* Smaller text for mobile */
     }
 }
 
