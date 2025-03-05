@@ -1,235 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Ensures proper text rendering across browsers, supporting special characters -->
         <meta charset="UTF-8" />
+        <!-- Sets viewport for responsive design, scaling to device width -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Page title for browser tab and SEO, thematic and concise -->
         <title>High Peaks - Echoes of the Ancients</title>
+        <!-- Links to external stylesheet for consistent site-wide styling -->
         <link rel="stylesheet" href="/styles.css" />
+        <!-- Favicon enhances branding with a thematic glyph or peak icon -->
         <link rel="icon" type="image/png" href="/images/favicon.png" />
+        <!-- SEO meta description (150-160 chars) to attract search engine users -->
+        <meta
+            name="description"
+            content="Scale High Peaks in Echoes of the Ancients, jagged heights of frost and wind guarding ancient secrets in the northern Valley."
+        />
+        <!-- SEO keywords target relevant search terms for discoverability -->
+        <meta
+            name="keywords"
+            content="High Peaks, Echoes of the Ancients, Valley of the Ancients, medieval fantasy, RPG, dark fantasy, locations"
+        />
     </head>
     <body>
+        <!-- Includes navigation from nav.shtml for consistent site-wide menu -->
+        <!--#include virtual="/nav.shtml" -->
         <header>
-            <!--#include virtual="/nav.shtml" -->
+            <!-- Container for background media (video/image), fills header dynamically -->
             <div class="header-media">
+                <!-- Video provides immersive intro, muted and looped for seamless playback -->
                 <video autoplay muted loop playsinline>
-                    <source src="/videos/hero_teaser.mp4" type="video/mp4" />
+                    <!-- Video source for High Peaks, stored in /videos/locations -->
+                    <source
+                        src="/videos/locations/highpeaks_teaser.mp4"
+                        type="video/mp4"
+                    />
+                    <!-- Fallback text for browsers that don’t support video -->
+                    Your browser does not support the video tag.
                 </video>
+                <!-- Fallback image in /images/locations, 1920x1080px to match video -->
                 <img
-                    src="/images/hero_fallback.jpg"
-                    alt="Valley of the Ancients"
+                    src="/images/locations/highpeaks_fallback.jpg"
+                    alt="High Peaks under stormy skies"
                 />
             </div>
+            <!-- Hero section overlays media with title and tagline, styled for impact -->
             <div class="hero highpeaks">
                 <h1>High Peaks</h1>
-                <p class="tagline">Where winds whisper victory</p>
+                <p class="tagline">Jagged Heights Where Winds Howl</p>
             </div>
         </header>
-        <section id="highpeaks">
-            <h2>The Jagged Ascent</h2>
-            <p>
-                The High Peaks rise along the Valley’s northern edge, jagged
-                granite spires slashing through storm-laden skies, where howling
-                winds carry the whispers of the Ancients’ final stand.
-                Snow-dusted ledges cling to icy cliffs, shadowed by raptor nests
-                and the eerie glow of Umbraeth’s corruption seeping through
-                cracks. Here, Aria climbs with Zephyr, the Sky Warden, her
-                Glyph-Blade slicing through gusts to uncover the Windlash Spire,
-                Gale Gate, and Frost Vault—each step a test of endurance against
-                casters and icy golems, their bond forged in the peaks’
-                relentless winds to confront Umbraeth’s final assault.
-            </p>
-            <h2>Key Landmarks</h2>
-            <div class="location-grid">
-                <article class="location">
+        <!-- Main content section with two-column layout for location details -->
+        <section id="location-sheet">
+            <div class="sheet-container">
+                <!-- Left column: Main image and initial sections with smaller images -->
+                <div class="left-column">
+                    <!-- Main image (800x600px) at top of left column -->
                     <img
-                        src="/images/locations/highpeaks_1.jpg"
-                        alt="Peaks Overview"
-                        class="location-img"
+                        src="/images/locations/highpeaks_main.jpg"
+                        alt="High Peaks with icy cliffs"
+                        class="locationpage-img"
                     />
-                    <h3>Frozen Spires</h3>
-                    <p>
-                        Jagged granite spires rise along the northern edge,
-                        snow-dusted and ice-sheathed, howling winds carrying
-                        Umbraeth’s corruption through cracks, raptor shadows
-                        circling under stormy skies.
-                    </p>
-                    <a
-                        href="/world/locations/highpeaks.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/highpeaks_2.jpg"
-                        alt="Windlash Spire"
-                        class="location-img"
-                    />
-                    <h3>Windlash Spire</h3>
-                    <p>
-                        A rune-carved spire atop a peak, its winds whipping
-                        blades into a seven-note song—high, low, mid, high, low,
-                        mid, high. Aria aligns the blades with Gauntlet Gust,
-                        unlocking a path, casters attacking from below.
-                    </p>
-                    <a
-                        href="/world/locations/highpeaks.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/highpeaks_3.jpg"
-                        alt="Gale Gate"
-                        class="location-img"
-                    />
-                    <h3>Gale Gate</h3>
-                    <p>
-                        A frozen gate of ice and wind, its runes glowing blue
-                        under storm light. Zephyr’s Windlash disperses the gale,
-                        revealing a chest with the Sky Shard, icy golems rising
-                        from the snow.
-                    </p>
-                    <a
-                        href="/world/locations/highpeaks.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/highpeaks_4.jpg"
-                        alt="Frost Vault"
-                        class="location-img"
-                    />
-                    <h3>Frost Vault</h3>
-                    <p>
-                        An icy cavern beneath a peak, its entrance sealed by
-                        frozen runes. Aria lights three braziers—north, east,
-                        south—melting the ice to unlock the Frost Cloak, casters
-                        casting dark pulses in defense.
-                    </p>
-                    <a
-                        href="/world/locations/highpeaks.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/highpeaks_5.jpg"
-                        alt="Raptor Nests"
-                        class="location-img"
-                    />
-                    <h3>Foes of the Sky</h3>
-                    <p>
-                        Raptors nest on icy ledges, their amber eyes piercing
-                        through snowstorms, talons slashing wind. Zephyr’s
-                        Windlash fells them, while Aria harvests their souls,
-                        their cries echoing off granite.
-                    </p>
-                    <a
-                        href="/world/locations/highpeaks.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/highpeaks_6.jpg"
-                        alt="Icy Golems"
-                        class="location-img"
-                    />
-                    <h3>Foes of Ice</h3>
-                    <p>
-                        Icy golems—frozen stone with glowing blue rune-etched
-                        cores—rise from snow, their fists shattering ice. Aria
-                        shatters their cores with the Glyph-Blade, their souls
-                        gleaming amidst frost, a battle against the cold.
-                    </p>
-                    <a
-                        href="/world/locations/highpeaks.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/highpeaks_7.jpg"
-                        alt="Sky Shard"
-                        class="location-img"
-                    />
-                    <h3>Sky Shard</h3>
-                    <p>
-                        A crystal pulsing with icy blue wind, found in the Gale
-                        Gate’s chest. It enhances Aria’s wind resistance (+10),
-                        its glow a beacon through storms, gifted by Zephyr’s
-                        mastery.
-                    </p>
-                    <a
-                        href="/world/locations/highpeaks.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/highpeaks_8.jpg"
-                        alt="Zephyr’s Perch"
-                        class="location-img"
-                    />
-                    <h3>Zephyr’s Watch</h3>
-                    <p>
-                        Zephyr’s icy perch—a snow-dusted ledge—holds his
-                        Windlash relic and a wind-carved map. “The peaks hide
-                        victory in their winds,” he declares, revealing a hidden
-                        cache with healing ice (+15 Health), forged in the
-                        storm.
-                    </p>
-                    <a
-                        href="/world/locations/highpeaks.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/characters/zephyr_action.jpg"
-                        alt="Zephyr Wielding Windlash"
-                        class="location-img"
-                    />
-                    <h3>Companions</h3>
-                    <p>
-                        Zephyr, the resolute Sky Warden, stands on an icy peak,
-                        his silver hair whipping in the wind, wielding Windlash
-                        to summon gusts against diving raptors. “The peaks hide
-                        victory in their winds, fire-hair,” he vows, guiding
-                        Aria through the High Peaks’ storms with unwavering
-                        focus.
-                    </p>
-                    <a
-                        href="/world/locations/highpeaks.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
+                    <!-- Overview with 400x300px image to the left -->
+                    <section class="overview">
+                        <img
+                            src="/images/locations/highpeaks_overview.jpg"
+                            alt="High Peaks summit"
+                            class="section-img"
+                        />
+                        <div class="section-text">
+                            <h2>Overview</h2>
+                            <p>
+                                The High Peaks rise along the northern edge of
+                                the Valley of the Ancients, a range of jagged,
+                                frost-bitten summits lashed by relentless winds.
+                                Ancient watchtowers cling to the cliffs, their
+                                stones weathered by time and Umbraeth’s creeping
+                                frost, a frozen gauntlet for Aria to conquer.
+                            </p>
+                        </div>
+                    </section>
+                    <!-- Geography with 400x300px image to the left -->
+                    <section class="geography">
+                        <img
+                            src="/images/locations/highpeaks_geography.jpg"
+                            alt="Frosty cliffs and wind"
+                            class="section-img"
+                        />
+                        <div class="section-text">
+                            <h2>Geography</h2>
+                            <p>
+                                Towering cliffs of ice-slicked stone soar 20
+                                meters, carved by fierce gales that howl through
+                                narrow passes. Frozen ledges jut from the peaks,
+                                dusted with snow and stained by Umbraeth’s black
+                                ichor, while ancient glyphs shimmer faintly
+                                under a stormy sky thick with swirling clouds.
+                            </p>
+                        </div>
+                    </section>
+                    <!-- History with 400x300px image to the left -->
+                    <section class="history">
+                        <img
+                            src="/images/locations/highpeaks_history.jpg"
+                            alt="Ancient watchtower in Peaks"
+                            class="section-img"
+                        />
+                        <div class="section-text">
+                            <h2>History</h2>
+                            <p>
+                                The High Peaks once stood as the Ancients’
+                                northern sentinels, their watchtowers guarding
+                                against Umbraeth’s rise. Elyra’s stand here
+                                against his icy tendrils left the Wind Shard
+                                buried in the frost, a relic Aria must claim to
+                                harness the gales.
+                            </p>
+                        </div>
+                    </section>
+                </div>
+                <!-- Closes left-column -->
+                <!-- Right column: Remaining detailed sections -->
+                <div class="right-column">
+                    <!-- Inhabitants lists creatures and characters -->
+                    <section class="inhabitants">
+                        <h2>Inhabitants</h2>
+                        <p>
+                            Wind wraiths whip through the gales, their mournful
+                            cries echoing, while frostfang wolves stalk the
+                            ledges with icy teeth. Umbraeth’s icebound watchers
+                            guard the towers, and Lyra, the Wind Warden, roams
+                            the heights, her staff channeling the storm’s fury.
+                        </p>
+                    </section>
+                    <!-- Puzzles highlight gameplay challenges -->
+                    <section class="puzzles">
+                        <h2>Puzzles</h2>
+                        <p>
+                            The Gale Lattice challenges Aria to channel wind
+                            bursts from the Gauntlet of Storms across three icy
+                            chimes, aligning their tones to shatter a
+                            frost-sealed gate and reveal the Wind Shard, all
+                            while evading wind wraith gusts.
+                        </p>
+                    </section>
+                    <!-- Relics detail key items -->
+                    <section class="relics">
+                        <h2>Relics</h2>
+                        <p>
+                            The Wind Shard, a crystalline fragment humming with
+                            gusts, rests in a frozen vault, amplifying Aria’s
+                            wind abilities against Umbraeth’s forces. An Icefang
+                            Claw, dropped by frostfang wolves, glows pale and
+                            boosts agility when wielded.
+                        </p>
+                    </section>
+                    <!-- Companions note potential allies -->
+                    <section class="companions">
+                        <h2>Companions</h2>
+                        <p>
+                            Lyra, the Wind Warden, appears atop the peaks, her
+                            silver eyes sharp beneath a wind-torn cloak.
+                            Wielding a staff that summons gales, she aids Aria
+                            against watchers and wraiths, her mastery of the
+                            winds guiding the path to the Wind Shard.
+                        </p>
+                    </section>
+                    <!-- Narrative ties the Peaks to Aria’s story -->
+                    <section class="narrative">
+                        <h2>Role in the Narrative</h2>
+                        <p>
+                            The High Peaks test Aria’s resilience, the Wind
+                            Shard empowering her to wield the storm against
+                            Umbraeth’s frost. Lyra’s alliance strengthens her
+                            resolve, revealing the Ancients’ wind mastery as she
+                            carves a path toward the Valley’s heart.
+                        </p>
+                    </section>
+                </div>
+                <!-- Closes right-column -->
             </div>
         </section>
+        <!-- Footer provides site info and links, consistent across pages -->
         <footer>
+            <!-- Copyright with future-proof year and Grok/xAI attribution -->
             <p>
                 © 2025 Echoes of the Ancients. Crafted with wisdom by Grok,
                 created by xAI.
             </p>
+            <!-- Contact email link for user engagement -->
             <p>
                 Contact:
                 <a href="mailto:echoesgame@KdeanGames.net"
                     >echoesgame@KdeanGames.net</a
                 >
             </p>
+            <!-- X link opens in new tab for social media connectivity -->
+            <p>
+                <a
+                    href="https://x.com/KdeanGames"
+                    target="_blank"
+                    rel="noopener"
+                    >Follow us on X</a
+                >
+            </p>
         </footer>
+        <!-- Script ensures video fallback to image for reliable display -->
         <script>
-            // Fallback: Show image if video fails or isn’t present
             const video = document.querySelector("video");
             const img = document.querySelector(".header-media img");
             if (!video.querySelector("source").src || video.readyState === 0) {
