@@ -6,6 +6,16 @@
         <title>Development Updates - Echoes of the Ancients</title>
         <link rel="stylesheet" href="/styles.css" />
         <link rel="icon" type="image/png" href="/images/favicon.png" />
+        <!-- SEO meta description (150-160 chars) attracts search engine users -->
+        <meta
+            name="description"
+            content="Stay updated with the latest news and developments from Echoes of the Ancients, a medieval dark fantasy RPG."
+        />
+        <!-- SEO keywords target relevant search terms for the updates page -->
+        <meta
+            name="keywords"
+            content="updates, news, Echoes of the Ancients, medieval fantasy, RPG, dark fantasy"
+        />
     </head>
     <body>
         <header>
@@ -42,6 +52,15 @@
                 Contact:
                 <a href="mailto:echoesgame@KdeanGames.net"
                     >echoesgame@KdeanGames.net</a
+                >
+            </p>
+            <!-- Social media link to X, opens in new tab for usability -->
+            <p>
+                <a
+                    href="https://x.com/KdeanGames"
+                    target="_blank"
+                    rel="noopener"
+                    >Follow us on X</a
                 >
             </p>
         </footer>
