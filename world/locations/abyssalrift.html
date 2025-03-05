@@ -1,235 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Ensures proper text rendering across browsers, supporting special characters -->
         <meta charset="UTF-8" />
+        <!-- Sets viewport for responsive design, scaling to device width -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Page title for browser tab and SEO, thematic and concise -->
         <title>Abyssal Rift - Echoes of the Ancients</title>
+        <!-- Links to external stylesheet for consistent site-wide styling -->
         <link rel="stylesheet" href="/styles.css" />
+        <!-- Favicon enhances branding with a thematic glyph or rift icon -->
         <link rel="icon" type="image/png" href="/images/favicon.png" />
+        <!-- SEO meta description (150-160 chars) to attract search engine users -->
+        <meta
+            name="description"
+            content="Explore Abyssal Rift in Echoes of the Ancients, a festering wound of corruption at the heart of the Valley of the Ancients."
+        />
+        <!-- SEO keywords target relevant search terms for discoverability -->
+        <meta
+            name="keywords"
+            content="Abyssal Rift, Echoes of the Ancients, Valley of the Ancients, medieval fantasy, RPG, dark fantasy, locations"
+        />
     </head>
     <body>
+        <!-- Includes navigation from nav.shtml for consistent site-wide menu -->
+        <!--#include virtual="/nav.shtml" -->
         <header>
-            <!--#include virtual="/nav.shtml" -->
+            <!-- Container for background media (video/image), fills header dynamically -->
             <div class="header-media">
+                <!-- Video provides immersive intro, muted and looped for seamless playback -->
                 <video autoplay muted loop playsinline>
-                    <source src="/videos/hero_teaser.mp4" type="video/mp4" />
+                    <!-- Video source for Abyssal Rift, stored in /videos/locations -->
+                    <source
+                        src="/videos/locations/abyssalrift_teaser.mp4"
+                        type="video/mp4"
+                    />
+                    <!-- Fallback text for browsers that don’t support video -->
+                    Your browser does not support the video tag.
                 </video>
+                <!-- Fallback image in /images/locations, 1920x1080px to match video -->
                 <img
-                    src="/images/hero_fallback.jpg"
-                    alt="Valley of the Ancients"
+                    src="/images/locations/abyssalrift_fallback.jpg"
+                    alt="Abyssal Rift under stormy skies"
                 />
             </div>
+            <!-- Hero section overlays media with title and tagline, styled for impact -->
             <div class="hero abyssalrift">
                 <h1>Abyssal Rift</h1>
-                <p class="tagline">Where darkness festers</p>
+                <p class="tagline">A Festering Wound of Corruption</p>
             </div>
         </header>
-        <section id="abyssalrift">
-            <h2>The Festering Wound</h2>
-            <p>
-                The Abyssal Rift yawns at the Valley’s heart, a festering chasm
-                of black stone and writhing shadows, where Umbraeth’s corruption
-                seeps like poison into the earth. A sickly green mist clings to
-                its jagged edges, pierced by the screams of insects and the
-                groans of corrupted golems. Here, Aria descends with Luna, the
-                Shadow Seer, her Glyph-Blade cutting through darkness to uncover
-                the Rift Core, Shadow Veil, and Corruption Crucible—each step a
-                battle against Umbraeth’s warden, their bond tested in the
-                rift’s depths as they seek to purge the valley’s curse.
-            </p>
-            <h2>Key Landmarks</h2>
-            <div class="location-grid">
-                <article class="location">
+        <!-- Main content section with two-column layout for location details -->
+        <section id="location-sheet">
+            <div class="sheet-container">
+                <!-- Left column: Main image and initial sections with smaller images -->
+                <div class="left-column">
+                    <!-- Main image (800x600px) at top of left column -->
                     <img
-                        src="/images/locations/abyssalrift_1.jpg"
-                        alt="Rift Overview"
-                        class="location-img"
+                        src="/images/locations/abyssalrift_main.jpg"
+                        alt="Abyssal Rift with corrupted stone"
+                        class="locationpage-img"
                     />
-                    <h3>Chasm of Shadows</h3>
-                    <p>
-                        A jagged chasm at the Valley’s heart, black stone
-                        dripping with Umbraeth’s corruption, green mist
-                        swirling, insects buzzing amidst the groans of corrupted
-                        earth.
-                    </p>
-                    <a
-                        href="/world/locations/abyssalrift.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/abyssalrift_2.jpg"
-                        alt="Rift Core"
-                        class="location-img"
-                    />
-                    <h3>Rift Core</h3>
-                    <p>
-                        A pulsating black crystal at the chasm’s heart, its dark
-                        energy fueling Umbraeth’s curse. Aria shatters its outer
-                        shell with Gauntlet Gust, revealing the Umbra Shard,
-                        while insects swarm in protest.
-                    </p>
-                    <a
-                        href="/world/locations/abyssalrift.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/abyssalrift_3.jpg"
-                        alt="Shadow Veil"
-                        class="location-img"
-                    />
-                    <h3>Shadow Veil</h3>
-                    <p>
-                        A barrier of writhing shadows blocking the path, its
-                        tendrils pulsing with Umbraeth’s power. Luna’s Shadow
-                        Pulse disperses it, revealing a chest with the Void
-                        Cloak, golems guarding the way.
-                    </p>
-                    <a
-                        href="/world/locations/abyssalrift.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/abyssalrift_4.jpg"
-                        alt="Corruption Crucible"
-                        class="location-img"
-                    />
-                    <h3>Corruption Crucible</h3>
-                    <p>
-                        A pool of black ichor, its surface rippling with
-                        Umbraeth’s essence. Aria purifies it with the
-                        Glyph-Blade’s light, unlocking a rune-etched platform,
-                        insects and golems rising in defense.
-                    </p>
-                    <a
-                        href="/world/locations/abyssalrift.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/abyssalrift_5.jpg"
-                        alt="Insect Hordes"
-                        class="location-img"
-                    />
-                    <h3>Foes of the Swarm</h3>
-                    <p>
-                        Venomous insects—black carapaces glinting—erupt from the
-                        chasm, their stingers dripping corruption. Luna’s Shadow
-                        Pulse scatters them, while Aria harvests their souls,
-                        each bite a test of endurance.
-                    </p>
-                    <a
-                        href="/world/locations/abyssalrift.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/abyssalrift_6.jpg"
-                        alt="Corrupted Golems"
-                        class="location-img"
-                    />
-                    <h3>Foes of Stone</h3>
-                    <p>
-                        Corrupted golems—black stone etched with Umbraeth’s
-                        runes—rise from the rift, their fists crushing stone.
-                        Aria cleaves their cores with the Glyph-Blade, their
-                        souls glowing amidst shadow, a battle of light against
-                        dark.
-                    </p>
-                    <a
-                        href="/world/locations/abyssalrift.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/abyssalrift_7.jpg"
-                        alt="Umbra Shard"
-                        class="location-img"
-                    />
-                    <h3>Umbra Shard</h3>
-                    <p>
-                        A dark crystal pulsing with Umbraeth’s essence, found in
-                        the Rift Core’s chest. It boosts Aria’s shadow
-                        resistance (+10), its black glow a grim reminder of the
-                        rift’s curse, purified by Luna’s wisdom.
-                    </p>
-                    <a
-                        href="/world/locations/abyssalrift.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/abyssalrift_8.jpg"
-                        alt="Luna’s Sanctuary"
-                        class="location-img"
-                    />
-                    <h3>Luna’s Haven</h3>
-                    <p>
-                        Luna’s shadowy sanctuary—a chasm alcove—holds her Shadow
-                        Pulse relic and a rune-carved grimoire. “The rift hides
-                        truths in shadow,” she murmurs, revealing a hidden cache
-                        with healing elixirs (+15 Health), forged in dark
-                        resilience.
-                    </p>
-                    <a
-                        href="/world/locations/abyssalrift.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/characters/luna_action.jpg"
-                        alt="Luna Casting Shadow Pulse"
-                        class="location-img"
-                    />
-                    <h3>Companions</h3>
-                    <p>
-                        Luna, the enigmatic Shadow Seer, stands in the Abyssal
-                        Rift’s chasm, her jet-black hair flowing like shadow,
-                        casting a Shadow Pulse to dispel writhing darkness. “The
-                        rift hides truths in shadow, fire-hair,” she intones,
-                        guiding Aria through the corrupted depths with mystical
-                        insight.
-                    </p>
-                    <a
-                        href="/world/locations/abyssalrift.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
+                    <!-- Overview with 400x300px image to the left -->
+                    <section class="overview">
+                        <img
+                            src="/images/locations/abyssalrift_overview.jpg"
+                            alt="Abyssal Rift chasm"
+                            class="section-img"
+                        />
+                        <div class="section-text">
+                            <h2>Overview</h2>
+                            <p>
+                                The Abyssal Rift tears through the heart of the
+                                Valley of the Ancients, a festering wound of
+                                corruption where Umbraeth’s power seeps
+                                unchecked. Jagged stone spires rise from its
+                                depths, oozing black ichor, as the air thrums
+                                with the Ancients’ shattered seals, a dire
+                                proving ground for Aria’s resolve.
+                            </p>
+                        </div>
+                    </section>
+                    <!-- Geography with 400x300px image to the left -->
+                    <section class="geography">
+                        <img
+                            src="/images/locations/abyssalrift_geography.jpg"
+                            alt="Corrupted cliffs and ichor"
+                            class="section-img"
+                        />
+                        <div class="section-text">
+                            <h2>Geography</h2>
+                            <p>
+                                Towering cliffs of dark, corrupted stone drop 25
+                                meters into a shadowed abyss, veined with
+                                Umbraeth’s black ichor that pulses like a living
+                                thing. Twisted spires pierce upward, faintly
+                                glowing with broken glyphs, while noxious pools
+                                fester below, cloaked in a stormy haze lit by
+                                jagged lightning.
+                            </p>
+                        </div>
+                    </section>
+                    <!-- History with 400x300px image to the left -->
+                    <section class="history">
+                        <img
+                            src="/images/locations/abyssalrift_history.jpg"
+                            alt="Ancient seal in Rift"
+                            class="section-img"
+                        />
+                        <div class="section-text">
+                            <h2>History</h2>
+                            <p>
+                                Once the site of the Ancients’ strongest seal
+                                against Umbraeth, the Abyssal Rift became his
+                                escape when their magic faltered. Elyra’s final
+                                stand stained the stone, forging the Shadow
+                                Veil, a lost relic buried in the rift’s depths
+                                until Aria’s quest calls it forth.
+                            </p>
+                        </div>
+                    </section>
+                </div>
+                <!-- Closes left-column -->
+                <!-- Right column: Remaining detailed sections -->
+                <div class="right-column">
+                    <!-- Inhabitants lists creatures and characters -->
+                    <section class="inhabitants">
+                        <h2>Inhabitants</h2>
+                        <p>
+                            Shadowspawn crawl along the cliffs, their red eyes
+                            glinting, while ichor drones swarm with venomous
+                            stingers. Umbraeth’s elite, the Rift Sentinels,
+                            guard the depths, and Zane, the Exiled Blade, haunts
+                            the rift, seeking atonement with his dual swords.
+                        </p>
+                    </section>
+                    <!-- Puzzles highlight gameplay challenges -->
+                    <section class="puzzles">
+                        <h2>Puzzles</h2>
+                        <p>
+                            The Corruption Matrix requires Aria to redirect
+                            three ichor streams using the Echo Shard’s light,
+                            aligning broken glyphs to unlock the Shadow Veil’s
+                            crypt, all while dodging shadowspawn assaults in the
+                            rift’s core.
+                        </p>
+                    </section>
+                    <!-- Relics detail key items -->
+                    <section class="relics">
+                        <h2>Relics</h2>
+                        <p>
+                            The Shadow Veil, a tattered cloak pulsing with dark
+                            energy, rests in a sealed crypt, bolstering Aria’s
+                            resistance to Umbraeth’s shadow. A Riftstone Shard,
+                            dropped by sentinels, glows darkly and boosts
+                            strength when held.
+                        </p>
+                    </section>
+                    <!-- Companions note potential allies -->
+                    <section class="companions">
+                        <h2>Companions</h2>
+                        <p>
+                            Zane, the Exiled Blade, emerges from the rift’s
+                            shadows, his scarred face framed by a tattered hood.
+                            Wielding dual curved swords, he aids Aria against
+                            sentinels and drones, his quest for redemption
+                            guiding her to the Shadow Veil.
+                        </p>
+                    </section>
+                    <!-- Narrative ties the Rift to Aria’s story -->
+                    <section class="narrative">
+                        <h2>Role in the Narrative</h2>
+                        <p>
+                            The Abyssal Rift thrusts Aria into Umbraeth’s core,
+                            where the Shadow Veil strengthens her stand against
+                            his corruption. Zane’s alliance forges a path to
+                            redemption, unveiling the rift’s secrets as Aria
+                            nears the Valley’s ultimate clash.
+                        </p>
+                    </section>
+                </div>
+                <!-- Closes right-column -->
             </div>
         </section>
+        <!-- Footer provides site info and links, consistent across pages -->
         <footer>
+            <!-- Copyright with future-proof year and Grok/xAI attribution -->
             <p>
                 © 2025 Echoes of the Ancients. Crafted with wisdom by Grok,
                 created by xAI.
             </p>
+            <!-- Contact email link for user engagement -->
             <p>
                 Contact:
                 <a href="mailto:echoesgame@KdeanGames.net"
                     >echoesgame@KdeanGames.net</a
                 >
             </p>
+            <!-- X link opens in new tab for social media connectivity -->
+            <p>
+                <a
+                    href="https://x.com/KdeanGames"
+                    target="_blank"
+                    rel="noopener"
+                    >Follow us on X</a
+                >
+            </p>
         </footer>
+        <!-- Script ensures video fallback to image for reliable display -->
         <script>
-            // Fallback: Show image if video fails or isn’t present
             const video = document.querySelector("video");
             const img = document.querySelector(".header-media img");
             if (!video.querySelector("source").src || video.readyState === 0) {
