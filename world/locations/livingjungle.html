@@ -38,7 +38,7 @@
                     <!-- Fallback text for browsers that don’t support video -->
                     Your browser does not support the video tag.
                 </video>
-                <!-- Fallback image in /images/locations ensures visual if video fails -->
+                <!-- Fallback image in /images/locations, 1920x1080px to match video -->
                 <img
                     src="/images/locations/livingjungle_fallback.jpg"
                     alt="Living Jungle under stormy canopy"
@@ -53,55 +53,79 @@
         <!-- Main content section with two-column layout for location details -->
         <section id="location-sheet">
             <div class="sheet-container">
-                <!-- Left column contains image and initial sections (Overview, Geography, History) -->
+                <!-- Left column: Main image and initial sections with smaller images -->
                 <div class="left-column">
-                    <!-- Main image (800x600px) in /images/locations, showcases the Jungle -->
+                    <!-- Main image (800x600px) at top of left column -->
                     <img
                         src="/images/locations/livingjungle_main.jpg"
                         alt="Living Jungle with crimson orchids"
                         class="locationpage-img"
                     />
-                    <!-- Overview introduces the Jungle’s role and significance -->
+                    <!-- Overview with 400x300px image to the left -->
                     <section class="overview">
-                        <h2>Overview</h2>
-                        <p>
-                            The Living Jungle sprawls across the eastern expanse
-                            of the Valley of the Ancients, a dense tangle of
-                            kapok trees, strangler figs, and crimson orchids.
-                            This verdant maze teems with life and danger, its
-                            beauty masking Umbraeth’s creeping rot and the
-                            secrets of the Ancients buried beneath its roots.
-                        </p>
+                        <img
+                            src="/images/locations/livingjungle_overview.jpg"
+                            alt="Living Jungle canopy"
+                            class="section-img"
+                        />
+                        <div class="section-text">
+                            <h2>Overview</h2>
+                            <p>
+                                The Living Jungle sprawls across the eastern
+                                expanse of the Valley of the Ancients, a dense
+                                tangle of kapok trees, strangler figs, and
+                                crimson orchids. This verdant maze teems with
+                                life and danger, its beauty masking Umbraeth’s
+                                creeping rot and the secrets of the Ancients
+                                buried beneath its roots.
+                            </p>
+                        </div>
                     </section>
-                    <!-- Geography details the physical environment, enhancing immersion -->
+                    <!-- Geography with 400x300px image to the left -->
                     <section class="geography">
-                        <h2>Geography</h2>
-                        <p>
-                            Towering kapok trees rise 30 meters, their canopies
-                            blotting out the sun, while strangler figs choke
-                            ancient stone ruins. Crimson orchids glow faintly
-                            along muddy paths, and shallow streams wind through
-                            the undergrowth, their waters tinged with Umbraeth’s
-                            black ichor. The air is thick with mist, pierced by
-                            raptor cries.
-                        </p>
+                        <img
+                            src="/images/locations/livingjungle_geography.jpg"
+                            alt="Jungle streams and ruins"
+                            class="section-img"
+                        />
+                        <div class="section-text">
+                            <h2>Geography</h2>
+                            <p>
+                                Towering kapok trees rise 30 meters, their
+                                canopies blotting out the sun, while strangler
+                                figs choke ancient stone ruins. Crimson orchids
+                                glow faintly along muddy paths, and shallow
+                                streams wind through the undergrowth, their
+                                waters tinged with Umbraeth’s black ichor. The
+                                air is thick with mist, pierced by raptor cries.
+                            </p>
+                        </div>
                     </section>
-                    <!-- History provides lore from Story and Location Profile -->
+                    <!-- History with 400x300px image to the left -->
                     <section class="history">
-                        <h2>History</h2>
-                        <p>
-                            Once a sacred grove tended by the Ancients, the
-                            Living Jungle fell to Umbraeth’s corruption after
-                            Elyra’s sacrifice at the Spire. Its glyphs, carved
-                            into kapok bark, now pulse dimly, whispering of a
-                            lost temple where the Gauntlet of Storms was forged,
-                            hidden beneath centuries of overgrowth.
-                        </p>
+                        <img
+                            src="/images/locations/livingjungle_history.jpg"
+                            alt="Ancient glyphs in jungle"
+                            class="section-img"
+                        />
+                        <div class="section-text">
+                            <h2>History</h2>
+                            <p>
+                                Once a sacred grove tended by the Ancients, the
+                                Living Jungle fell to Umbraeth’s corruption
+                                after Elyra’s sacrifice at the Spire. Its
+                                glyphs, carved into kapok bark, now pulse dimly,
+                                whispering of a lost temple where the Gauntlet
+                                of Storms was forged, hidden beneath centuries
+                                of overgrowth.
+                            </p>
+                        </div>
                     </section>
                 </div>
-                <!-- Right column contains remaining detailed sections -->
+                <!-- Closes left-column -->
+                <!-- Right column: Remaining detailed sections -->
                 <div class="right-column">
-                    <!-- Inhabitants lists creatures and characters from Story and Profiles -->
+                    <!-- Inhabitants lists creatures and characters -->
                     <section class="inhabitants">
                         <h2>Inhabitants</h2>
                         <p>
@@ -113,7 +137,7 @@
                             with his kapok bow.
                         </p>
                     </section>
-                    <!-- Puzzles highlight gameplay challenges from GDD and Map -->
+                    <!-- Puzzles highlight gameplay challenges -->
                     <section class="puzzles">
                         <h2>Puzzles</h2>
                         <p>
@@ -124,7 +148,7 @@
                             Gauntlet of Storms’ resting place.
                         </p>
                     </section>
-                    <!-- Relics detail key items from Story and GDD -->
+                    <!-- Relics detail key items -->
                     <section class="relics">
                         <h2>Relics</h2>
                         <p>
@@ -135,7 +159,7 @@
                             consumed, glowing with faint red light.
                         </p>
                     </section>
-                    <!-- Companions note potential allies from Story Chapter 2 -->
+                    <!-- Companions note potential allies -->
                     <section class="companions">
                         <h2>Companions</h2>
                         <p>
@@ -146,7 +170,7 @@
                             with precision.
                         </p>
                     </section>
-                    <!-- Narrative ties the Jungle to Aria’s story arc from Story -->
+                    <!-- Narrative ties the Jungle to Aria’s story -->
                     <section class="narrative">
                         <h2>Role in the Narrative</h2>
                         <p>
@@ -159,6 +183,7 @@
                         </p>
                     </section>
                 </div>
+                <!-- Closes right-column -->
             </div>
         </section>
         <!-- Footer provides site info and links, consistent across pages -->
@@ -187,20 +212,16 @@
         </footer>
         <!-- Script ensures video fallback to image for reliable display -->
         <script>
-            // Selects video and fallback image for dynamic handling
             const video = document.querySelector("video");
             const img = document.querySelector(".header-media img");
-            // Hides video and shows image if source is missing or not ready
             if (!video.querySelector("source").src || video.readyState === 0) {
                 video.style.display = "none";
                 img.style.display = "block";
             }
-            // Shows video and hides image once loaded
             video.onloadeddata = () => {
                 video.style.display = "block";
                 img.style.display = "none";
             };
-            // Reverts to image on video error
             video.onerror = () => {
                 video.style.display = "none";
                 img.style.display = "block";
