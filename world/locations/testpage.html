@@ -1,50 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!-- Ensures proper text rendering across browsers, supporting special characters -->
         <meta charset="UTF-8" />
-        <!-- Sets viewport for responsive design, scaling to device width -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <!-- Page title for browser tab and SEO, thematic and concise -->
         <title>Spire of Dawn - Echoes of the Ancients</title>
-        <!-- Links to external stylesheet for consistent site-wide styling -->
         <link rel="stylesheet" href="/styles.css" />
-        <!-- Favicon enhances branding with a thematic glyph or monolith icon -->
         <link rel="icon" type="image/png" href="/images/favicon.png" />
-        <!-- SEO meta description (150-160 chars) to attract search engine users -->
         <meta
             name="description"
             content="Explore Spire of Dawn, a fractured monolith in Echoes of the Ancients where Aria’s quest begins against Umbraeth’s shadow."
         />
-        <!-- SEO keywords target relevant search terms for discoverability -->
         <meta
             name="keywords"
             content="Spire of Dawn, Echoes of the Ancients, Valley of the Ancients, medieval fantasy, RPG, dark fantasy, locations"
         />
     </head>
     <body>
-        <!-- Includes navigation from nav.shtml for consistent site-wide menu -->
         <!--#include virtual="/nav.shtml" -->
         <header>
-            <!-- Container for background media (video/image), fills header dynamically -->
             <div class="header-media">
-                <!-- Video provides immersive intro, muted and looped for seamless playback -->
                 <video autoplay muted loop playsinline>
-                    <!-- Video source for Spire of Dawn, stored in /videos/locations -->
                     <source
                         src="/videos/locations/spireofdawn_teaser.mp4"
                         type="video/mp4"
                     />
-                    <!-- Fallback text for browsers that don’t support video -->
                     Your browser does not support the video tag.
                 </video>
-                <!-- Fallback image in /images/locations, now 1920x1080px -->
                 <img
                     src="/images/locations/spireofdawn_fallback.jpg"
                     alt="Spire of Dawn under stormy skies"
                 />
             </div>
-            <!-- Hero section overlays media with title and tagline, styled for impact -->
             <div class="hero spireofdawn">
                 <h1>Spire of Dawn</h1>
                 <p class="tagline">
@@ -52,18 +38,14 @@
                 </p>
             </div>
         </header>
-        <!-- Main content section with two-column layout for location details -->
         <section id="location-sheet">
             <div class="sheet-container">
-                <!-- Left column: Main image and initial sections with smaller images -->
                 <div class="left-column">
-                    <!-- Main image (800x600px) at top of left column -->
                     <img
                         src="/images/locations/spireofdawn_main.jpg"
                         alt="Spire of Dawn amidst kapok trees"
                         class="locationpage-img"
                     />
-                    <!-- Overview with 400x300px image to the left -->
                     <section class="overview">
                         <img
                             src="/images/locations/spireofdawn_overview.jpg"
@@ -84,7 +66,6 @@
                             </p>
                         </div>
                     </section>
-                    <!-- Geography with 400x300px image to the left -->
                     <section class="geography">
                         <img
                             src="/images/locations/spireofdawn_geography.jpg"
@@ -104,7 +85,6 @@
                             </p>
                         </div>
                     </section>
-                    <!-- History with 400x300px image to the left -->
                     <section class="history">
                         <img
                             src="/images/locations/spireofdawn_history.jpg"
@@ -125,10 +105,8 @@
                         </div>
                     </section>
                 </div>
-                <!-- Closes left-column -->
-                <!-- Right column: Remaining detailed sections -->
+                <!-- End of left-column -->
                 <div class="right-column">
-                    <!-- Inhabitants lists creatures and characters -->
                     <section class="inhabitants">
                         <h2>Inhabitants</h2>
                         <p>
@@ -139,7 +117,6 @@
                             Hunter, offering aid amidst the chaos.
                         </p>
                     </section>
-                    <!-- Puzzles highlight gameplay challenges -->
                     <section class="puzzles">
                         <h2>Puzzles</h2>
                         <p>
@@ -150,7 +127,6 @@
                             unlocking its power amidst gruntling ambushes.
                         </p>
                     </section>
-                    <!-- Relics detail key items -->
                     <section class="relics">
                         <h2>Relics</h2>
                         <p>
@@ -161,7 +137,6 @@
                             wind-blown jump to claim.
                         </p>
                     </section>
-                    <!-- Companions note potential allies -->
                     <section class="companions">
                         <h2>Companions</h2>
                         <p>
@@ -171,7 +146,6 @@
                             gruntlings, his agility bolstering her quest.
                         </p>
                     </section>
-                    <!-- Narrative ties the Spire to Aria’s story -->
                     <section class="narrative">
                         <h2>Role in the Narrative</h2>
                         <p>
@@ -183,24 +157,20 @@
                         </p>
                     </section>
                 </div>
-                <!-- Closes right-column -->
+                <!-- End of right-column -->
             </div>
         </section>
-        <!-- Footer provides site info and links, consistent across pages -->
         <footer>
-            <!-- Copyright with future-proof year and Grok/xAI attribution -->
             <p>
                 © 2025 Echoes of the Ancients. Crafted with wisdom by Grok,
                 created by xAI.
             </p>
-            <!-- Contact email link for user engagement -->
             <p>
                 Contact:
                 <a href="mailto:echoesgame@KdeanGames.net"
                     >echoesgame@KdeanGames.net</a
                 >
             </p>
-            <!-- X link opens in new tab for social media connectivity -->
             <p>
                 <a
                     href="https://x.com/KdeanGames"
@@ -210,22 +180,17 @@
                 >
             </p>
         </footer>
-        <!-- Script ensures video fallback to image for reliable display -->
         <script>
-            // Selects video and fallback image for dynamic handling
             const video = document.querySelector("video");
             const img = document.querySelector(".header-media img");
-            // Hides video and shows image if source is missing or not ready
             if (!video.querySelector("source").src || video.readyState === 0) {
                 video.style.display = "none";
                 img.style.display = "block";
             }
-            // Shows video and hides image once loaded
             video.onloadeddata = () => {
                 video.style.display = "block";
                 img.style.display = "none";
             };
-            // Reverts to image on video error
             video.onerror = () => {
                 video.style.display = "none";
                 img.style.display = "block";

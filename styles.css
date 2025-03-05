@@ -2,31 +2,31 @@
    Reset and Base Styles
    ========================================================================== */
 
-/* Reset default margins, padding, and box-sizing for all elements to ensure consistency */
+/* Resets default margins, padding, and box-sizing for all elements to ensure consistent layout across browsers */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Ensures padding/margins don’t bloat elements, maintaining layout control */
+    box-sizing: border-box; /* Includes padding and borders in element dimensions, preventing layout bloat */
 }
 
-/* Base body styling for consistent look across site, with fallback font for broad compatibility */
+/* Defines base styling for the body, setting a dark theme and fallback typography */
 body {
-    font-family: "Arial", sans-serif; /* Default fallback font for wide support */
-    background: #0d0d0d; /* Dark background for medieval fantasy vibe */
-    color: #e6e6e6; /* Light text for contrast against dark background */
-    line-height: 1.6; /* Improved readability with spacious line height */
-    overflow-x: hidden; /* Prevents horizontal scroll issues, ensuring clean mobile layout */
+    font-family: "Arial", sans-serif; /* Fallback font for broad compatibility, overridden by custom fonts where specified */
+    background: #0d0d0d; /* Dark background for a medieval fantasy aesthetic */
+    color: #e6e6e6; /* Light text color for high contrast against dark background */
+    line-height: 1.6; /* Spacious line height for improved readability */
+    overflow-x: hidden; /* Prevents horizontal scrolling issues, ensuring a clean layout on all devices */
 }
 
 /* ==========================================================================
-   Fonts and Typography
+   Typography and Fonts
    ========================================================================== */
 
-/* Import custom fonts for medieval aesthetic, optimized for performance and theme */
-@import url("https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap"); /* Desktop: MedievalSharp for a medieval, handwritten look */
-@import url("https://fonts.googleapis.com/css2?family=Garamond&display=swap"); /* Mobile: Garamond for readability, replacing Cardo for legibility */
+/* Imports custom fonts from Google Fonts for a medieval aesthetic, optimized for performance */
+@import url("https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap"); /* MedievalSharp: Handwritten medieval style for desktop */
+@import url("https://fonts.googleapis.com/css2?family=Garamond&display=swap"); /* Garamond: Readable serif font for mobile */
 
-/* Headings and navigation typography (desktop default) */
+/* Styles headings and navigation links with MedievalSharp for desktop, ensuring thematic consistency */
 h1,
 h2,
 .tagline,
@@ -36,1116 +36,1049 @@ nav a,
 .update h3,
 .document h3,
 .location h3 {
-    font-family: "MedievalSharp", cursive, Arial; /* MedievalSharp for titles/nav on desktop, with Arial fallback */
-    font-weight: 400; /* Normal weight for readability, avoiding heavy distortion */
+    font-family: "MedievalSharp", cursive, Arial; /* MedievalSharp primary, with Arial fallback */
+    font-weight: 400; /* Normal weight for clarity, avoiding overly bold distortion */
 }
 
-/* Body text for updates, documents, and locations (desktop default) */
+/* Applies MedievalSharp to body text in specific sections for desktop consistency */
 .update .date,
 .document p,
 .location p {
-    font-family: "MedievalSharp", cursive, Arial; /* Consistent medieval style for body text on desktop */
+    font-family: "MedievalSharp", cursive, Arial; /* MedievalSharp for thematic body text, with Arial fallback */
     font-weight: 400; /* Normal weight for readability */
 }
 
 /* ==========================================================================
-   Header and Hero Section
+   Header and Hero Styling
    ========================================================================== */
 
-/* Header container for full-screen background media, ensuring responsive height */
+/* Styles the header as a full-screen container for background media and hero content */
 header {
-    height: 100vh; /* Full viewport height for immersive effect */
+    height: 100vh; /* Full viewport height for an immersive experience */
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    overflow: hidden; /* Contains media overflow, preventing layout issues */
+    flex-direction: column; /* Stacks children vertically */
+    align-items: center; /* Centers content horizontally */
+    position: relative; /* Allows absolute positioning of children */
+    overflow: hidden; /* Prevents media overflow from breaking layout */
 }
 
-/* Media layer for video/image background, positioned below nav */
+/* Positions the header media (video/image) below the fixed navigation */
 .header-media {
     position: absolute;
-    top: 4rem; /* Offset for fixed nav height */
+    top: 4rem; /* Offset to account for fixed nav height */
     left: 0;
-    width: 100%;
-    height: calc(
-        100% - 4rem
-    ); /* Full height minus nav, maintaining proportions */
-    z-index: 0; /* Below nav and hero for layering */
+    width: 100%; /* Full width for background coverage */
+    height: calc(100% - 4rem); /* Adjusts height to fit below nav */
+    z-index: 0; /* Places media behind navigation and hero */
 }
 
-/* Video styling with fallback logic, optimized for performance */
+/* Styles header video for full coverage with a fade-in animation */
 header video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Covers area without distortion, ideal for responsive design */
-    animation: fadeIn 2s ease-in; /* Smooth fade-in for user experience */
-    display: none; /* Hidden until loaded, managed by script */
+    object-fit: cover; /* Ensures video fills space without distortion */
+    animation: fadeIn 2s ease-in; /* Smooth fade-in for visual appeal */
+    display: none; /* Hidden by default, shown by script when loaded */
 }
 
-/* Fallback image styling, visible by default until video loads */
+/* Styles fallback image for header, visible until video loads */
 header img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    animation: fadeIn 2s ease-in;
-    display: block; /* Default visible, replaced by video if available */
+    object-fit: cover; /* Ensures image fills space without distortion */
+    animation: fadeIn 2s ease-in; /* Smooth fade-in for consistency */
+    display: block; /* Visible by default, hidden by script if video loads */
 }
 
-/* Fade-in animation for header media, enhancing visual flow */
+/* Defines fade-in animation for header media */
 @keyframes fadeIn {
     from {
         opacity: 0;
-    }
+    } /* Starts fully transparent */
     to {
         opacity: 1;
-    }
+    } /* Ends fully opaque */
 }
 
-/* Hero overlay for titles and taglines, styled for medieval theme */
+/* Styles the hero overlay for titles and taglines with a medieval theme */
 .hero {
     background: rgba(
         0,
         0,
         0,
         0.7
-    ); /* Semi-transparent dark overlay for readability */
-    padding: 2.5rem;
-    border-radius: 15px;
-    animation: slideUp 1s ease-out; /* Slide-up entry for engagement */
+    ); /* Semi-transparent dark overlay for text readability */
+    padding: 2.5rem; /* Generous padding for a framed look */
+    border-radius: 15px; /* Rounded corners for a polished medieval style */
+    animation: slideUp 1s ease-out; /* Slide-up animation for entry effect */
     position: relative;
-    z-index: 1; /* Above media for visibility */
-    margin-top: 60vh; /* Positions below nav on desktop for balance */
-    width: 80%;
-    max-width: 800px;
+    z-index: 1; /* Places hero above media layer */
+    margin-top: 60vh; /* Positions below nav, centered vertically on desktop */
+    width: 80%; /* Limits width for readability */
+    max-width: 800px; /* Caps width for large screens */
 }
 
-/* Page-specific hero adjustments (desktop), maintaining consistency */
-.hero.index {
-    margin-top: 60vh; /* Consistent spacing for index homepage */
-}
-.hero.updates {
-    margin-top: 60vh; /* Matches index for updates page */
-}
-.hero.documents {
-    margin-top: 60vh; /* Matches others for documents page */
-}
-.hero.locations {
-    margin-top: 60vh; /* Matches others for locations summary */
-}
-.hero.spireofdawn {
-    margin-top: 60vh; /* Matches others for Spire detail */
-}
+/* Adjusts hero positioning for specific pages on desktop */
+.hero.index,
+.hero.updates,
+.hero.documents,
+.hero.locations,
+.hero.spireofdawn,
 .hero.livingjungle {
-    margin-top: 60vh; /* Matches others for Jungle detail */
+    margin-top: 60vh; /* Consistent vertical positioning across pages */
 }
 
-/* Slide-up animation for hero, enhancing page entry */
+/* Defines slide-up animation for hero section */
 @keyframes slideUp {
     from {
-        transform: translateY(50px);
-        opacity: 0;
+        transform: translateY(50px); /* Starts 50px below final position */
+        opacity: 0; /* Starts fully transparent */
     }
     to {
-        transform: translateY(0);
-        opacity: 1;
+        transform: translateY(0); /* Ends at natural position */
+        opacity: 1; /* Ends fully opaque */
     }
 }
 
-/* Main heading styling, prominent and thematic */
+/* Styles main headings with a bold, thematic appearance */
 h1 {
-    font-size: 4rem; /* Large, bold titles for impact */
-    color: #d4a017; /* Gold for medieval flair, matching theme */
-    text-shadow: 3px 3px 6px #000; /* Deep shadow for depth and readability */
+    font-size: 4rem; /* Large size for prominent titles */
+    color: #d4a017; /* Gold color for medieval flair */
+    text-shadow: 3px 3px 6px #000; /* Deep shadow for depth and contrast */
 }
 
-/* Tagline styling, supporting the hero with subtle emphasis */
+/* Styles taglines as supporting text under headings */
 .tagline {
-    font-size: 1.8rem;
-    margin: 1rem 0;
+    font-size: 1.8rem; /* Smaller but still prominent */
+    margin: 1rem 0; /* Vertical spacing for hierarchy */
 }
 
 /* ==========================================================================
-   Navigation
+   Navigation Styling
    ========================================================================== */
 
-/* Fixed navigation bar, ensuring visibility across pages */
+/* Styles the fixed navigation bar for consistent visibility */
 nav {
     position: fixed;
     top: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.9); /* Dark, semi-transparent for modern look */
-    padding: 1rem 0;
-    z-index: 1000; /* Above all but burger toggle for layering */
+    width: 100%; /* Full width across the top */
+    background: rgba(0, 0, 0, 0.9); /* Dark, semi-transparent background */
+    padding: 1rem 0; /* Vertical padding for spacing */
+    z-index: 1000; /* High z-index to stay above content, below burger toggle */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7); /* Subtle shadow for depth */
 }
 
-/* Hidden checkbox for main menu toggle, enabling mobile behavior */
-.nav-toggle {
-    display: none;
-}
-
-/* Hidden checkbox for World submenu toggle, supporting mobile navigation */
+/* Hides checkbox inputs for mobile menu toggles */
+.nav-toggle,
 .world-toggle {
-    display: none;
+    display: none; /* Hidden, controlled by labels for mobile navigation */
 }
 
-/* Hamburger menu toggle label (mobile), hidden on desktop */
+/* Styles the hamburger menu toggle label, hidden on desktop */
 .nav-toggle-label {
-    display: none; /* Hidden on desktop, appears on mobile */
+    display: none; /* Visible only on mobile via media query */
     position: absolute;
     top: 1rem;
     right: 1rem;
     cursor: pointer;
-    z-index: 1002; /* Above everything for accessibility */
-    padding: 0.5rem;
-    background: transparent; /* No background, just lines for minimalism */
+    z-index: 1002; /* Above all elements for accessibility */
+    padding: 0.5rem; /* Padding for tap area */
+    background: transparent; /* No background, just lines */
 }
 
-/* Hamburger lines, styled for thematic gold and smooth transitions */
+/* Styles hamburger menu lines with thematic gold color */
 .nav-toggle-label span {
     display: block;
-    width: 30px;
-    height: 4px;
-    background: #d4a017; /* Gold lines matching theme */
-    margin: 6px 0;
-    transition: all 0.3s ease; /* Smooth animation for user interaction */
-    z-index: 1003; /* Above all for visibility during toggle */
+    width: 30px; /* Width of each line */
+    height: 4px; /* Thickness of each line */
+    background: #d4a017; /* Gold color matching theme */
+    margin: 6px 0; /* Spacing between lines */
+    transition: all 0.3s ease; /* Smooth animation for toggle effect */
+    z-index: 1003; /* Ensures visibility during toggle */
 }
 
-/* Main menu layout, centered and spaced for desktop */
+/* Styles the main navigation menu for desktop */
 .main-menu {
-    display: flex;
-    justify-content: center;
-    gap: 2rem; /* Space between items for clarity */
-    list-style: none;
+    display: flex; /* Horizontal layout for desktop */
+    justify-content: center; /* Centers menu items */
+    gap: 2rem; /* Spacing between items */
+    list-style: none; /* Removes default list bullets */
 }
 
-/* Nav link styling, ensuring readability and theme consistency */
+/* Styles navigation links with hover effects */
 nav a {
-    color: #e6e6e6;
-    text-decoration: none;
-    font-size: 1.3rem;
-    transition: color 0.3s, text-shadow 0.3s; /* Hover effects for interactivity */
+    color: #e6e6e6; /* Light text for contrast */
+    text-decoration: none; /* No underline by default */
+    font-size: 1.3rem; /* Readable size for navigation */
+    transition: color 0.3s, text-shadow 0.3s; /* Smooth hover transitions */
 }
 
 nav a:hover {
-    color: #d4a017; /* Gold on hover, thematic highlight */
-    text-shadow: 0 0 5px rgba(212, 160, 23, 0.8); /* Glow effect for emphasis */
+    color: #d4a017; /* Gold on hover for thematic highlight */
+    text-shadow: 0 0 5px rgba(212, 160, 23, 0.8); /* Subtle glow effect */
 }
 
-/* Dropdown container, enabling hierarchical navigation */
+/* Styles dropdown containers for nested navigation */
 .dropdown {
-    position: relative;
+    position: relative; /* Positions dropdown content relative to this */
 }
 
-/* Dropdown button (label for toggle on mobile), styled for desktop */
+/* Styles dropdown button (label for mobile toggle) */
 .dropbtn {
-    color: #e6e6e6;
-    font-size: 1.3rem;
-    padding: 0; /* No extra padding on desktop for clean look */
-    display: block; /* Full click area for usability */
-    cursor: pointer; /* Clickable feel for user feedback */
+    color: #e6e6e6; /* Light text for visibility */
+    font-size: 1.3rem; /* Matches nav link size */
+    padding: 0; /* No padding on desktop for clean look */
+    display: block; /* Full clickable area */
+    cursor: pointer; /* Indicates interactivity */
 }
 
-/* Dropdown menu, hidden by default on desktop */
+/* Styles dropdown menu, hidden by default */
 .dropdown-content {
-    display: none;
+    display: none; /* Hidden until hovered or toggled */
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.95);
-    min-width: 180px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
-    border-radius: 5px;
-    padding: 0.5rem 0;
-    z-index: 1001; /* Above nav, below burger for layering */
+    left: 50%; /* Centers horizontally */
+    transform: translateX(-50%); /* Adjusts for true centering */
+    background: rgba(0, 0, 0, 0.95); /* Dark, semi-transparent background */
+    min-width: 180px; /* Ensures sufficient width for content */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Shadow for depth */
+    border-radius: 5px; /* Rounded corners for polish */
+    padding: 0.5rem 0; /* Vertical padding for spacing */
+    z-index: 1001; /* Above nav, below burger toggle */
 }
 
+/* Shows dropdown content on hover for desktop */
 .dropdown:hover .dropdown-content {
-    display: block; /* Shows on hover (desktop) for accessibility */
+    display: block; /* Visible on hover */
 }
 
+/* Styles dropdown menu links */
 .dropdown-content a {
-    padding: 0.5rem 1rem;
-    font-size: 1.1rem;
-    display: block; /* Ensures full click area for usability */
+    padding: 0.5rem 1rem; /* Padding for clickable area */
+    font-size: 1.1rem; /* Slightly smaller than main nav */
+    display: block; /* Full clickable area */
 }
 
+/* Hover effect for dropdown links */
 .dropdown-content a:hover {
-    background: rgba(
-        212,
-        160,
-        23,
-        0.2
-    ); /* Subtle gold on hover, thematic consistency */
+    background: rgba(212, 160, 23, 0.2); /* Subtle gold background on hover */
 }
 
 /* ==========================================================================
-   Content Sections
+   General Content Sections
    ========================================================================== */
 
-/* General section styling, centered and spacious for readability */
+/* Styles generic sections for content blocks */
 section {
-    padding: 3rem 2rem; /* Reduced padding for tighter layout, balanced design */
-    max-width: 1200px;
-    margin: 0 auto; /* Centered content for clean presentation */
+    padding: 3rem 2rem; /* Spacious padding for readability */
+    max-width: 1200px; /* Caps width for large screens */
+    margin: 0 auto; /* Centers content horizontally */
 }
 
-/* Section headings, prominent and thematic */
+/* Styles section headings with thematic prominence */
 h2 {
-    font-size: 2.8rem; /* Large, bold titles for impact */
-    color: #d4a017; /* Gold for prominence, matching theme */
-    text-align: center;
-    margin-bottom: 2rem; /* Space below for visual hierarchy */
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* Deep shadow for depth and readability */
+    font-size: 2.8rem; /* Large size for emphasis */
+    color: #d4a017; /* Gold color for medieval theme */
+    text-align: center; /* Centered for visual balance */
+    margin-bottom: 2rem; /* Space below for hierarchy */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* Deep shadow for depth */
 }
 
-/* Documents Grid, organized for desktop and mobile */
-.document-grid {
-    display: grid;
-    gap: 2rem;
-    padding: 1rem 0; /* Minimal padding for alignment with other grids */
-}
-
-.document {
-    background: #1f1f1f; /* Dark card background for thematic consistency */
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Lifted shadow for depth */
-    transition: transform 0.3s, box-shadow 0.3s; /* Hover animation for interactivity */
-}
-
-.document:hover {
-    transform: translateY(-5px); /* Slight lift on hover for engagement */
-    box-shadow: 0 12px 24px rgba(212, 160, 23, 0.3); /* Gold shadow for thematic highlight */
-}
-
-.document-img {
-    width: 100%;
-    max-width: 200px; /* Thumbnail size for consistency */
-    height: auto;
-    border-radius: 10px;
-    border: 2px solid #d4a017; /* Gold border, thematic touch */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
-    margin-bottom: 1rem;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.document:hover .document-img {
-    transform: scale(1.05); /* Slight scale on hover for emphasis */
-    box-shadow: 0 8px 16px rgba(212, 160, 23, 0.3); /* Enhanced shadow for visual feedback */
-}
-
-.document h3 {
-    font-size: 2rem;
-    color: #d4a017;
-    margin-bottom: 0.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    text-transform: uppercase;
-}
-
-.document p {
-    font-size: 1.1rem;
-    color: #b0b0b0; /* Lighter grey for text, ensuring contrast */
-    margin-bottom: 1rem;
-}
-
-.download-btn {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background: #d4a017;
-    color: #0d0d0d;
-    text-decoration: none;
-    border-radius: 5px;
-    font-family: "MedievalSharp", cursive, Arial;
-    font-weight: 400;
-    transition: background 0.3s, transform 0.3s;
-}
-
-.download-btn:hover {
-    background: #f5c442; /* Lighter gold on hover, thematic consistency */
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(212, 160, 23, 0.4);
-}
-
-/* Locations Grid, key for location detail pages */
-.location-grid {
-    display: grid;
-    grid-template-columns: repeat(
-        2,
-        1fr
-    ); /* Two-column layout on desktop for spacious design */
-    gap: 2rem;
-    padding: 1rem 0; /* Matches other grids for consistency */
-}
-
-.location {
-    background: #1f1f1f;
-    padding: 2.5rem;
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
-    transition: transform 0.3s, box-shadow 0.3s;
-    text-align: center; /* Center like features for aesthetic balance */
-}
-
-.location:hover {
-    transform: scale(1.05); /* Matches feature hover for thematic consistency */
-    box-shadow: 0 12px 24px rgba(212, 160, 23, 0.3);
-}
-
-.location-img {
-    width: 100%;
-    height: 300px; /* Fixed height for consistent visuals */
-    object-fit: cover; /* Ensures image fills space without distortion */
-    border-radius: 10px;
-    border: 2px solid #d4a017; /* Gold border, thematic touch */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    margin-bottom: 1rem;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.location:hover .location-img {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(212, 160, 23, 0.3);
-}
-
-.location h3 {
-    font-size: 1.8rem; /* Matches feature h3 for hierarchy */
-    color: #e6e6e6;
-    margin: 1rem 0;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-}
-
-.location p {
-    font-size: 1.1rem;
-    color: #b0b0b0;
-    line-height: 1.8; /* Matches feature line height for readability */
-    margin-bottom: 1rem;
-}
-
-/* Character Sheet Layout */
-#character-sheet {
-    padding: 2rem;
-    background: #0d0d0d; /* Dark background for a medieval fantasy vibe */
-}
-
-/* Container for the two-column layout */
-.sheet-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr; /* Left column narrower, right column wider */
-    gap: 2rem; /* Space between columns */
-    max-width: 1200px;
-    margin: 0 auto; /* Center the layout on the page */
-}
-
-/* Left Column: Image and Stats */
-.left-column {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center contents horizontally */
-}
 /* ==========================================================================
-   Location Sheet Layout (New Section for Location Pages)
+   Document Grid Styling
    ========================================================================== */
 
-/* Main container for two-column layout, distinct from character sheets */
-#location-sheet {
-    padding: 2rem; /* Consistent padding with character sheets */
-    background: #0d0d0d; /* Dark background matches site theme */
+/* Styles the document grid for organizing document cards */
+.document-grid {
+    display: grid; /* Grid layout for flexibility */
+    gap: 2rem; /* Spacing between cards */
+    padding: 1rem 0; /* Minimal padding for alignment */
 }
 
-/* Container for two-column layout, shared with character sheets but scoped to location-sheet */
-.sheet-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr; /* Left narrower, right wider for balance */
-    gap: 2rem; /* Spacing between columns for clarity */
-    max-width: 1200px; /* Caps width for large screens */
-    margin: 0 auto; /* Centers layout horizontally */
-}
-
-/* Left column styles the main image, reused from character layout */
-.left-column {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centers image horizontally */
-}
-
-/* Specific styling for location main image, distinct from characterpage-img */
-.locationpage-img {
-    width: 800px; /* Fixed width for desktop, per design spec */
-    height: 600px; /* Fixed height for 4:3 ratio, photorealistic visuals */
-    object-fit: cover; /* Fills space without distortion */
-    border-radius: 10px; /* Rounded corners for medieval polish */
-    border: 2px solid #d4a017; /* Gold border for thematic consistency */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
-    margin-bottom: 1rem; /* Space below for separation */
+/* Styles individual document cards */
+.document {
+    background: #1f1f1f; /* Dark background for contrast */
+    padding: 2rem; /* Comfortable padding for content */
+    border-radius: 15px; /* Rounded corners for polish */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Shadow for depth */
     transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
 }
 
-/* Hover effect for location image, enhancing interactivity */
-.locationpage-img:hover {
-    transform: scale(1.05); /* Slight enlargement on hover */
+/* Hover effect for document cards */
+.document:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 12px 24px rgba(212, 160, 23, 0.3); /* Gold-tinted shadow */
+}
+
+/* Styles document thumbnail images */
+.document-img {
+    width: 100%;
+    max-width: 200px; /* Consistent thumbnail size */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 10px; /* Rounded corners */
+    border: 2px solid #d4a017; /* Gold border for theme */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+    margin-bottom: 1rem; /* Space below image */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
+}
+
+/* Hover effect for document images */
+.document:hover .document-img {
+    transform: scale(1.05); /* Slight enlargement */
+    box-shadow: 0 8px 16px rgba(212, 160, 23, 0.3); /* Enhanced shadow */
+}
+
+/* Styles document card headings */
+.document h3 {
+    font-size: 2rem; /* Prominent size for titles */
+    color: #d4a017; /* Gold for theme */
+    margin-bottom: 0.5rem; /* Space below */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow for depth */
+    text-transform: uppercase; /* Uppercase for emphasis */
+}
+
+/* Styles document card paragraphs */
+.document p {
+    font-size: 1.1rem; /* Readable size */
+    color: #b0b0b0; /* Lighter grey for contrast */
+    margin-bottom: 1rem; /* Space below */
+}
+
+/* Styles download buttons within document cards */
+.download-btn {
+    display: inline-block; /* Inline-block for natural flow */
+    padding: 0.5rem 1rem; /* Compact padding for buttons */
+    background: #d4a017; /* Gold background */
+    color: #0d0d0d; /* Dark text for contrast */
+    text-decoration: none; /* No underline */
+    border-radius: 5px; /* Rounded corners */
+    font-family: "MedievalSharp", cursive, Arial; /* Thematic font */
+    font-weight: 400; /* Normal weight */
+    transition: background 0.3s, transform 0.3s; /* Smooth hover effects */
+}
+
+/* Hover effect for download buttons */
+.download-btn:hover {
+    background: #f5c442; /* Lighter gold on hover */
+    transform: translateY(-2px); /* Slight lift */
+    box-shadow: 0 4px 8px rgba(212, 160, 23, 0.4); /* Subtle shadow */
+}
+
+/* ==========================================================================
+   Location Grid Styling
+   ========================================================================== */
+
+/* Styles the location grid for summary pages */
+.location-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two-column layout on desktop */
+    gap: 2rem; /* Spacing between cards */
+    padding: 1rem 0; /* Minimal padding */
+}
+
+/* Styles individual location cards */
+.location {
+    background: #1f1f1f; /* Dark background */
+    padding: 2.5rem; /* Spacious padding */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Shadow for depth */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
+    text-align: center; /* Centered content */
+}
+
+/* Hover effect for location cards */
+.location:hover {
+    transform: scale(1.05); /* Slight enlargement */
+    box-shadow: 0 12px 24px rgba(212, 160, 23, 0.3); /* Gold-tinted shadow */
+}
+
+/* Styles location card images */
+.location-img {
+    width: 100%;
+    height: 300px; /* Fixed height for consistency */
+    object-fit: cover; /* Fills space without distortion */
+    border-radius: 10px; /* Rounded corners */
+    border: 2px solid #d4a017; /* Gold border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+    margin-bottom: 1rem; /* Space below */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
+}
+
+/* Hover effect for location images */
+.location:hover .location-img {
+    transform: scale(1.05); /* Slight enlargement */
+    box-shadow: 0 8px 16px rgba(212, 160, 23, 0.3); /* Enhanced shadow */
+}
+
+/* Styles location card headings */
+.location h3 {
+    font-size: 1.8rem; /* Consistent with feature headings */
+    color: #e6e6e6; /* Light text */
+    margin: 1rem 0; /* Vertical spacing */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+}
+
+/* Styles location card paragraphs */
+.location p {
+    font-size: 1.1rem; /* Readable size */
+    color: #b0b0b0; /* Lighter grey */
+    line-height: 1.8; /* Spacious line height */
+    margin-bottom: 1rem; /* Space below */
+}
+
+/* ==========================================================================
+   Character Sheet Layout
+   ========================================================================== */
+
+/* Styles the character sheet section */
+#character-sheet {
+    padding: 2rem; /* Consistent padding */
+    background: #0d0d0d; /* Dark background for theme */
+}
+
+/* Defines the two-column layout for character sheets */
+.sheet-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Left narrower, right wider for character layout */
+    gap: 2rem; /* Spacing between columns */
+    max-width: 1200px; /* Caps width */
+    margin: 0 auto; /* Centers layout */
+}
+
+/* Styles the left column for character image and stats */
+.left-column {
+    display: flex;
+    flex-direction: column; /* Stacks content vertically */
+    align-items: center; /* Centers horizontally */
+}
+
+/* Styles the main character image */
+.characterpage-img {
+    width: 800px; /* Fixed width for desktop */
+    height: 600px; /* Fixed height, 4:3 ratio */
+    object-fit: cover; /* Fills space without distortion */
+    border-radius: 10px; /* Rounded corners */
+    border: 2px solid #d4a017; /* Gold border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+    margin-bottom: 1rem; /* Space below */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
+}
+
+/* Hover effect for character image */
+.characterpage-img:hover {
+    transform: scale(1.05); /* Slight enlargement */
     box-shadow: 0 8px 16px rgba(212, 160, 23, 0.3); /* Gold-tinted shadow */
 }
 
-/* Right column stacks sections vertically, reused from character layout */
-.right-column {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem; /* Vertical spacing between sections */
-}
-
-/* Individual sections within right column, styled for consistency */
-.right-column section {
-    background: #1f1f1f; /* Dark background for contrast */
-    padding: 1.5rem; /* Comfortable padding for content */
-    border-radius: 10px; /* Rounded corners match site aesthetic */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
-}
-
-/* Section headings use MedievalSharp on desktop for thematic flair */
-.right-column h2 {
-    font-family: "MedievalSharp", cursive, Arial; /* Desktop font */
-    color: #d4a017; /* Gold text aligns with theme */
-    font-size: 1.8rem; /* Slightly smaller for hierarchy */
-    margin-bottom: 1rem; /* Space below header */
-}
-
-/* Paragraphs constrained for readability on desktop */
-.right-column p {
-    max-width: 700px; /* Limits line length for optimal reading */
-    font-size: 1rem; /* Smaller text for dense info */
-    color: #e6e6e6; /* Light text contrasts with dark background */
-    font-family: "MedievalSharp", cursive, Arial; /* Desktop font */
-}
-/* ==========================================================================
-   Character Image Styling
-   ========================================================================== */
-.characterpage-img {
-    width: 800px; /* Fixed width for desktop screens */
-    height: 600px; /* Fixed height for desktop screens (4:3 ratio) */
-    object-fit: cover; /* Ensures the image fills the space without stretching */
-    border-radius: 10px; /* Rounded corners for a polished look */
-    border: 2px solid #d4a017; /* Gold border to match the medieval theme */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Shadow for depth */
-    margin-bottom: 1rem; /* Space below the image */
-    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover animations */
-}
-
-/* Hover effect for interactivity */
-.characterpage-img:hover {
-    transform: scale(1.05); /* Slight enlargement on hover */
-    box-shadow: 0 8px 16px rgba(212, 160, 23, 0.3); /* Golden glow effect */
-}
-
-/* Stats Box Styling */
+/* Styles the stats box within the left column */
 .stats-box {
-    background: #1f1f1f; /* Dark background for contrast */
-    border: 2px solid #d4a017; /* Gold border for thematic consistency */
-    padding: 1rem;
-    border-radius: 10px;
-    width: 100%; /* Full width of the column */
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
+    background: #1f1f1f; /* Dark background */
+    border: 2px solid #d4a017; /* Gold border */
+    padding: 1rem; /* Compact padding */
+    border-radius: 10px; /* Rounded corners */
+    width: 100%; /* Full column width */
+    text-align: center; /* Centered text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow */
 }
 
+/* Styles stats box heading */
 .stats-box h3 {
-    font-family: "MedievalSharp", cursive; /* Medieval font for headers */
-    color: #d4a017; /* Gold text for headers */
-    margin-bottom: 1rem;
+    font-family: "MedievalSharp", cursive; /* Thematic font */
+    color: #d4a017; /* Gold text */
+    margin-bottom: 1rem; /* Space below */
 }
 
+/* Styles stats box paragraphs */
 .stats-box p {
-    font-size: 1.2rem;
-    color: #e6e6e6; /* Light text for readability */
-    margin: 0.5rem 0;
+    font-size: 1.2rem; /* Readable size */
+    color: #e6e6e6; /* Light text */
+    margin: 0.5rem 0; /* Vertical spacing */
 }
 
+/* Highlights stat labels in gold */
 .stats-box p strong {
-    color: #d4a017; /* Gold for stat labels */
+    color: #d4a017; /* Gold for emphasis */
 }
 
-/* Right Column: Descriptive Sections */
+/* ==========================================================================
+   Location Sheet Layout
+   ========================================================================== */
+
+/* Styles the location sheet section */
+#location-sheet {
+    padding: 2rem; /* Consistent padding */
+    background: #0d0d0d; /* Dark background */
+}
+
+/* Redefines sheet-container for location pages (overrides character sheet layout) */
+.sheet-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Equal columns for location layout */
+    gap: 2rem; /* Spacing between columns */
+    max-width: 1200px; /* Caps width */
+    margin: 0 auto; /* Centers layout */
+}
+
+/* Styles the left column for location main image and initial sections */
+.left-column {
+    display: flex;
+    flex-direction: column; /* Stacks content vertically */
+    gap: 2rem; /* Spacing between elements */
+    align-items: center; /* Centers main image */
+}
+
+/* Styles the main location image at the top of the left column */
+.locationpage-img {
+    width: 800px; /* Fixed width for desktop */
+    height: 600px; /* Fixed height, 4:3 ratio */
+    object-fit: cover; /* Fills space without distortion */
+    border-radius: 10px; /* Rounded corners */
+    border: 2px solid #d4a017; /* Gold border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
+}
+
+/* Hover effect for main location image */
+.locationpage-img:hover {
+    transform: scale(1.05); /* Slight enlargement */
+    box-shadow: 0 8px 16px rgba(212, 160, 23, 0.3); /* Gold-tinted shadow */
+}
+
+/* Styles sections within the left column (Overview, Geography, History) */
+.left-column section {
+    display: flex; /* Flex layout for image and text */
+    gap: 1rem; /* Spacing between image and text */
+    background: #1f1f1f; /* Dark background */
+    padding: 1.5rem; /* Comfortable padding */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+    width: 100%; /* Full width within column */
+}
+
+/* Container for text within left column sections */
+.left-column .section-text {
+    flex: 1; /* Takes remaining space beside image */
+}
+
+/* Styles headings in left column sections */
+.left-column h2 {
+    font-family: "MedievalSharp", cursive, Arial; /* Thematic font */
+    color: #d4a017; /* Gold text */
+    font-size: 1.8rem; /* Slightly smaller for hierarchy */
+    margin-bottom: 1rem; /* Space below */
+}
+
+/* Styles paragraphs in left column sections */
+.left-column p {
+    font-size: 1rem; /* Smaller text for dense info */
+    color: #e6e6e6; /* Light text */
+    font-family: "MedievalSharp", cursive, Arial; /* Thematic font */
+}
+
+/* Styles the right column for remaining location sections */
 .right-column {
     display: flex;
-    flex-direction: column;
-    gap: 2rem; /* Space between sections (rows) */
+    flex-direction: column; /* Stacks sections vertically */
+    gap: 2rem; /* Spacing between sections */
 }
 
+/* Styles sections within the right column (Inhabitants, Puzzles, etc.) */
 .right-column section {
-    background: #1f1f1f; /* Dark background for each section */
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
+    background: #1f1f1f; /* Dark background */
+    padding: 1.5rem; /* Comfortable padding */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow */
 }
 
+/* Styles headings in right column sections */
 .right-column h2 {
-    font-family: "MedievalSharp", cursive; /* Medieval font for section headers */
-    color: #d4a017; /* Gold text for headers */
-    margin-bottom: 1rem;
+    font-family: "MedievalSharp", cursive, Arial; /* Thematic font */
+    color: #d4a017; /* Gold text */
+    font-size: 1.8rem; /* Consistent with left column */
+    margin-bottom: 1rem; /* Space below */
 }
 
+/* Styles paragraphs in right column sections */
 .right-column p {
-    max-width: 700px; /* Narrows text for readability on desktop */
-    font-size: 1.1rem;
-    color: #e6e6e6; /* Light text for readability */
-}
-/* Adjusted font sizes for better readability */
-.left-column h2,
-.right-column h2 {
-    font-size: 1.8rem; /* Smaller header size */
+    max-width: 700px; /* Limits line length for readability */
+    font-size: 1rem; /* Smaller text for dense info */
+    color: #e6e6e6; /* Light text */
+    font-family: "MedievalSharp", cursive, Arial; /* Thematic font */
 }
 
-.left-column p,
-.right-column p {
-    font-size: 1rem; /* Smaller paragraph text */
-}
-.ability-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(212, 160, 23, 0.3);
+/* ==========================================================================
+   Section Image Styling
+   ========================================================================== */
+
+/* Styles smaller section images (400x300px) within left column sections */
+.section-img {
+    width: 400px; /* Fixed width for desktop */
+    height: 300px; /* Fixed height, 4:3 ratio */
+    object-fit: cover; /* Fills space without distortion */
+    border-radius: 10px; /* Rounded corners */
+    border: 2px solid #d4a017; /* Gold border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
 }
 
-/* Responsive Design for Mobile */
-@media (max-width: 767px) {
-    .sheet-container {
-        grid-template-columns: 1fr; /* Single column on mobile */
-    }
-    .left-column,
-    .right-column {
-        width: 100%; /* Full width on mobile */
-    }
-    .characterpage-img {
-        width: 100%; /* Full width on mobile */
-        height: auto; /* Maintain aspect ratio */
-    }
-    .right-column p {
-        max-width: 100%; /* Full width text on mobile */
-    }
+/* Hover effect for section images */
+.section-img:hover {
+    transform: scale(1.05); /* Slight enlargement */
+    box-shadow: 0 8px 16px rgba(212, 160, 23, 0.3); /* Gold-tinted shadow */
 }
 
+/* ==========================================================================
+   Button Styling
+   ========================================================================== */
+
+/* Styles explore buttons for interactive elements */
 .explore-btn {
-    display: inline-block;
-    padding: 0.8rem 1.5rem; /* Larger tap target, optimized for mobile usability */
-    background: #d4a017;
-    color: #0d0d0d;
-    text-decoration: none;
-    border-radius: 5px;
-    font-family: "MedievalSharp", cursive, Arial; /* Desktop font for thematic consistency */
-    font-weight: 400;
-    transition: background 0.3s, transform 0.3s;
+    display: inline-block; /* Inline-block for flow */
+    padding: 0.8rem 1.5rem; /* Larger padding for tap targets */
+    background: #d4a017; /* Gold background */
+    color: #0d0d0d; /* Dark text */
+    text-decoration: none; /* No underline */
+    border-radius: 5px; /* Rounded corners */
+    font-family: "MedievalSharp", cursive, Arial; /* Thematic font */
+    font-weight: 400; /* Normal weight */
+    transition: background 0.3s, transform 0.3s; /* Smooth hover effects */
 }
 
+/* Hover effect for explore buttons */
 .explore-btn:hover {
-    background: #f5c442; /* Lighter gold on hover, thematic highlight */
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(212, 160, 23, 0.4);
+    background: #f5c442; /* Lighter gold */
+    transform: translateY(-2px); /* Slight lift */
+    box-shadow: 0 4px 8px rgba(212, 160, 23, 0.4); /* Subtle shadow */
 }
 
-/* Updates Grid, for news and announcements */
+/* ==========================================================================
+   Update Grid Styling
+   ========================================================================== */
+
+/* Styles the update grid for news and announcements */
 .update-grid {
-    display: grid;
-    gap: 2rem;
-    padding: 1rem 0;
+    display: grid; /* Grid layout */
+    gap: 2rem; /* Spacing between cards */
+    padding: 1rem 0; /* Minimal padding */
 }
 
+/* Styles individual update cards */
 .update {
-    background: #1f1f1f;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
-    transition: transform 0.3s, box-shadow 0.3s;
+    background: #1f1f1f; /* Dark background */
+    padding: 2rem; /* Comfortable padding */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Shadow for depth */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
 }
 
+/* Hover effect for update cards */
 .update:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(212, 160, 23, 0.3);
+    transform: translateY(-5px); /* Slight lift */
+    box-shadow: 0 12px 24px rgba(212, 160, 23, 0.3); /* Gold-tinted shadow */
 }
 
+/* Styles update card headings */
 .update h3 {
-    font-size: 2rem;
-    color: #d4a017;
-    margin-bottom: 0.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    text-transform: uppercase;
+    font-size: 2rem; /* Prominent size */
+    color: #d4a017; /* Gold text */
+    margin-bottom: 0.5rem; /* Space below */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow for depth */
+    text-transform: uppercase; /* Uppercase for emphasis */
 }
 
+/* Styles update card dates */
 .update .date {
-    font-size: 1rem;
-    color: #b0b0b0;
-    margin-bottom: 1rem;
-    font-style: italic;
+    font-size: 1rem; /* Smaller size for metadata */
+    color: #b0b0b0; /* Lighter grey */
+    margin-bottom: 1rem; /* Space below */
+    font-style: italic; /* Italic for distinction */
 }
 
+/* Styles update card paragraphs */
 .update p {
-    font-size: 1.1rem;
-    color: #b0b0b0;
-    line-height: 1.8;
+    font-size: 1.1rem; /* Readable size */
+    color: #b0b0b0; /* Lighter grey */
+    line-height: 1.8; /* Spacious line height */
 }
 
+/* Styles media container within update cards */
 .update .media {
-    margin-top: 1rem;
-    text-align: center;
+    margin-top: 1rem; /* Space above */
+    text-align: center; /* Centered content */
 }
 
+/* Styles media images within update cards */
 .update .media img {
     width: 100%;
-    max-width: 400px;
-    height: auto;
-    border-radius: 10px;
-    border: 2px solid #d4a017;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s, box-shadow 0.3s;
+    max-width: 400px; /* Caps width */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 10px; /* Rounded corners */
+    border: 2px solid #d4a017; /* Gold border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
 }
 
+/* Hover effect for update media images */
 .update .media img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(212, 160, 23, 0.3);
+    transform: scale(1.05); /* Slight enlargement */
+    box-shadow: 0 8px 16px rgba(212, 160, 23, 0.3); /* Enhanced shadow */
 }
 
-/* Features Carousel, for homepage highlights */
+/* ==========================================================================
+   Feature Grid Styling
+   ========================================================================== */
+
+/* Styles the feature grid as a horizontal carousel */
 .feature-grid {
-    display: flex;
-    overflow-x: auto;
-    gap: 2rem;
-    padding: 1rem 0;
-    scrollbar-width: thin;
-    scrollbar-color: #d4a017 #1f1f1f;
+    display: flex; /* Flex layout for scrolling */
+    overflow-x: auto; /* Enables horizontal scrolling */
+    gap: 2rem; /* Spacing between items */
+    padding: 1rem 0; /* Minimal padding */
+    scrollbar-width: thin; /* Thin scrollbar for Firefox */
+    scrollbar-color: #d4a017 #1f1f1f; /* Custom scrollbar colors */
 }
 
+/* Customizes Webkit scrollbar appearance */
 .feature-grid::-webkit-scrollbar {
-    height: 8px;
+    height: 8px; /* Thin scrollbar height */
 }
 
 .feature-grid::-webkit-scrollbar-track {
-    background: #1f1f1f;
+    background: #1f1f1f; /* Dark track */
 }
 
 .feature-grid::-webkit-scrollbar-thumb {
-    background: #d4a017;
-    border-radius: 4px;
+    background: #d4a017; /* Gold thumb */
+    border-radius: 4px; /* Rounded thumb */
 }
 
+/* Styles individual feature cards */
 .feature {
-    flex: 0 0 400px;
-    background: #1f1f1f;
-    padding: 2.5rem;
-    border-radius: 15px;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    flex: 0 0 400px; /* Fixed width, no shrinking */
+    background: #1f1f1f; /* Dark background */
+    padding: 2.5rem; /* Spacious padding */
+    border-radius: 15px; /* Rounded corners */
+    text-align: center; /* Centered content */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Shadow for depth */
 }
 
+/* Hover effect for feature cards */
 .feature:hover {
-    transform: scale(1.1);
-    box-shadow: 0 12px 24px rgba(212, 160, 23, 0.3);
+    transform: scale(1.1); /* Larger scale for emphasis */
+    box-shadow: 0 12px 24px rgba(212, 160, 23, 0.3); /* Gold-tinted shadow */
 }
 
+/* Styles feature card images */
 .feature img {
     width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 10px;
-    border: 2px solid #d4a017;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s, box-shadow 0.3s;
+    height: 250px; /* Fixed height */
+    object-fit: cover; /* Fills space without distortion */
+    border-radius: 10px; /* Rounded corners */
+    border: 2px solid #d4a017; /* Gold border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
 }
 
+/* Hover effect for feature images */
 .feature img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(212, 160, 23, 0.3);
+    transform: scale(1.05); /* Slight enlargement */
+    box-shadow: 0 8px 16px rgba(212, 160, 23, 0.3); /* Enhanced shadow */
 }
 
+/* Styles feature card headings */
 .feature h3 {
-    font-size: 1.8rem;
-    color: #e6e6e6;
-    margin: 1rem 0;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    font-size: 1.8rem; /* Consistent size */
+    color: #e6e6e6; /* Light text */
+    margin: 1rem 0; /* Vertical spacing */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Subtle shadow */
 }
 
+/* Styles feature card paragraphs */
 .feature p {
-    font-size: 1.1rem;
-    color: #b0b0b0;
-    line-height: 1.8;
+    font-size: 1.1rem; /* Readable size */
+    color: #b0b0b0; /* Lighter grey */
+    line-height: 1.8; /* Spacious line height */
 }
 
 /* ==========================================================================
    Teaser Section Styling
    ========================================================================== */
 
-/* Teaser section container, centered and spacious for readability, matching site theme */
+/* Styles the teaser section container */
 #teasers {
-    padding: 2rem; /* Reduced padding for tighter layout, balanced design */
-    background: #1f1f1f; /* Dark card background for thematic consistency */
-    max-width: 1200px;
-    margin: 0 auto; /* Centered content for clean presentation */
-    display: block; /* Ensures section is visible, overriding any hidden state */
+    padding: 2rem; /* Reduced padding for balance */
+    background: #1f1f1f; /* Dark background */
+    max-width: 1200px; /* Caps width */
+    margin: 0 auto; /* Centers content */
+    display: block; /* Ensures visibility */
 }
 
-/* Teaser zigzag grid, key for dynamic layout on desktop and mobile, fixing content display */
+/* Styles the teaser zigzag grid for dynamic layout */
 .teaser-zigzag {
-    display: grid;
-    gap: 2rem; /* Space between cards for clarity, matching other grids */
-    padding: 1rem 0; /* Minimal padding for alignment with other sections */
-    /* Desktop: Two-column staggered layout for visual appeal, ensuring content visibility */
-    visibility: visible; /* Ensures grid and content are visible, fixing display issue */
+    display: grid; /* Grid layout */
+    gap: 2rem; /* Spacing between cards */
+    padding: 1rem 0; /* Minimal padding */
+    visibility: visible; /* Ensures visibility */
 }
 
-/* Staggered effect for odd-numbered cards, creating visual depth on desktop, now visible */
-.teaser-card:nth-child(odd) {
-    transform: translateX(-10px); /* Slight left shift for zigzag effect */
-    visibility: visible; /* Ensures content is visible, overriding any hidden state */
-    opacity: 1; /* Ensures full opacity for visibility */
+/* Applies staggered effect to odd-numbered teaser cards */
+.teaser-zigzag .teaser-card:nth-child(odd) {
+    transform: translateX(-10px); /* Slight left shift */
+    visibility: visible; /* Ensures visibility */
+    opacity: 1; /* Full opacity */
 }
 
-/* Staggered effect for even-numbered cards, balancing the layout on desktop, now visible */
-.teaser-card:nth-child(even) {
-    transform: translateX(10px); /* Slight right shift for zigzag effect */
-    visibility: visible; /* Ensures content is visible, overriding any hidden state */
-    opacity: 1; /* Ensures full opacity for visibility */
+/* Applies staggered effect to even-numbered teaser cards */
+.teaser-zigzag .teaser-card:nth-child(even) {
+    transform: translateX(10px); /* Slight right shift */
+    visibility: visible; /* Ensures visibility */
+    opacity: 1; /* Full opacity */
 }
 
-/* Desktop layout, two columns for spacious design, ensuring content displays */
+/* Defines two-column layout for teaser grid on desktop */
 @media (min-width: 768px) {
     .teaser-zigzag {
-        grid-template-columns: repeat(
-            2,
-            1fr
-        ); /* Two-column layout on desktop, content visible */
-        visibility: visible; /* Ensures grid is visible on desktop */
+        grid-template-columns: repeat(2, 1fr); /* Two columns */
+        visibility: visible; /* Ensures visibility */
     }
 }
 
-/* ==========================================================================
-   Responsive Design (Mobile Adjustments)
-   ========================================================================== */
-
-/* Mobile adjustments for screens below 767px */
-@media (max-width: 767px) {
-    /* Ensure all headings and navigation use Garamond on mobile */
-    h1,
-    h2,
-    .tagline,
-    nav a,
-    .dropbtn,
-    .dropdown-content a,
-    .update h3,
-    .document h3,
-    .location h3 {
-        font-family: "Garamond", serif, Arial; /* Mobile font, no script */
-        font-weight: 400; /* Normal weight for clarity */
-    }
-
-    /* Body text uses Garamond on mobile, overriding any script font */
-    .update .date,
-    .document p,
-    .location p,
-    .right-column p {
-        font-family: "Garamond", serif, Arial; /* Mobile font consistency */
-        font-size: 0.9rem; /* Adjusted for mobile readability */
-    }
-
-    /* Buttons use Garamond instead of Arial for mobile consistency */
-    .explore-btn,
-    .download-btn,
-    .teaser-card a {
-        font-family: "Garamond", serif, Arial; /* Mobile font, no sans-serif */
-        font-size: 1rem; /* Readable on small screens */
-        padding: 0.8rem 1.5rem; /* Large tap target */
-    }
-
-    /* Location-specific mobile adjustments */
-    .sheet-container {
-        grid-template-columns: 1fr; /* Single column for mobile */
-    }
-    .left-column,
-    .right-column {
-        width: 100%; /* Full width on mobile */
-    }
-    .locationpage-img {
-        width: 100%; /* Full width adapts to screen */
-        height: auto; /* Maintains aspect ratio */
-    }
-    .right-column h2 {
-        font-size: 1.6rem; /* Smaller headers for mobile */
-    }
-    .right-column p {
-        max-width: 100%; /* Full width text on mobile */
-        font-size: 0.9rem; /* Smaller text for mobile */
-    }
-}
-
-/* Teaser card styling, thematic and interactive for user engagement, fixing visibility issue */
+/* Styles individual teaser cards */
 .teaser-card {
-    background: #1f1f1f; /* Dark card background for thematic consistency */
-    border: 2px solid #d4a017; /* Gold border, matching medieval theme */
-    border-radius: 15px;
-    padding: 2rem; /* Larger padding for better touch interaction on mobile */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Lifted shadow for depth */
-    transition: transform 0.3s, box-shadow 0.3s; /* Hover animation for interactivity */
-    text-align: center; /* Center like features for aesthetic balance */
-    opacity: 1; /* Ensures cards are fully visible by default, overriding hidden state */
-    transform: translateY(
-        0
-    ); /* Default position for visibility, removing initial offset until animated */
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Smooth fade-in for user experience */
-    visibility: visible; /* Ensures cards are visible, fixing display issue */
-    display: block; /* Ensures cards are displayed, overriding any hidden state */
+    background: #1f1f1f; /* Dark background */
+    border: 2px solid #d4a017; /* Gold border */
+    border-radius: 15px; /* Rounded corners */
+    padding: 2rem; /* Spacious padding */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Shadow for depth */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
+    text-align: center; /* Centered content */
+    opacity: 1; /* Full opacity */
+    transform: translateY(0); /* Default position */
+    visibility: visible; /* Ensures visibility */
+    display: block; /* Ensures display */
 }
 
-/* Visible state for teaser cards, triggered on scroll, ensuring content shows */
+/* Defines visible state for teaser cards (for scroll animations) */
 .teaser-card.visible {
-    opacity: 1; /* Fully visible when in view */
-    transform: translateY(0); /* Reset offset for final position */
-    visibility: visible; /* Ensures content remains visible after animation */
+    opacity: 1; /* Full opacity when in view */
+    transform: translateY(0); /* Reset position */
+    visibility: visible; /* Ensures visibility */
 }
 
-/* Hover effect for teaser cards, enhancing user interaction, content visible */
+/* Hover effect for teaser cards */
 .teaser-card:hover {
-    transform: scale(1.05); /* Slight scale on hover for engagement */
-    box-shadow: 0 12px 24px rgba(212, 160, 23, 0.3); /* Enhanced shadow for thematic highlight */
-    visibility: visible; /* Ensures content stays visible on hover */
-    opacity: 1; /* Ensures full opacity on hover */
+    transform: scale(1.05); /* Slight enlargement */
+    box-shadow: 0 12px 24px rgba(212, 160, 23, 0.3); /* Gold-tinted shadow */
+    visibility: visible; /* Ensures visibility */
+    opacity: 1; /* Full opacity */
 }
 
-/* Teaser image styling, optimized for consistent visuals and interactivity, fixing display */
+/* Styles teaser card images */
 .teaser-card img {
     width: 100%;
-    height: 300px; /* Fixed height for consistent visuals on desktop */
-    object-fit: cover; /* Ensures image fills space without distortion */
-    border-radius: 10px;
-    border: 2px solid #d4a017; /* Gold border, thematic touch */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
-    transition: transform 0.3s, box-shadow 0.3s; /* Hover animation for interactivity */
-    animation: pulse 2s infinite ease-in-out; /* Subtle pulse for magical vibe */
-    visibility: visible; /* Ensures images are visible, fixing display issue */
-    opacity: 1; /* Ensures full opacity for visibility */
+    height: 300px; /* Fixed height for desktop */
+    object-fit: cover; /* Fills space without distortion */
+    border-radius: 10px; /* Rounded corners */
+    border: 2px solid #d4a017; /* Gold border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
+    animation: pulse 2s infinite ease-in-out; /* Subtle pulse animation */
+    visibility: visible; /* Ensures visibility */
+    opacity: 1; /* Full opacity */
 }
 
-/* Hover effect for teaser images, enhancing visual feedback, content visible */
+/* Hover effect for teaser card images */
 .teaser-card img:hover {
-    transform: scale(1.05); /* Slight scale on hover for emphasis */
-    box-shadow: 0 8px 16px rgba(212, 160, 23, 0.3); /* Enhanced shadow for thematic highlight */
-    visibility: visible; /* Ensures images stay visible on hover */
-    opacity: 1; /* Ensures full opacity on hover */
+    transform: scale(1.05); /* Slight enlargement */
+    box-shadow: 0 8px 16px rgba(212, 160, 23, 0.3); /* Enhanced shadow */
+    visibility: visible; /* Ensures visibility */
+    opacity: 1; /* Full opacity */
 }
 
-/* Teaser heading styling, prominent and thematic, ensuring visibility */
+/* Styles teaser card headings */
 .teaser-card h3 {
-    font-size: 1.8rem; /* Matches feature h3 for hierarchy */
-    color: #e6e6e6; /* Light text for contrast against dark background */
-    margin: 1rem 0;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
-    visibility: visible; /* Ensures headings are visible, fixing display issue */
-    opacity: 1; /* Ensures full opacity for visibility */
+    font-size: 1.8rem; /* Consistent size */
+    color: #e6e6e6; /* Light text */
+    margin: 1rem 0; /* Vertical spacing */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+    visibility: visible; /* Ensures visibility */
+    opacity: 1; /* Full opacity */
 }
 
-/* Teaser paragraph styling, readable and thematic, ensuring visibility */
+/* Styles teaser card paragraphs */
 .teaser-card p {
-    font-size: 1.5rem; /* Larger text for readability on desktop */
-    color: #b0b0b0; /* Lighter grey for text, ensuring contrast */
-    line-height: 1.8; /* Improved readability with spacious line height */
-    margin-bottom: 1rem;
-    visibility: visible; /* Ensures paragraphs are visible, fixing display issue */
-    opacity: 1; /* Ensures full opacity for visibility */
+    font-size: 1.5rem; /* Larger for readability */
+    color: #b0b0b0; /* Lighter grey */
+    line-height: 1.8; /* Spacious line height */
+    margin-bottom: 1rem; /* Space below */
+    visibility: visible; /* Ensures visibility */
+    opacity: 1; /* Full opacity */
 }
 
-/* Teaser button styling, interactive and thematic, ensuring visibility */
+/* Styles teaser card buttons */
 .teaser-card a {
-    display: inline-block;
-    padding: 0.8rem 1.5rem; /* Larger tap target, optimized for mobile usability */
-    background: #d4a017; /* Gold for medieval flair, matching theme */
-    color: #0d0d0d; /* Dark text for contrast on gold */
-    text-decoration: none;
-    border-radius: 5px;
-    font-family: "MedievalSharp", cursive, Arial; /* Desktop font for thematic consistency */
-    font-weight: 400;
-    transition: background 0.3s, transform 0.3s; /* Smooth hover effects for interactivity */
-    visibility: visible; /* Ensures buttons are visible, fixing display issue */
-    opacity: 1; /* Ensures full opacity for visibility */
+    display: inline-block; /* Inline-block for flow */
+    padding: 0.8rem 1.5rem; /* Larger padding for tap targets */
+    background: #d4a017; /* Gold background */
+    color: #0d0d0d; /* Dark text */
+    text-decoration: none; /* No underline */
+    border-radius: 5px; /* Rounded corners */
+    font-family: "MedievalSharp", cursive, Arial; /* Thematic font */
+    font-weight: 400; /* Normal weight */
+    transition: background 0.3s, transform 0.3s; /* Smooth hover effects */
+    visibility: visible; /* Ensures visibility */
+    opacity: 1; /* Full opacity */
 }
 
-/* Hover effect for teaser buttons, enhancing user interaction, content visible */
+/* Hover effect for teaser card buttons */
 .teaser-card a:hover {
-    background: #f5c442; /* Lighter gold on hover, thematic consistency */
-    transform: translateY(-2px); /* Slight lift for engagement */
-    box-shadow: 0 4px 8px rgba(212, 160, 23, 0.4); /* Subtle shadow for depth */
-    visibility: visible; /* Ensures buttons stay visible on hover */
-    opacity: 1; /* Ensures full opacity on hover */
+    background: #f5c442; /* Lighter gold */
+    transform: translateY(-2px); /* Slight lift */
+    box-shadow: 0 4px 8px rgba(212, 160, 23, 0.4); /* Subtle shadow */
+    visibility: visible; /* Ensures visibility */
+    opacity: 1; /* Full opacity */
 }
 
-/* Mobile adjustments for teaser cards, ensuring legibility, usability, and visibility */
-@media (max-width: 767px) {
-    .teaser-card img {
-        height: 200px; /* Smaller images for mobile screens */
-        visibility: visible; /* Ensures images are visible on mobile */
-        opacity: 1; /* Ensures full opacity for visibility */
-    }
-    .teaser-card h3 {
-        font-size: 1.5rem; /* Reduced for mobile readability */
-        visibility: visible; /* Ensures headings are visible on mobile */
-        opacity: 1; /* Ensures full opacity for visibility */
-    }
-    .teaser-card p {
-        font-size: 1rem; /* Adjusted for mobile text size */
-        visibility: visible; /* Ensures paragraphs are visible on mobile */
-        opacity: 1; /* Ensures full opacity for visibility */
-    }
-    .teaser-card a {
-        font-family: "Arial", sans-serif; /* More legible sans-serif on mobile, replacing MedievalSharp for clarity */
-        font-size: 1rem; /* Ensures readability on small screens */
-        padding: 0.8rem 1.5rem; /* Maintains large tap target for usability */
-        visibility: visible; /* Ensures buttons are visible on mobile */
-        opacity: 1; /* Ensures full opacity for visibility */
-    }
-}
-
-/* Teaser header styling, prominent and thematic, ensuring visibility */
+/* Styles teaser section heading */
 #teasers h2 {
-    font-size: 2.8rem; /* Large, bold title for impact, matching other h2 */
-    color: #d4a017; /* Gold for prominence, matching theme */
-    text-align: center;
-    margin-bottom: 2rem; /* Space below for visual hierarchy */
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* Deep shadow for depth and readability */
-    opacity: 1; /* Ensures heading is fully visible by default, fixing display issue */
-    transform: translateX(
-        0
-    ); /* Default position for visibility, removing initial offset until animated */
-    animation: slideIn 1s ease-out forwards; /* Smooth slide-in for engagement */
-    visibility: visible; /* Ensures heading is visible, fixing display issue */
+    font-size: 2.8rem; /* Consistent with other h2 */
+    color: #d4a017; /* Gold text */
+    text-align: center; /* Centered */
+    margin-bottom: 2rem; /* Space below */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* Deep shadow */
+    opacity: 1; /* Full opacity */
+    transform: translateX(0); /* Default position */
+    animation: slideIn 1s ease-out forwards; /* Slide-in animation */
+    visibility: visible; /* Ensures visibility */
 }
 
-/* Slide-in animation for teaser header, enhancing page entry */
+/* Defines slide-in animation for teaser heading */
 @keyframes slideIn {
     from {
-        opacity: 0;
-        transform: translateX(-50px);
+        opacity: 0; /* Starts transparent */
+        transform: translateX(-50px); /* Starts left */
     }
     to {
-        opacity: 1;
-        transform: translateX(0);
+        opacity: 1; /* Ends opaque */
+        transform: translateX(0); /* Ends at natural position */
     }
 }
 
-/* Pulse animation for teaser images, enhancing magical vibe, ensuring visibility */
+/* Defines pulse animation for teaser images */
 @keyframes pulse {
     0% {
         transform: scale(1);
-    }
+    } /* Normal size */
     50% {
         transform: scale(1.05);
-    }
+    } /* Slightly enlarged */
     100% {
         transform: scale(1);
-    }
+    } /* Back to normal */
 }
 
-/* Hover glow effect for teaser elements, matching medieval theme, ensuring visibility */
+/* Applies hover glow effect to teaser elements */
 .teaser-card:hover img,
 .teaser-card:hover h3,
 .teaser-card:hover p {
-    text-shadow: 0 0 10px #d4a017; /* Gold glow for thematic highlight */
-    transition: text-shadow 0.3s ease-in-out; /* Smooth transition for interactivity */
-    visibility: visible; /* Ensures hover effects don’t hide content */
-    opacity: 1; /* Ensures full opacity on hover */
-}
-
-/* Future section placeholder styling, ensuring visibility and consistency */
-.future-section {
-    display: none; /* Hidden by default until content is added, ensuring no display issues */
+    text-shadow: 0 0 10px #d4a017; /* Gold glow */
+    transition: text-shadow 0.3s ease-in-out; /* Smooth transition */
+    visibility: visible; /* Ensures visibility */
+    opacity: 1; /* Full opacity */
 }
 
 /* ==========================================================================
-   Footer
+   Footer Styling
    ========================================================================== */
 
-/* Footer styling, minimal and thematic */
+/* Styles the footer with a minimal, thematic design */
 footer {
-    background: #080808; /* Darker base for contrast */
-    padding: 2rem;
-    text-align: center;
-    font-size: 1rem;
+    background: #080808; /* Darker background for contrast */
+    padding: 2rem; /* Spacious padding */
+    text-align: center; /* Centered content */
+    font-size: 1rem; /* Readable size */
 }
 
+/* Styles footer links */
 footer a {
-    color: #d4a017;
-    text-decoration: none;
+    color: #d4a017; /* Gold text */
+    text-decoration: none; /* No underline */
 }
 
+/* Hover effect for footer links */
 footer a:hover {
-    text-decoration: underline; /* Simple hover effect for interaction */
+    text-decoration: underline; /* Simple underline on hover */
 }
 
 /* ==========================================================================
    Responsive Design (Mobile Adjustments)
    ========================================================================== */
 
-/* Mobile adjustments for screens below 767px, ensuring readability and usability */
+/* Applies mobile-specific styles below 767px */
 @media (max-width: 767px) {
-    /* Hamburger menu toggle, visible on mobile for navigation */
+    /* Shows hamburger menu toggle on mobile */
     .nav-toggle-label {
-        display: block;
-        z-index: 1002; /* Above other elements for accessibility */
+        display: block; /* Visible on mobile */
+        z-index: 1002; /* Above other elements */
     }
 
-    /* Collapse main menu into vertical list on mobile */
+    /* Collapses main menu into a vertical list on mobile */
     .main-menu {
-        display: none;
-        flex-direction: column;
+        display: none; /* Hidden by default */
+        flex-direction: column; /* Vertical stacking */
         position: absolute;
-        top: 4rem;
+        top: 4rem; /* Below nav bar */
         left: 0;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.95); /* Dark, semi-transparent for theme */
-        padding: 1rem 0;
-        z-index: 1000; /* Above header media for visibility */
+        width: 100%; /* Full width */
+        background: rgba(0, 0, 0, 0.95); /* Dark background */
+        padding: 1rem 0; /* Vertical padding */
+        z-index: 1000; /* Above header media */
     }
 
-    /* Show main menu when toggled, enabling mobile navigation */
+    /* Shows main menu when toggled */
     .nav-toggle:checked ~ .main-menu {
-        display: flex; /* Show when toggled for usability */
+        display: flex; /* Visible when checkbox is checked */
     }
 
-    /* Hamburger animation for smooth mobile interaction */
+    /* Animates hamburger lines into an X on toggle */
     .nav-toggle:checked + .nav-toggle-label span:nth-child(1) {
-        transform: rotate(45deg) translate(6px, 6px);
+        transform: rotate(45deg) translate(6px, 6px); /* Top line rotates */
     }
     .nav-toggle:checked + .nav-toggle-label span:nth-child(2) {
-        opacity: 0;
+        opacity: 0; /* Middle line disappears */
     }
     .nav-toggle:checked + .nav-toggle-label span:nth-child(3) {
-        transform: rotate(-45deg) translate(8px, -8px);
+        transform: rotate(-45deg) translate(8px, -8px); /* Bottom line rotates */
     }
 
-    /* Submenu adjustments for mobile, simplifying dropdown behavior */
+    /* Adjusts dropdown menu for mobile */
     .dropdown-content {
-        display: none; /* Hidden by default on mobile */
-        position: static;
-        transform: none;
-        width: 100%;
-        box-shadow: none;
-        background: rgba(0, 0, 0, 0.95);
-        padding-left: 1rem; /* Indent for hierarchy, improving readability */
+        display: none; /* Hidden by default */
+        position: static; /* No absolute positioning */
+        transform: none; /* No centering offset */
+        width: 100%; /* Full width */
+        box-shadow: none; /* No shadow */
+        background: rgba(0, 0, 0, 0.95); /* Dark background */
+        padding-left: 1rem; /* Indent for hierarchy */
     }
 
     .dropdown {
-        position: static;
+        position: static; /* No relative positioning */
     }
 
     .dropbtn {
-        padding: 0.5rem; /* Padding for better tap area on mobile */
+        padding: 0.5rem; /* Padding for tap area */
     }
 
     .dropdown:hover .dropdown-content {
-        display: none; /* Disable hover on mobile, use toggle instead */
+        display: none; /* Disables hover effect */
     }
 
-    /* Show World submenu when toggled, enhancing mobile navigation */
     #world-toggle:checked ~ .dropdown-content {
-        display: block; /* Expands when clicked for usability on mobile */
+        display: block; /* Shows when toggled */
     }
 
-    /* Mobile typography adjustments, switching to Garamond for readability */
+    /* Switches typography to Garamond for mobile readability */
     h1,
     h2,
     .tagline,
@@ -1155,113 +1088,190 @@ footer a:hover {
     .update h3,
     .document h3,
     .location h3 {
-        font-family: "Garamond", serif, Arial; /* Mobile font switch to Garamond for legibility */
-        font-weight: 400; /* Normal weight for clarity on small screens */
+        font-family: "Garamond", serif, Arial; /* Garamond for legibility */
+        font-weight: 400; /* Normal weight */
     }
+
     h1 {
         font-size: 2.2rem;
-    }
+    } /* Smaller h1 */
     h2 {
         font-size: 2rem;
-    } /* Maintains hierarchy, adjusted for mobile */
+    } /* Smaller h2 */
     .tagline {
         font-size: 1.2rem;
-    }
+    } /* Smaller tagline */
     nav a,
     .dropbtn {
         font-size: 1.2rem;
-    }
+    } /* Smaller nav links */
     .dropdown-content a {
         font-size: 1rem;
-    }
+    } /* Smaller dropdown links */
     .update h3,
     .document h3,
     .location h3 {
         font-size: 1.6rem;
-    }
+    } /* Smaller section headings */
     .update .date,
     .document p,
     .location p {
-        font-family: "Garamond", serif, Arial; /* Mobile font for body text, ensuring readability */
-        font-size: 1rem;
+        font-family: "Garamond", serif, Arial; /* Garamond for body text */
+        font-size: 1rem; /* Adjusted size */
     }
 
-    /* Mobile header adjustments, optimizing for smaller screens */
+    /* Adjusts header media for mobile */
     .header-media {
         top: 4rem;
-        height: calc(
-            100% - 4rem
-        ); /* Adjusts for nav, maintaining full coverage */
+        height: calc(100% - 4rem); /* Fits below nav */
     }
+
+    /* Adjusts hero positioning for mobile */
     .hero {
-        margin-top: 50vh; /* Positions hero lower on mobile for balance */
-    }
+        margin-top: 50vh;
+    } /* Lower on mobile */
     .hero.index {
-        margin-top: 20vh; /* Shorter spacing for homepage on mobile */
-    }
+        margin-top: 20vh;
+    } /* Shorter for homepage */
     .hero.updates,
     .hero.documents,
     .hero.locations,
     .hero.spireofdawn,
     .hero.livingjungle {
-        margin-top: 50vh; /* Consistent spacing for detail pages */
-    }
+        margin-top: 50vh;
+    } /* Consistent for detail pages */
 
-    /* Mobile location grid adjustment, critical for single-column readability */
+    /* Switches location grid to single column */
     .location-grid {
-        grid-template-columns: 1fr; /* Single-column layout on mobile for better space and readability, fixing two-column issue */
+        grid-template-columns: 1fr; /* Single column */
     }
 
-    /* Mobile button font adjustment, ensuring legibility for interactive elements */
+    /* Adjusts explore button font for mobile */
     .explore-btn {
-        font-family: "Arial", sans-serif; /* More legible sans-serif on mobile, replacing Garamond for clarity */
-        font-size: 1rem; /* Ensures readability on small screens */
-        padding: 0.8rem 1.5rem; /* Maintains large tap target for usability */
+        font-family: "Arial", sans-serif; /* Sans-serif for clarity */
+        font-size: 1rem; /* Readable size */
+        padding: 0.8rem 1.5rem; /* Large tap target */
     }
 
-    /* Mobile grid and card adjustments, optimizing for touch and space */
+    /* Adjusts grids and cards for mobile */
     .feature-grid,
     .update-grid,
     .document-grid,
     .location-grid,
     .teaser-zigzag {
-        gap: 1rem; /* Reduced gap for tighter layout on mobile */
-        padding: 1rem 0; /* Minimal padding for alignment */
+        gap: 1rem; /* Tighter spacing */
+        padding: 1rem 0; /* Minimal padding */
     }
+
     .feature,
     .update,
     .document,
     .location,
     .teaser-card {
-        flex: 0 0 280px; /* Smaller cards for mobile fit */
-        padding: 2rem; /* Larger padding for better touch interaction */
+        flex: 0 0 280px; /* Smaller width */
+        padding: 2rem; /* Spacious padding */
     }
+
     .feature img,
     .update .media img,
     .location-img,
     .teaser-card img {
-        height: 200px; /* Smaller images for mobile screens */
+        height: 200px; /* Smaller height */
     }
+
     .feature h3,
     .update h3,
     .document h3,
     .location h3,
     .teaser-card h3 {
-        font-size: 1.5rem; /* Reduced for mobile readability */
+        font-size: 1.5rem; /* Smaller headings */
     }
+
     .feature p,
     .update p,
     .document p,
     .location p,
     .teaser-card p {
-        font-size: 1rem; /* Adjusted for mobile text size */
+        font-size: 1rem; /* Smaller text */
     }
+
     .download-btn,
     .explore-btn {
-        padding: 0.8rem 1.5rem; /* Larger tap targets for all buttons on mobile */
-        font-size: 1rem; /* Ensures button text readability */
+        padding: 0.8rem 1.5rem; /* Large tap targets */
+        font-size: 1rem; /* Readable size */
     }
+
     section {
-        padding: 2rem 1rem;
-    } /* Tighter padding for mobile, improving space usage */
+        padding: 2rem 1rem; /* Tighter padding */
+    }
+
+    /* Adjusts sheet container to single column */
+    .sheet-container {
+        grid-template-columns: 1fr; /* Single column */
+    }
+
+    .left-column,
+    .right-column {
+        width: 100%; /* Full width */
+    }
+
+    .characterpage-img,
+    .locationpage-img {
+        width: 100%; /* Full width */
+        height: auto; /* Maintains aspect ratio */
+    }
+
+    .left-column section {
+        flex-direction: column; /* Stacks image and text */
+        gap: 1rem; /* Spacing */
+    }
+
+    .section-img {
+        width: 100%; /* Full width */
+        height: auto; /* Maintains aspect ratio */
+    }
+
+    .left-column h2 {
+        font-family: "Garamond", serif, Arial; /* Garamond for readability */
+        font-size: 1.6rem; /* Smaller size */
+    }
+
+    .left-column p,
+    .right-column p {
+        font-family: "Garamond", serif, Arial; /* Garamond for body text */
+        font-size: 0.9rem; /* Smaller size */
+        max-width: 100%; /* Full width */
+    }
+
+    .right-column h2 {
+        font-family: "Garamond", serif, Arial; /* Garamond for readability */
+        font-size: 1.6rem; /* Smaller size */
+    }
+
+    .teaser-card img {
+        height: 200px; /* Smaller height */
+    }
+
+    .teaser-card h3 {
+        font-size: 1.5rem; /* Smaller size */
+    }
+
+    .teaser-card p {
+        font-size: 1rem; /* Smaller size */
+    }
+
+    .teaser-card a {
+        font-family: "Arial", sans-serif; /* Sans-serif for clarity */
+        font-size: 1rem; /* Readable size */
+        padding: 0.8rem 1.5rem; /* Large tap target */
+    }
+}
+
+/* ==========================================================================
+   Future Section Placeholder
+   ========================================================================== */
+
+/* Hides future section placeholder until content is added */
+.future-section {
+    display: none; /* Hidden by default */
 }
