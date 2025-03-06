@@ -1,235 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Ensures proper text rendering across browsers, supporting special characters -->
         <meta charset="UTF-8" />
+        <!-- Sets viewport for responsive design, scaling to device width -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Page title for browser tab and SEO, thematic and concise -->
         <title>Wind’s Roost - Echoes of the Ancients</title>
+        <!-- Links to external stylesheet for consistent site-wide styling -->
         <link rel="stylesheet" href="/styles.css" />
+        <!-- Favicon enhances branding with a thematic glyph or wind icon -->
         <link rel="icon" type="image/png" href="/images/favicon.png" />
+        <!-- SEO meta description (150-160 chars) to attract search engine users -->
+        <meta
+            name="description"
+            content="Ascend Wind’s Roost in Echoes of the Ancients, a lofty perch atop High Peaks carved by gales in the northern Valley of the Ancients."
+        />
+        <!-- SEO keywords target relevant search terms for discoverability -->
+        <meta
+            name="keywords"
+            content="Wind’s Roost, Echoes of the Ancients, Valley of the Ancients, High Peaks, medieval fantasy, RPG, dark fantasy, locations"
+        />
     </head>
     <body>
+        <!-- Includes navigation from nav.shtml for consistent site-wide menu -->
+        <!--#include virtual="/nav.shtml" -->
         <header>
-            <!--#include virtual="/nav.shtml" -->
+            <!-- Container for background media (video/image), fills header dynamically -->
             <div class="header-media">
+                <!-- Video provides immersive intro, muted and looped for seamless playback -->
                 <video autoplay muted loop playsinline>
-                    <source src="/videos/hero_teaser.mp4" type="video/mp4" />
+                    <!-- Video source for Wind’s Roost, stored in /videos/locations -->
+                    <source
+                        src="/videos/locations/windsroost_teaser.mp4"
+                        type="video/mp4"
+                    />
+                    <!-- Fallback text for browsers that don’t support video -->
+                    Your browser does not support the video tag.
                 </video>
+                <!-- Fallback image in /images/locations, 1920x1080px to match video -->
                 <img
-                    src="/images/hero_fallback.jpg"
-                    alt="Valley of the Ancients"
+                    src="/images/locations/windsroost_fallback.jpg"
+                    alt="Wind’s Roost under stormy skies"
                 />
             </div>
+            <!-- Hero section overlays media with title and tagline, styled for impact -->
             <div class="hero windsroost">
                 <h1>Wind’s Roost</h1>
-                <p class="tagline">Where the final gale blows</p>
+                <p class="tagline">A Lofty Perch Carved by Gales</p>
             </div>
         </header>
-        <section id="windsroost">
-            <h2>The Lofty Perch</h2>
-            <p>
-                Wind’s Roost crowns the northern peaks, a lofty perch of granite
-                and wind-carved stone, where gale-force winds howl against
-                Umbraeth’s final assault. Icy outcrops shimmer under starlight,
-                shadowed by raptor nests and the dark pulse of casters, as the
-                Ancients’ last stand echoes through the cliffs. Here, Aria and
-                Zephyr face the Warden of Shadows, her Glyph-Blade clashing with
-                the Windspire Lock, Tempest Gate, and Starlight Vault—each gust
-                a testament to their bond, purging Umbraeth’s corruption in a
-                storm of light and wind to save the Valley.
-            </p>
-            <h2>Key Landmarks</h2>
-            <div class="location-grid">
-                <article class="location">
+        <!-- Main content section with two-column layout for location details -->
+        <section id="location-sheet">
+            <div class="sheet-container">
+                <!-- Left column: Main image and initial sections with smaller images -->
+                <div class="left-column">
+                    <!-- Main image (800x600px) at top of left column -->
                     <img
-                        src="/images/locations/windsroost_1.jpg"
-                        alt="Roost Overview"
-                        class="location-img"
+                        src="/images/locations/windsroost_main.jpg"
+                        alt="Wind’s Roost atop High Peaks"
+                        class="locationpage-img"
                     />
-                    <h3>Wind-Swept Heights</h3>
-                    <p>
-                        Granite and wind-carved stone rise on northern peaks,
-                        icy outcrops shimmering under starlight, gale-force
-                        winds carrying Umbraeth’s dark pulse, raptor shadows
-                        circling amidst cliffs.
-                    </p>
-                    <a
-                        href="/world/locations/windsroost.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/windsroost_2.jpg"
-                        alt="Windspire Lock"
-                        class="location-img"
-                    />
-                    <h3>Windspire Lock</h3>
-                    <p>
-                        A rune-carved spire atop a peak, its wind blades
-                        spinning to a nine-note hymn—high, low, mid, high, low,
-                        mid, high, low, mid. Aria aligns them with Gauntlet
-                        Gust, unlocking a path, casters casting dark pulses.
-                    </p>
-                    <a
-                        href="/world/locations/windsroost.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/windsroost_3.jpg"
-                        alt="Tempest Gate"
-                        class="location-img"
-                    />
-                    <h3>Tempest Gate</h3>
-                    <p>
-                        An icy gate of wind and frost, its runes glowing silver
-                        under starlight. Zephyr’s Windlash disperses the
-                        tempest, revealing a chest with the Gale Shard, icy
-                        golems rising from snow.
-                    </p>
-                    <a
-                        href="/world/locations/windsroost.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/windsroost_4.jpg"
-                        alt="Starlight Vault"
-                        class="location-img"
-                    />
-                    <h3>Starlight Vault</h3>
-                    <p>
-                        A starlit cavern beneath a peak, its entrance sealed by
-                        silver runes. Aria lights four braziers—north, east,
-                        south, west—unlocking the Storm Cloak, casters and the
-                        Warden of Shadows guarding the path.
-                    </p>
-                    <a
-                        href="/world/locations/windsroost.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/windsroost_5.jpg"
-                        alt="Raptor Nests"
-                        class="location-img"
-                    />
-                    <h3>Foes of the Sky</h3>
-                    <p>
-                        Raptors nest on icy outcrops, their amber eyes glowing
-                        under starlight, talons slashing wind. Zephyr’s Windlash
-                        fells them, while Aria harvests their souls, their cries
-                        echoing off stone.
-                    </p>
-                    <a
-                        href="/world/locations/windsroost.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/windsroost_6.jpg"
-                        alt="Caster Shadows"
-                        class="location-img"
-                    />
-                    <h3>Foes of Magic</h3>
-                    <p>
-                        Caster shadows—ethereal forms with glowing violet
-                        eyes—rise from cliffs, casting dark pulses. Zephyr’s
-                        Windlash counters their magic, while Aria harvests their
-                        souls, each pulse a test of light against dark.
-                    </p>
-                    <a
-                        href="/world/locations/windsroost.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/windsroost_7.jpg"
-                        alt="Gale Shard"
-                        class="location-img"
-                    />
-                    <h3>Gale Shard</h3>
-                    <p>
-                        A crystal pulsing with icy silver wind, found in the
-                        Tempest Gate’s chest. It enhances Aria’s wind power
-                        (+10), its glow a beacon through storms, gifted by
-                        Zephyr’s resolve.
-                    </p>
-                    <a
-                        href="/world/locations/windsroost.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/windsroost_8.jpg"
-                        alt="Zephyr’s Nest"
-                        class="location-img"
-                    />
-                    <h3>Zephyr’s Roost</h3>
-                    <p>
-                        Zephyr’s wind-swept nest—a granite ledge—holds his
-                        Windlash relic and a star-carved map. “The final gale
-                        will break Umbraeth’s chains,” he vows, revealing a
-                        hidden cache with healing winds (+15 Health), forged in
-                        the storm.
-                    </p>
-                    <a
-                        href="/world/locations/windsroost.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/characters/zephyr_action.jpg"
-                        alt="Zephyr Wielding Windlash Against Warden"
-                        class="location-img"
-                    />
-                    <h3>Companions</h3>
-                    <p>
-                        Zephyr, the resolute Sky Warden, stands on Wind’s
-                        Roost’s granite ledge, his silver hair whipping in
-                        gale-force winds, wielding Windlash to summon gusts
-                        against the Warden of Shadows’ dark pulse. “The final
-                        gale will break Umbraeth’s chains, fire-hair,” he
-                        declares, guiding Aria through the peak’s final stand
-                        with unwavering focus.
-                    </p>
-                    <a
-                        href="/world/locations/windsroost.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
+                    <!-- Overview with 400x300px image to the left -->
+                    <section class="overview">
+                        <img
+                            src="/images/locations/windsroost_overview.jpg"
+                            alt="Wind’s Roost perch"
+                            class="section-img"
+                        />
+                        <div class="section-text">
+                            <h2>Overview</h2>
+                            <p>
+                                Wind’s Roost crowns the High Peaks in the
+                                northern Valley of the Ancients, a lofty perch
+                                carved into the highest summit by relentless
+                                gales. Ancient platforms defy the frost, now
+                                shadowed by Umbraeth’s grip, a windswept trial
+                                for Aria’s ascent.
+                            </p>
+                        </div>
+                    </section>
+                    <!-- Geography with 400x300px image to the left -->
+                    <section class="geography">
+                        <img
+                            src="/images/locations/windsroost_geography.jpg"
+                            alt="Wind-carved cliffs"
+                            class="section-img"
+                        />
+                        <div class="section-text">
+                            <h2>Geography</h2>
+                            <p>
+                                Sheer cliffs drop 50 meters from the High Peaks’
+                                apex, their wind-scoured faces etched with frost
+                                and ancient glyphs. Narrow platforms jut out,
+                                lashed by howling winds, while Umbraeth’s black
+                                ichor stains the icy stone under a stormy,
+                                swirling sky.
+                            </p>
+                        </div>
+                    </section>
+                    <!-- History with 400x300px image to the left -->
+                    <section class="history">
+                        <img
+                            src="/images/locations/windsroost_history.jpg"
+                            alt="Ancient wind shrine"
+                            class="section-img"
+                        />
+                        <div class="section-text">
+                            <h2>History</h2>
+                            <p>
+                                The Ancients crafted Wind’s Roost as a shrine to
+                                the gales, a vantage against Umbraeth’s rise.
+                                Elyra’s final windsong here sealed the Gale
+                                Crest, a relic lost to the frost until Aria
+                                climbs to reclaim its power against the shadow.
+                            </p>
+                        </div>
+                    </section>
+                </div>
+                <!-- Closes left-column -->
+                <!-- Right column: Remaining detailed sections -->
+                <div class="right-column">
+                    <!-- Inhabitants lists creatures and characters -->
+                    <section class="inhabitants">
+                        <h2>Inhabitants</h2>
+                        <p>
+                            Gale shrieker birds swoop through the winds, their
+                            cries piercing, while frost wraiths drift along the
+                            cliffs. Umbraeth’s windbound sentinels guard the
+                            perch, and Lyra, the Wind Warden, watches from the
+                            heights, her staff steady against the storm.
+                        </p>
+                    </section>
+                    <!-- Puzzles highlight gameplay challenges -->
+                    <section class="puzzles">
+                        <h2>Puzzles</h2>
+                        <p>
+                            The Windspire Puzzle tasks Aria with directing gusts
+                            from the Gauntlet of Storms through three
+                            wind-carved spires, aligning their vibrations to
+                            unseal the Gale Crest, all while balancing against
+                            gale shrieker dives on the narrow perch.
+                        </p>
+                    </section>
+                    <!-- Relics detail key items -->
+                    <section class="relics">
+                        <h2>Relics</h2>
+                        <p>
+                            The Gale Crest, a wind-etched medallion humming with
+                            power, rests in an icy nook, enhancing Aria’s wind
+                            abilities against Umbraeth’s forces. A Shrieker
+                            Feather, dropped by gale shriekers, glows faintly
+                            and boosts speed when held.
+                        </p>
+                    </section>
+                    <!-- Companions note potential allies -->
+                    <section class="companions">
+                        <h2>Companions</h2>
+                        <p>
+                            Lyra, the Wind Warden, stands resolute at Wind’s
+                            Roost, her silver eyes cutting through the storm
+                            beneath a wind-torn cloak. Her staff channels gales
+                            to fend off sentinels, guiding Aria to the Gale
+                            Crest with unyielding resolve.
+                        </p>
+                    </section>
+                    <!-- Narrative ties Wind’s Roost to Aria’s story -->
+                    <section class="narrative">
+                        <h2>Role in the Narrative</h2>
+                        <p>
+                            Wind’s Roost pushes Aria to master the gales, the
+                            Gale Crest amplifying her defiance against
+                            Umbraeth’s frost. Lyra’s unwavering support atop the
+                            perch unveils the Ancients’ wind legacy, fortifying
+                            Aria for the Valley’s final battle.
+                        </p>
+                    </section>
+                </div>
+                <!-- Closes right-column -->
             </div>
         </section>
+        <!-- Footer provides site info and links, consistent across pages -->
         <footer>
+            <!-- Copyright with future-proof year and Grok/xAI attribution -->
             <p>
                 © 2025 Echoes of the Ancients. Crafted with wisdom by Grok,
                 created by xAI.
             </p>
+            <!-- Contact email link for user engagement -->
             <p>
                 Contact:
                 <a href="mailto:echoesgame@KdeanGames.net"
                     >echoesgame@KdeanGames.net</a
                 >
             </p>
+            <!-- X link opens in new tab for social media connectivity -->
+            <p>
+                <a
+                    href="https://x.com/KdeanGames"
+                    target="_blank"
+                    rel="noopener"
+                    >Follow us on X</a
+                >
+            </p>
         </footer>
+        <!-- Script ensures video fallback to image for reliable display -->
         <script>
-            // Fallback: Show image if video fails or isn’t present
             const video = document.querySelector("video");
             const img = document.querySelector(".header-media img");
             if (!video.querySelector("source").src || video.readyState === 0) {
