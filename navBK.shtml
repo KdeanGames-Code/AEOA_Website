@@ -10,12 +10,12 @@
         <li><a href="/documents.html">Documents</a></li>
         <li class="dropdown">
             <input type="checkbox" id="world-toggle" class="world-toggle" />
-            <label for="world-toggle" class="dropbtn"
-                ><a href="/world/world.html">World</a></label
-            >
+            <label for="world-toggle" class="dropbtn">World</label>
             <ul class="dropdown-content">
                 <li><a href="/world/locations.html">Locations</a></li>
-                <li><a href="/world/characters.html">Characters</a></li>
+                <li>
+                    <a href="/world/characters.html">Characters</a>
+                </li>
                 <li><a href="/world/weapons/weapons.html">Weapons</a></li>
                 <li><a href="/world/armor/armor.html">Armor</a></li>
                 <li><a href="/world/magic/magic.html">Magic</a></li>
