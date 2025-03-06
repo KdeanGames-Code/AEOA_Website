@@ -1,236 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Ensures proper text rendering across browsers, supporting special characters -->
         <meta charset="UTF-8" />
+        <!-- Sets viewport for responsive design, scaling to device width -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Page title for browser tab and SEO, thematic and concise -->
         <title>Temple of Echoes - Echoes of the Ancients</title>
+        <!-- Links to external stylesheet for consistent site-wide styling -->
         <link rel="stylesheet" href="/styles.css" />
+        <!-- Favicon enhances branding with a thematic glyph or mirror icon -->
         <link rel="icon" type="image/png" href="/images/favicon.png" />
+        <!-- SEO meta description (150-160 chars) to attract search engine users -->
+        <meta
+            name="description"
+            content="Discover Temple of Echoes in Echoes of the Ancients, a wind-sung cathedral of mirrors in the central-east Valley."
+        />
+        <!-- SEO keywords target relevant search terms for discoverability -->
+        <meta
+            name="keywords"
+            content="Temple of Echoes, Echoes of the Ancients, Valley of the Ancients, medieval fantasy, RPG, dark fantasy, locations"
+        />
     </head>
     <body>
+        <!-- Includes navigation from nav.shtml for consistent site-wide menu -->
+        <!--#include virtual="/nav.shtml" -->
         <header>
-            <!--#include virtual="/nav.shtml" -->
+            <!-- Container for background media (video/image), fills header dynamically -->
             <div class="header-media">
+                <!-- Video provides immersive intro, muted and looped for seamless playback -->
                 <video autoplay muted loop playsinline>
-                    <source src="/videos/hero_teaser.mp4" type="video/mp4" />
+                    <!-- Video source for Temple of Echoes, stored in /videos/locations -->
+                    <source
+                        src="/videos/locations/templeofechoes_teaser.mp4"
+                        type="video/mp4"
+                    />
+                    <!-- Fallback text for browsers that don’t support video -->
+                    Your browser does not support the video tag.
                 </video>
+                <!-- Fallback image in /images/locations, 1920x1080px to match video -->
                 <img
-                    src="/images/hero_fallback.jpg"
-                    alt="Valley of the Ancients"
+                    src="/images/locations/templeofechoes_fallback.jpg"
+                    alt="Temple of Echoes under stormy skies"
                 />
             </div>
+            <!-- Hero section overlays media with title and tagline, styled for impact -->
             <div class="hero templeofechoes">
                 <h1>Temple of Echoes</h1>
-                <p class="tagline">Where wind sings forgotten truths</p>
+                <p class="tagline">A Cathedral Where Winds Sing</p>
             </div>
         </header>
-        <section id="templeofechoes">
-            <h2>The Wind-Sung Cathedral</h2>
-            <p>
-                The Temple of Echoes rises in the central-east Valley, a
-                mirrored cathedral carved from obsidian, its spires resonating
-                with haunting wind songs that weave through crystal chimes.
-                Shadows flicker across its reflective surfaces, where raptor
-                cries mingle with the whispers of the Ancients’ lost magic.
-                Here, Aria steps into the temple’s labyrinthine halls, her
-                Glyph-Blade echoing off glass walls as she deciphers the Wind
-                Dial, Mirror Maze, and Echo Chamber—guided by Mira’s sharp ears,
-                their journey a symphony of survival against Umbraeth’s shadow
-                seeping through the cracks.
-            </p>
-            <h2>Key Landmarks</h2>
-            <div class="location-grid">
-                <article class="location">
+        <!-- Main content section with two-column layout for location details -->
+        <section id="location-sheet">
+            <div class="sheet-container">
+                <!-- Left column: Main image and initial sections with smaller images -->
+                <div class="left-column">
+                    <!-- Main image (800x600px) at top of left column -->
                     <img
-                        src="/images/locations/templeofechoes_1.jpg"
-                        alt="Temple Overview"
-                        class="location-img"
+                        src="/images/locations/templeofechoes_main.jpg"
+                        alt="Temple of Echoes with mirrored spires"
+                        class="locationpage-img"
                     />
-                    <h3>Mirrored Spires</h3>
-                    <p>
-                        Obsidian towers gleam under a twilight sky, their
-                        mirrored surfaces reflecting raptor shadows. Crystal
-                        chimes hum with the wind, guarding secrets beneath a
-                        canopy of echoes in the central-east Valley.
-                    </p>
-                    <a
-                        href="/world/locations/templeofechoes.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/templeofechoes_2.jpg"
-                        alt="Wind Dial"
-                        class="location-img"
-                    />
-                    <h3>Wind Dial</h3>
-                    <p>
-                        A massive stone dial carved with runes, its blades
-                        spinning with gusts from hidden vents. Aria aligns the
-                        blades—north, east, south, west—unlocking a mirrored
-                        door, while raptors swoop from above, testing her focus.
-                    </p>
-                    <a
-                        href="/world/locations/templeofechoes.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/templeofechoes_3.jpg"
-                        alt="Mirror Maze"
-                        class="location-img"
-                    />
-                    <h3>Mirror Maze</h3>
-                    <p>
-                        A labyrinth of obsidian mirrors, its reflections
-                        disorienting. Aria uses the Flute Pulse to shatter false
-                        paths, revealing a chest with the Echo Shard, gruntlings
-                        lurking in the distorted shadows.
-                    </p>
-                    <a
-                        href="/world/locations/templeofechoes.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/templeofechoes_4.jpg"
-                        alt="Echo Chamber"
-                        class="location-img"
-                    />
-                    <h3>Echo Chamber</h3>
-                    <p>
-                        A cavernous hall where wind chimes resonate in seven
-                        notes—high, low, mid, high, low, mid, high. Aria strikes
-                        the chimes in sequence, unlocking the Windwalker’s Veil,
-                        with casters’ shadows testing her rhythm.
-                    </p>
-                    <a
-                        href="/world/locations/templeofechoes.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/templeofechoes_5.jpg"
-                        alt="Raptor Nests"
-                        class="location-img"
-                    />
-                    <h3>Foes of the Air</h3>
-                    <p>
-                        Raptors nest on mirrored spires, their amber eyes
-                        piercing the twilight, talons scraping glass. Aria
-                        parries their dives with Gauntlet Gusts, their souls
-                        shimmering as they fall, a dance of echoes under the
-                        temple’s gaze.
-                    </p>
-                    <a
-                        href="/world/locations/templeofechoes.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/templeofechoes_6.jpg"
-                        alt="Caster Shadows"
-                        class="location-img"
-                    />
-                    <h3>Shadows of Magic</h3>
-                    <p>
-                        Caster shadows—ethereal forms with glowing eyes—emerge
-                        from mirrors, casting dark pulses. Mira’s Flute Pulse
-                        counters their magic, while Aria harvests their souls,
-                        each strike resonating with the temple’s song.
-                    </p>
-                    <a
-                        href="/world/locations/templeofechoes.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/templeofechoes_7.jpg"
-                        alt="Echo Shard"
-                        class="location-img"
-                    />
-                    <h3>Echo Shard</h3>
-                    <p>
-                        A crystal pulsing with wind’s song, found in the Mirror
-                        Maze’s chest. It boosts Aria’s speed (+10), its silver
-                        glow syncing with the temple’s chimes, gifted by Mira’s
-                        insight.
-                    </p>
-                    <a
-                        href="/world/locations/templeofechoes.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/templeofechoes_8.jpg"
-                        alt="Mira’s Perch"
-                        class="location-img"
-                    />
-                    <h3>Mira’s Watch</h3>
-                    <p>
-                        Mira’s high perch—a mirrored ledge—holds her Flute Pulse
-                        and a wind-carved journal. “Listen to the echoes,
-                        fire-hair,” she whispers, revealing a hidden alcove with
-                        healing crystals (+15 Health), forged in the temple’s
-                        song.
-                    </p>
-                    <a
-                        href="/world/locations/templeofechoes.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/characters/mira_action.jpg"
-                        alt="Mira Playing Flute Pulse"
-                        class="location-img"
-                    />
-                    <h3>Companions</h3>
-                    <p>
-                        Mira, the ethereal Wind Whisperer, stands on a mirrored
-                        spire, her silver hair flowing as she plays the Flute
-                        Pulse, its notes shattering caster shadows. “Listen to
-                        the echoes, fire-hair,” she murmurs, guiding Aria
-                        through the temple’s haunting melody with unwavering
-                        focus.
-                    </p>
-                    <a
-                        href="/world/locations/templeofechoes.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
+                    <!-- Overview with 400x300px image to the left -->
+                    <section class="overview">
+                        <img
+                            src="/images/locations/templeofechoes_overview.jpg"
+                            alt="Temple of Echoes exterior"
+                            class="section-img"
+                        />
+                        <div class="section-text">
+                            <h2>Overview</h2>
+                            <p>
+                                The Temple of Echoes stands in the central-east
+                                of the Valley of the Ancients, a wind-sung
+                                cathedral of towering mirrored spires that hum
+                                with ancient resonance. Its halls reflect both
+                                light and shadow, tainted by Umbraeth’s creeping
+                                corruption, a sacred enigma Aria must unravel.
+                            </p>
+                        </div>
+                    </section>
+                    <!-- Geography with 400x300px image to the left -->
+                    <section class="geography">
+                        <img
+                            src="/images/locations/templeofechoes_geography.jpg"
+                            alt="Mirrored halls and wind"
+                            class="section-img"
+                        />
+                        <div class="section-text">
+                            <h2>Geography</h2>
+                            <p>
+                                Soaring spires of polished stone rise 15 meters,
+                                their mirrored surfaces catching the wind that
+                                whistles through the central-east plains.
+                                Shattered reflections line the interior halls,
+                                marred by Umbraeth’s black ichor, while gusts
+                                swirl dust across a stormy landscape dotted with
+                                cracked glyphs.
+                            </p>
+                        </div>
+                    </section>
+                    <!-- History with 400x300px image to the left -->
+                    <section class="history">
+                        <img
+                            src="/images/locations/templeofechoes_history.jpg"
+                            alt="Ancient mirror in Temple"
+                            class="section-img"
+                        />
+                        <div class="section-text">
+                            <h2>History</h2>
+                            <p>
+                                Built by the Ancients as a shrine to harness
+                                wind and sound, the Temple of Echoes fell silent
+                                when Umbraeth’s shadow cracked its mirrors.
+                                Elyra’s desperate chant here forged the Echo
+                                Chime, a relic lost within, awaiting Aria’s
+                                voice to reclaim it.
+                            </p>
+                        </div>
+                    </section>
+                </div>
+                <!-- Closes left-column -->
+                <!-- Right column: Remaining detailed sections -->
+                <div class="right-column">
+                    <!-- Inhabitants lists creatures and characters -->
+                    <section class="inhabitants">
+                        <h2>Inhabitants</h2>
+                        <p>
+                            Echo wraiths drift through the halls, their whispers
+                            carried by the wind, while mirror shards animate as
+                            reflective guardians. Umbraeth’s shadowed chanters
+                            haunt the spires, and Mira, the Echo Keeper, guards
+                            the temple, her voice a weapon against the silence.
+                        </p>
+                    </section>
+                    <!-- Puzzles highlight gameplay challenges -->
+                    <section class="puzzles">
+                        <h2>Puzzles</h2>
+                        <p>
+                            The Mirror Chorus requires Aria to align three
+                            mirrored panels with wind bursts from the Gauntlet
+                            of Storms, reflecting a resonant beam to awaken the
+                            Echo Chime, all while dodging echo wraith shrieks
+                            that shatter focus.
+                        </p>
+                    </section>
+                    <!-- Relics detail key items -->
+                    <section class="relics">
+                        <h2>Relics</h2>
+                        <p>
+                            The Echo Chime, a silver bell pulsing with wind
+                            song, rests in a mirrored vault, enhancing Aria’s
+                            abilities to disrupt Umbraeth’s forces. A Mirror
+                            Fragment, dropped by guardians, glows softly and
+                            boosts perception when held.
+                        </p>
+                    </section>
+                    <!-- Companions note potential allies -->
+                    <section class="companions">
+                        <h2>Companions</h2>
+                        <p>
+                            Mira, the Echo Keeper, emerges from the temple’s
+                            depths, her amber eyes gleaming beneath a flowing
+                            robe. Wielding a staff that amplifies sound, she
+                            aids Aria against chanters and wraiths, her chants
+                            guiding the way to the Echo Chime.
+                        </p>
+                    </section>
+                    <!-- Narrative ties the Temple to Aria’s story -->
+                    <section class="narrative">
+                        <h2>Role in the Narrative</h2>
+                        <p>
+                            The Temple of Echoes tests Aria’s harmony with the
+                            wind, the Echo Chime amplifying her fight against
+                            Umbraeth’s silence. Mira’s alliance unveils the
+                            Ancients’ sonic mastery, strengthening Aria’s
+                            resolve as she nears the Valley’s core.
+                        </p>
+                    </section>
+                </div>
+                <!-- Closes right-column -->
             </div>
         </section>
+        <!-- Footer provides site info and links, consistent across pages -->
         <footer>
+            <!-- Copyright with future-proof year and Grok/xAI attribution -->
             <p>
                 © 2025 Echoes of the Ancients. Crafted with wisdom by Grok,
                 created by xAI.
             </p>
+            <!-- Contact email link for user engagement -->
             <p>
                 Contact:
                 <a href="mailto:echoesgame@KdeanGames.net"
                     >echoesgame@KdeanGames.net</a
                 >
             </p>
+            <!-- X link opens in new tab for social media connectivity -->
+            <p>
+                <a
+                    href="https://x.com/KdeanGames"
+                    target="_blank"
+                    rel="noopener"
+                    >Follow us on X</a
+                >
+            </p>
         </footer>
+        <!-- Script ensures video fallback to image for reliable display -->
         <script>
-            // Fallback: Show image if video fails or isn’t present
             const video = document.querySelector("video");
             const img = document.querySelector(".header-media img");
             if (!video.querySelector("source").src || video.readyState === 0) {
