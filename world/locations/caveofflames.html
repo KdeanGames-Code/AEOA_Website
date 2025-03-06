@@ -1,228 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Ensures proper text rendering across browsers, supporting special characters -->
         <meta charset="UTF-8" />
+        <!-- Sets viewport for responsive design, scaling to device width -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Page title for browser tab and SEO, thematic and concise -->
         <title>Cave of Flames - Echoes of the Ancients</title>
+        <!-- Links to external stylesheet for consistent site-wide styling -->
         <link rel="stylesheet" href="/styles.css" />
+        <!-- Favicon enhances branding with a thematic glyph or flame icon -->
         <link rel="icon" type="image/png" href="/images/favicon.png" />
+        <!-- SEO meta description (150-160 chars) to attract search engine users -->
+        <meta
+            name="description"
+            content="Enter Cave of Flames in Echoes of the Ancients, a fiery refuge within Living Jungle burning with embers and Umbraeth’s shadow."
+        />
+        <!-- SEO keywords target relevant search terms for discoverability -->
+        <meta
+            name="keywords"
+            content="Cave of Flames, Echoes of the Ancients, Valley of the Ancients, Living Jungle, medieval fantasy, RPG, dark fantasy, locations"
+        />
     </head>
     <body>
+        <!-- Includes navigation from nav.shtml for consistent site-wide menu -->
+        <!--#include virtual="/nav.shtml" -->
         <header>
-            <!--#include virtual="/nav.shtml" -->
+            <!-- Container for background media (video/image), fills header dynamically -->
             <div class="header-media">
+                <!-- Video provides immersive intro, muted and looped for seamless playback -->
                 <video autoplay muted loop playsinline>
-                    <source src="/videos/hero_teaser.mp4" type="video/mp4" />
+                    <!-- Video source for Cave of Flames, stored in /videos/locations -->
+                    <source
+                        src="/videos/locations/caveofflames_teaser.mp4"
+                        type="video/mp4"
+                    />
+                    <!-- Fallback text for browsers that don’t support video -->
+                    Your browser does not support the video tag.
                 </video>
+                <!-- Fallback image in /images/locations, 1920x1080px to match video -->
                 <img
-                    src="/images/hero_fallback.jpg"
-                    alt="Valley of the Ancients"
+                    src="/images/locations/caveofflames_fallback.jpg"
+                    alt="Cave of Flames under stormy skies"
                 />
             </div>
+            <!-- Hero section overlays media with title and tagline, styled for impact -->
+            <div class="hero caveofflames">
+                <h1>Cave of Flames</h1>
+                <p class="tagline">A Fiery Refuge Burning with Embers</p>
+            </div>
         </header>
-        <section id="caveofflames">
-            <h2>The Ember Haven</h2>
-            <p>
-                The Cave of Flames yawns within the Living Jungle’s dense heart,
-                a jagged maw of charred stone framed by blackened kapok stumps,
-                their surfaces smoldering with faint embers that cast a
-                flickering glow, the air thick with the sharp, acrid bite of ash
-                and the musky scent of rot beneath crimson orchids. Ancient
-                murals of the Ancients wielding fire against shadow glow faintly
-                on damp walls, their ochre figures pulsing with latent magic,
-                while raptor nests and insect swarms lurk in the shadows. Here,
-                Aria ventures with Talyn, her Glyph-Blade igniting braziers to
-                unlock the Ember Shard, each step a fiery duel against
-                Umbraeth’s corruption, the cave’s heat a testament to the
-                valley’s fiery past.
-            </p>
-            <h2>Key Landmarks</h2>
-            <div class="location-grid">
-                <article class="location">
+        <!-- Main content section with two-column layout for location details -->
+        <section id="location-sheet">
+            <div class="sheet-container">
+                <!-- Left column: Main image and initial sections with smaller images -->
+                <div class="left-column">
+                    <!-- Main image (800x600px) at top of left column -->
                     <img
-                        src="/images/locations/caveofflames_1.jpg"
-                        alt="Cave Overview"
-                        class="location-img"
+                        src="/images/locations/caveofflames_main.jpg"
+                        alt="Cave of Flames with fiery glow"
+                        class="locationpage-img"
                     />
-                    <h3>Charred Entrance</h3>
-                    <p>
-                        A jagged cave mouth framed by blackened stumps,
-                        smoldering embers casting flickering light, vines
-                        curling amidst the damp, rot-scented air, raptor claw
-                        marks scarring the stone.
-                    </p>
-                    <a
-                        href="/world/locations/caveofflames.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/caveofflames_2.jpg"
-                        alt="Flame Conduit Nexus"
-                        class="location-img"
-                    />
-                    <h3>Flame Conduit Nexus</h3>
-                    <p>
-                        A chamber of bronze braziers, their surfaces pitted and
-                        blackened, glowing with embers as Aria ignites them in
-                        sequence, insects swarming from crevices, the air sharp
-                        with acrid heat.
-                    </p>
-                    <a
-                        href="/world/locations/caveofflames.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/caveofflames_3.jpg"
-                        alt="Ember Trap Grid"
-                        class="location-img"
-                    />
-                    <h3>Ember Trap Grid</h3>
-                    <p>
-                        A maze of pressure plates triggering flame jets, their
-                        searing heat cutting through shadow, raptor talons
-                        diving as Aria navigates with precision, the stone walls
-                        echoing with ancient fire’s roar.
-                    </p>
-                    <a
-                        href="/world/locations/caveofflames.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/caveofflames_4.jpg"
-                        alt="Ancient Murals"
-                        class="location-img"
-                    />
-                    <h3>Ancient Murals</h3>
-                    <p>
-                        Damp stone walls etched with ochre figures of the
-                        Ancients wielding fire, their glow pulsing against
-                        Umbraeth’s shadow, the air thick with the musk of rot
-                        and ash, gruntling scratches visible nearby.
-                    </p>
-                    <a
-                        href="/world/locations/caveofflames.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/characters/talyn_action.jpg"
-                        alt="Talyn Wielding Vinewood Pick"
-                        class="location-img"
-                    />
-                    <h3>Companions</h3>
-                    <p>
-                        Talyn, lean and scarred, stands amidst the cave’s
-                        embers, brown eyes glinting with wry humor, Vinewood
-                        Pick pulsing green to strike raptors, guiding Aria
-                        through the fiery depths with jungle savvy.
-                    </p>
-                    <a
-                        href="/world/locations/caveofflames.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/caveofflames_5.jpg"
-                        alt="Raptor Nests"
-                        class="location-img"
-                    />
-                    <h3>Raptor Nests</h3>
-                    <p>
-                        Twisted roots and feathers pocked with claw marks,
-                        raptor nests lurking in shadows, their amber eyes
-                        glinting as they dive, the air filled with their
-                        piercing shrieks and the scent of scorched earth.
-                    </p>
-                    <a
-                        href="/world/locations/caveofflames.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/caveofflames_6.jpg"
-                        alt="Insect Swarms"
-                        class="location-img"
-                    />
-                    <h3>Insect Swarms</h3>
-                    <p>
-                        Iridescent carapaces glinting like oil slicks, venomous
-                        biters buzzing from crevices, their acrid sting cutting
-                        through the cave’s heat, challenging Aria’s agility
-                        amidst flickering embers.
-                    </p>
-                    <a
-                        href="/world/locations/caveofflames.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/caveofflames_7.jpg"
-                        alt="Ember Shard Vault"
-                        class="location-img"
-                    />
-                    <h3>Ember Shard Vault</h3>
-                    <p>
-                        A hidden platform rising from flame-lit stone, the Ember
-                        Shard glowing with molten light, its jagged edges
-                        casting shadows, guarded by raptor talons and ancient
-                        fire’s lingering warmth.
-                    </p>
-                    <a
-                        href="/world/locations/caveofflames.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
-                <article class="location">
-                    <img
-                        src="/images/locations/caveofflames_8.jpg"
-                        alt="Corrupted Roots"
-                        class="location-img"
-                    />
-                    <h3>Corrupted Roots</h3>
-                    <p>
-                        Twisted kapok roots pulsing with Umbraeth’s black ichor,
-                        their surfaces slick with decay, the air heavy with
-                        rot’s musk as Aria purges the corruption with fiery
-                        resolve.
-                    </p>
-                    <a
-                        href="/world/locations/caveofflames.html"
-                        class="explore-btn"
-                        >Explore</a
-                    >
-                </article>
+                    <!-- Overview with 400x300px image to the left -->
+                    <section class="overview">
+                        <img
+                            src="/images/locations/caveofflames_overview.jpg"
+                            alt="Cave of Flames entrance"
+                            class="section-img"
+                        />
+                        <div class="section-text">
+                            <h2>Overview</h2>
+                            <p>
+                                The Cave of Flames smolders within the Living
+                                Jungle of the Valley of the Ancients, a hidden
+                                refuge aglow with ancient embers and choked by
+                                Umbraeth’s shadow. Its fiery depths hold secrets
+                                of the past, a blazing trial for Aria to endure.
+                            </p>
+                        </div>
+                    </section>
+                    <!-- Geography with 400x300px image to the left -->
+                    <section class="geography">
+                        <img
+                            src="/images/locations/caveofflames_geography.jpg"
+                            alt="Fiery tunnels and embers"
+                            class="section-img"
+                        />
+                        <div class="section-text">
+                            <h2>Geography</h2>
+                            <p>
+                                Narrow tunnels twist beneath the Living Jungle,
+                                their walls of scorched stone glowing with
+                                embers and reaching 10 meters high. Lava pools
+                                bubble at the cave’s heart, Umbraeth’s black
+                                ichor mingling with the heat, all shrouded in a
+                                smoky haze under a stormy canopy.
+                            </p>
+                        </div>
+                    </section>
+                    <!-- History with 400x300px image to the left -->
+                    <section class="history">
+                        <img
+                            src="/images/locations/caveofflames_history.jpg"
+                            alt="Ancient forge in Cave"
+                            class="section-img"
+                        />
+                        <div class="section-text">
+                            <h2>History</h2>
+                            <p>
+                                Once an Ancients’ forge where flames shaped
+                                their might, the Cave of Flames burned on after
+                                Umbraeth’s corruption seeped in. Elyra’s fire
+                                sealed the Ember Heart here, a relic Aria must
+                                claim to wield the blaze against his darkness.
+                            </p>
+                        </div>
+                    </section>
+                </div>
+                <!-- Closes left-column -->
+                <!-- Right column: Remaining detailed sections -->
+                <div class="right-column">
+                    <!-- Inhabitants lists creatures and characters -->
+                    <section class="inhabitants">
+                        <h2>Inhabitants</h2>
+                        <p>
+                            Ember serpents slither through the heat, their
+                            scales aflame, while ash wraiths rise from the
+                            embers with searing touch. Umbraeth’s flamebound
+                            guards watch the forge, and Torin, the Ember Smith,
+                            hammers in the depths, his craft defying the shadow.
+                        </p>
+                    </section>
+                    <!-- Puzzles highlight gameplay challenges -->
+                    <section class="puzzles">
+                        <h2>Puzzles</h2>
+                        <p>
+                            The Ember Forge Puzzle tasks Aria with channeling
+                            wind from the Gauntlet of Storms to stoke three
+                            dying ember vents, aligning their flames to unlock
+                            the Ember Heart’s anvil, all while evading ash
+                            wraith bursts in the heat.
+                        </p>
+                    </section>
+                    <!-- Relics detail key items -->
+                    <section class="relics">
+                        <h2>Relics</h2>
+                        <p>
+                            The Ember Heart, a molten orb glowing with fire,
+                            rests on an ancient anvil, empowering Aria’s attacks
+                            with flame against Umbraeth’s minions. An Ember
+                            Scale, shed by serpents, glows red and boosts
+                            endurance when held.
+                        </p>
+                    </section>
+                    <!-- Companions note potential allies -->
+                    <section class="companions">
+                        <h2>Companions</h2>
+                        <p>
+                            Torin, the Ember Smith, labors in the Cave’s depths,
+                            his soot-streaked face set beneath a leather hood.
+                            Wielding a fiery hammer, he aids Aria against guards
+                            and serpents, his forge skills guiding her to the
+                            Ember Heart.
+                        </p>
+                    </section>
+                    <!-- Narrative ties the Cave to Aria’s story -->
+                    <section class="narrative">
+                        <h2>Role in the Narrative</h2>
+                        <p>
+                            The Cave of Flames forges Aria’s fiery resolve, the
+                            Ember Heart igniting her strength to burn through
+                            Umbraeth’s shadow. Torin’s craft renews the
+                            Ancients’ fire, stoking her path to the Valley’s
+                            climactic redemption.
+                        </p>
+                    </section>
+                </div>
+                <!-- Closes right-column -->
             </div>
         </section>
+        <!-- Footer provides site info and links, consistent across pages -->
         <footer>
+            <!-- Copyright with future-proof year and Grok/xAI attribution -->
             <p>
                 © 2025 Echoes of the Ancients. Crafted with wisdom by Grok,
                 created by xAI.
             </p>
+            <!-- Contact email link for user engagement -->
             <p>
                 Contact:
                 <a href="mailto:echoesgame@KdeanGames.net"
                     >echoesgame@KdeanGames.net</a
                 >
             </p>
+            <!-- X link opens in new tab for social media connectivity -->
+            <p>
+                <a
+                    href="https://x.com/KdeanGames"
+                    target="_blank"
+                    rel="noopener"
+                    >Follow us on X</a
+                >
+            </p>
         </footer>
+        <!-- Script ensures video fallback to image for reliable display -->
         <script>
             const video = document.querySelector("video");
             const img = document.querySelector(".header-media img");
