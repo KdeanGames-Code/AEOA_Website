@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>World - Echoes of the Ancients</title>
+        <link rel="stylesheet" href="/styles.css" />
+        <link rel="icon" type="image/png" href="/images/favicon.png" />
+        <!-- SEO Meta Tags -->
+        <meta
+            name="description"
+            content="Discover the World of Echoes of the Ancients, from mystical locations to ancient weapons and armor in the Valley of the Ancients."
+        />
+        <meta
+            name="keywords"
+            content="world, Valley of the Ancients, Echoes of the Ancients, locations, weapons, armor, medieval fantasy, RPG"
+        />
+    </head>
+    <body>
+        <header>
+            <!--#include virtual="/nav.shtml" -->
+            <div class="header-media">
+                <video autoplay muted loop playsinline>
+                    <source
+                        src="/videos/locations/world_teaser.mp4"
+                        type="video/mp4"
+                    />
+                </video>
+                <img
+                    src="/images/world/world_fallback.jpg"
+                    alt="Valley of the Ancients Overview"
+                />
+            </div>
+            <div class="hero world">
+                <h1>World</h1>
+                <p class="tagline">
+                    Realms, Relics, and Shadows of the Ancients
+                </p>
+            </div>
+        </header>
+        <section id="world">
+            <h2>Explore the World</h2>
+            <div class="location-grid">
+                <article class="location">
+                    <img
+                        src="/images/world/locations_thumb.jpg"
+                        alt="Locations Thumbnail"
+                        class="location-img"
+                    />
+                    <h3>Locations</h3>
+                    <p>Nine realms scarred by Umbraeth’s shadow.</p>
+                    <a href="/world/locations.html" class="explore-btn"
+                        >Explore</a
+                    >
+                </article>
+                <article class="location">
+                    <img
+                        src="/images/world/weapons_thumb.jpg"
+                        alt="Weapons Thumbnail"
+                        class="location-img"
+                    />
+                    <h3>Weapons</h3>
+                    <p>Blades and tools forged by ancient hands.</p>
+                    <a href="/world/weapons/weapons.html" class="explore-btn"
+                        >Coming Soon</a
+                    >
+                </article>
+                <article class="location">
+                    <img
+                        src="/images/world/armor_thumb.jpg"
+                        alt="Armor Thumbnail"
+                        class="location-img"
+                    />
+                    <h3>Armor</h3>
+                    <p>Guardians clad in steel and shadow.</p>
+                    <a href="/world/armor/armor.html" class="explore-btn"
+                        >Coming Soon</a
+                    >
+                </article>
+                <article class="location">
+                    <img
+                        src="/images/world/relics_thumb.jpg"
+                        alt="Relics Thumbnail"
+                        class="location-img"
+                    />
+                    <h3>Relics</h3>
+                    <p>Ancient powers sealed in forgotten forms.</p>
+                    <a href="/world/relics/relics.html" class="explore-btn"
+                        >Coming Soon</a
+                    >
+                </article>
+                <article class="location">
+                    <img
+                        src="/images/world/lore_thumb.jpg"
+                        alt="Lore Thumbnail"
+                        class="location-img"
+                    />
+                    <h3>Lore</h3>
+                    <p>Tales of the Valley’s rise and fall.</p>
+                    <a href="/world/lore.html" class="explore-btn"
+                        >Coming Soon</a
+                    >
+                </article>
+                <article class="location">
+                    <img
+                        src="/images/world/enemies_thumb.jpg"
+                        alt="Enemies Thumbnail"
+                        class="location-img"
+                    />
+                    <h3>Enemies</h3>
+                    <p>Foes born of Umbraeth’s dark will.</p>
+                    <a href="/world/enemies/enemies.html" class="explore-btn"
+                        >Coming Soon</a
+                    >
+                </article>
+            </div>
+        </section>
+        <footer>
+            <p>
+                © 2025 Echoes of the Ancients. Crafted with wisdom by Grok,
+                created by xAI.
+            </p>
+            <p>
+                Contact:
+                <a href="mailto:echoesgame@KdeanGames.net"
+                    >echoesgame@KdeanGames.net</a
+                >
+            </p>
+            <a href="https://x.com/KdeanGames" target="_blank" rel="noopener"
+                >Follow us on X</a
+            >
+        </footer>
+        <script>
+            // Fallback: Show image if video fails or isn’t present
+            const video = document.querySelector("video");
+            const img = document.querySelector(".header-media img");
+            if (!video.querySelector("source").src || video.readyState === 0) {
+                video.style.display = "none";
+                img.style.display = "block";
+            }
+            video.onloadeddata = () => {
+                video.style.display = "block";
+                img.style.display = "none";
+            };
+            video.onerror = () => {
+                video.style.display = "none";
+                img.style.display = "block";
+            };
+        </script>
+    </body>
+</html>
