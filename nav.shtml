@@ -16,12 +16,12 @@
             <ul class="dropdown-content">
                 <li><a href="/world/locations.html">Locations</a></li>
                 <li><a href="/world/characters.html">Characters</a></li>
-                <li><a href="/world/weapons/weapons.html">Weapons</a></li>
-                <li><a href="/world/armor/armor.html">Armor</a></li>
-                <li><a href="/world/magic/magic.html">Magic</a></li>
-                <li><a href="/world/items/items.html">Items</a></li>
-                <li><a href="/world/enemies/enemies.html">Enemies</a></li>
-                <li><a href="/world/gameplay/gameplay.html">Gameplay</a></li>
+                <li><a href="/world/weapons.html">Weapons</a></li>
+                <li><a href="/world/armor.html">Armor</a></li>
+                <li><a href="/world/magic.html">Magic</a></li>
+                <li><a href="/world/items.html">Items</a></li>
+                <li><a href="/world/enemies.html">Enemies</a></li>
+                <li><a href="/world/gameplay.html">Gameplay</a></li>
             </ul>
         </li>
     </ul>
