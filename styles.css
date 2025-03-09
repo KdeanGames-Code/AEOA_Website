@@ -1266,7 +1266,267 @@ footer a:hover {
         padding: 0.8rem 1.5rem; /* Large tap target */
     }
 }
+/* ==========================================================================
+   Weapon and Armor Sheet Styling
+   ========================================================================== */
 
+/* Styles the weapon/armor sheet sections */
+#weapon-sheet,
+#armor-sheet {
+    padding: 2rem; /* Matches existing section padding */
+    background: #0d0d0d; /* Dark background for theme */
+    max-width: 1200px; /* Consistent width cap */
+    margin: 0 auto; /* Centers content */
+}
+
+/* Defines two-column layout for weapon/armor sheets, overriding character/location layouts */
+.sheet-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Equal columns for balanced layout */
+    gap: 2rem; /* Consistent spacing */
+    max-width: 1200px; /* Matches section width */
+    margin: 0 auto; /* Centers layout */
+}
+
+/* Styles the left column for portrait and descriptive sections */
+.left-column {
+    display: flex;
+    flex-direction: column; /* Stacks content vertically */
+    gap: 2rem; /* Spacing between sections */
+    align-items: center; /* Centers portrait image */
+}
+
+/* Styles the main weapon/armor portrait image */
+.weaponpage-img,
+.armorpage-img {
+    width: 100%;
+    max-width: 800px; /* Matches your 800x600 prompt dimensions */
+    height: 600px; /* Fixed height for consistency */
+    object-fit: cover; /* Fills space without distortion */
+    border-radius: 10px; /* Matches your rounded aesthetic */
+    border: 2px solid #d4a017; /* Gold border for theme */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
+}
+
+/* Hover effect for weapon/armor portrait images */
+.weaponpage-img:hover,
+.armorpage-img:hover {
+    transform: scale(1.05); /* Slight enlargement */
+    box-shadow: 0 8px 16px rgba(212, 160, 23, 0.3); /* Gold-tinted shadow */
+}
+
+/* Styles sections within the left column (Appearance, Lore, etc.) */
+.left-column section {
+    background: #1f1f1f; /* Dark card background */
+    padding: 1.5rem; /* Comfortable padding */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+    width: 100%; /* Full column width */
+}
+
+/* Styles headings in left column sections */
+.left-column h2 {
+    font-family: "MedievalSharp", cursive, Arial; /* Thematic font */
+    color: #d4a017; /* Gold text */
+    font-size: 1.8rem; /* Matches your smaller section headings */
+    margin-bottom: 1rem; /* Space below */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+}
+
+/* Styles paragraphs in left column sections */
+.left-column p {
+    font-size: 1rem; /* Matches your dense info size */
+    color: #e6e6e6; /* Light text */
+    font-family: "MedievalSharp", cursive, Arial; /* Thematic font */
+}
+
+/* Styles blockquotes for lore quotes */
+.left-column blockquote {
+    margin: 1rem 0; /* Vertical spacing */
+    padding: 1rem; /* Internal padding */
+    background: #2a2a2a; /* Slightly lighter background */
+    border-left: 4px solid #d4a017; /* Gold accent */
+    font-style: italic; /* Thematic emphasis */
+    color: #b0b0b0; /* Lighter grey */
+    font-family: "MedievalSharp", cursive, Arial; /* Thematic font */
+}
+
+/* Styles the powers/properties list */
+.power-list,
+.property-list {
+    margin-top: 1rem; /* Space above */
+}
+
+/* Styles individual power/property items */
+.power-item,
+.property-item {
+    margin-bottom: 1rem; /* Space between items */
+}
+
+/* Styles power/property headings */
+.power-item h3,
+.property-item h3 {
+    font-family: "MedievalSharp", cursive, Arial; /* Thematic font */
+    color: #e6e6e6; /* Light text */
+    font-size: 1.2rem; /* Slightly larger for hierarchy */
+    margin-bottom: 0.5rem; /* Space below */
+}
+
+/* Styles power/property descriptions */
+.power-item p,
+.property-item p {
+    font-size: 1rem; /* Matches body text */
+    color: #b0b0b0; /* Lighter grey */
+    font-family: "MedievalSharp", cursive, Arial; /* Thematic font */
+}
+
+/* Styles the right column for stats and additional sections */
+.right-column {
+    display: flex;
+    flex-direction: column; /* Stacks sections vertically */
+    gap: 2rem; /* Spacing between sections */
+}
+
+/* Styles sections within the right column (Narrative, Wielders, etc.) */
+.right-column section {
+    background: #1f1f1f; /* Dark card background */
+    padding: 1.5rem; /* Comfortable padding */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+}
+
+/* Styles headings in right column sections */
+.right-column h2 {
+    font-family: "MedievalSharp", cursive, Arial; /* Thematic font */
+    color: #d4a017; /* Gold text */
+    font-size: 1.8rem; /* Consistent with left column */
+    margin-bottom: 1rem; /* Space below */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+}
+
+/* Styles paragraphs in right column sections */
+.right-column p {
+    max-width: 700px; /* Limits line length */
+    font-size: 1rem; /* Matches body text */
+    color: #e6e6e6; /* Light text */
+    font-family: "MedievalSharp", cursive, Arial; /* Thematic font */
+}
+
+/* Styles the stats box in the right column */
+.stats-box {
+    background: #1f1f1f; /* Dark background */
+    border: 2px solid #d4a017; /* Gold border */
+    padding: 1rem; /* Compact padding */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+    width: 100%; /* Full column width */
+    text-align: center; /* Centered text */
+}
+
+/* Styles stats box heading */
+.stats-box h3 {
+    font-family: "MedievalSharp", cursive, Arial; /* Thematic font */
+    color: #d4a017; /* Gold text */
+    font-size: 1.6rem; /* Slightly smaller than section headings */
+    margin-bottom: 1rem; /* Space below */
+}
+
+/* Styles stats box paragraphs */
+.stats-box p {
+    font-size: 1.2rem; /* Readable size */
+    color: #e6e6e6; /* Light text */
+    margin: 0.5rem 0; /* Vertical spacing */
+}
+
+/* Highlights stat labels in gold */
+.stats-box p strong {
+    color: #d4a017; /* Gold for emphasis */
+}
+
+/* Styles unordered lists in wielders/wearers sections */
+.right-column ul {
+    list-style: none; /* No bullets */
+    padding: 0; /* No default padding */
+}
+
+/* Styles list items in wielders/wearers sections */
+.right-column li {
+    margin: 0.5rem 0; /* Vertical spacing */
+    font-size: 1rem; /* Matches body text */
+    color: #e6e6e6; /* Light text */
+    font-family: "MedievalSharp", cursive, Arial; /* Thematic font */
+}
+
+/* Highlights names in wielders/wearers lists */
+.right-column li strong {
+    color: #d4a017; /* Gold for emphasis */
+}
+
+/* ==========================================================================
+   Responsive Adjustments for Weapon/Armor Sheets
+   ========================================================================== */
+
+@media (max-width: 767px) {
+    /* Adjusts weapon/armor sheet to single column on mobile */
+    #weapon-sheet,
+    #armor-sheet {
+        padding: 2rem 1rem; /* Tighter padding */
+    }
+
+    .sheet-container {
+        grid-template-columns: 1fr; /* Single column */
+    }
+
+    .left-column,
+    .right-column {
+        width: 100%; /* Full width */
+    }
+
+    .weaponpage-img,
+    .armorpage-img {
+        width: 100%; /* Full width */
+        height: auto; /* Maintains aspect ratio */
+        max-width: 100%; /* Overrides desktop max-width */
+    }
+
+    .left-column section,
+    .right-column section {
+        padding: 1rem; /* Tighter padding */
+    }
+
+    .left-column h2,
+    .right-column h2 {
+        font-family: "Garamond", serif, Arial; /* Switches to Garamond for mobile */
+        font-size: 1.6rem; /* Smaller size */
+    }
+
+    .left-column p,
+    .right-column p,
+    .power-item p,
+    .property-item p,
+    .stats-box p,
+    .right-column li {
+        font-family: "Garamond", serif, Arial; /* Garamond for readability */
+        font-size: 0.9rem; /* Smaller size */
+    }
+
+    .power-item h3,
+    .property-item h3 {
+        font-family: "Garamond", serif, Arial; /* Garamond for mobile */
+        font-size: 1.1rem; /* Slightly smaller */
+    }
+
+    .stats-box h3 {
+        font-family: "Garamond", serif, Arial; /* Garamond for mobile */
+        font-size: 1.4rem; /* Smaller size */
+    }
+
+    .left-column blockquote {
+        font-family: "Garamond", serif, Arial; /* Garamond for mobile */
+        font-size: 0.9rem; /* Smaller size */
+    }
+}
 /* ==========================================================================
    Future Section Placeholder
    ========================================================================== */

@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Standard meta tags for encoding and responsiveness -->
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Page title -->
         <title>Gauntlet of Storms - Echoes of the Ancients</title>
+        <!-- Link to external stylesheet -->
         <link rel="stylesheet" href="/styles.css" />
+        <!-- Favicon -->
         <link rel="icon" type="image/png" href="/images/favicon.png" />
         <!-- SEO Meta Tags -->
         <meta
@@ -17,10 +21,14 @@
         />
     </head>
     <body>
+        <!-- Page identifier -->
         <!-- /world/weapons/gauntlet-of-storms.html -->
+
+        <!-- Header with media and hero text -->
         <header>
-            <!-- Server-Side Include for navigation consistency -->
+            <!-- Server-Side Include for navigation -->
             <!--#include virtual="/nav.shtml" -->
+            <!-- Media container for video and fallback image -->
             <div class="header-media">
                 <video autoplay muted loop playsinline>
                     <source
@@ -33,22 +41,27 @@
                     alt="Gauntlet of Storms at Wind’s Roost"
                 />
             </div>
+            <!-- Hero overlay with weapon-specific class -->
             <div class="hero weapons">
                 <h1>Gauntlet of Storms</h1>
                 <p class="tagline">The Stormlord’s Thunder Fist</p>
             </div>
         </header>
 
+        <!-- Weapon details section -->
         <section id="weapon-sheet">
+            <!-- Two-column container using existing character sheet class -->
             <div class="sheet-container">
-                <!-- Left Column: Portrait and Descriptive Sections -->
+                <!-- Left column for portrait and descriptive content -->
                 <div class="left-column">
+                    <!-- Weapon portrait using characterpage-img class -->
                     <img
                         src="/images/weapons/gauntlet-of-storms_portrait.jpg"
                         alt="Gauntlet of Storms Portrait"
-                        class="weaponpage-img"
+                        class="characterpage-img"
                     />
 
+                    <!-- Appearance section -->
                     <section class="appearance">
                         <h2>Appearance</h2>
                         <p>
@@ -61,6 +74,7 @@
                         </p>
                     </section>
 
+                    <!-- Lore section with blockquote -->
                     <section class="lore">
                         <h2>Lore</h2>
                         <p>
@@ -75,6 +89,7 @@
                         </blockquote>
                     </section>
 
+                    <!-- Powers section with list -->
                     <section class="powers">
                         <h2>Powers & Effects</h2>
                         <p>
@@ -99,6 +114,7 @@
                         </div>
                     </section>
 
+                    <!-- Origin section -->
                     <section class="origin">
                         <h2>Origin</h2>
                         <p>
@@ -111,8 +127,9 @@
                     </section>
                 </div>
 
-                <!-- Right Column: Stats and Additional Sections -->
+                <!-- Right column for stats and additional content -->
                 <div class="right-column">
+                    <!-- Stats box -->
                     <div class="stats-box">
                         <h3>Stats</h3>
                         <p><strong>Length:</strong> 0.7m</p>
@@ -121,6 +138,7 @@
                         <p><strong>Magic Affinity:</strong> Wind</p>
                     </div>
 
+                    <!-- Narrative section -->
                     <section class="narrative">
                         <h2>Role in the Narrative</h2>
                         <p>
@@ -131,6 +149,7 @@
                         </p>
                     </section>
 
+                    <!-- Wielders section -->
                     <section class="wielders">
                         <h2>Notable Wielders</h2>
                         <ul>
@@ -149,6 +168,7 @@
                         </ul>
                     </section>
 
+                    <!-- Legacy section -->
                     <section class="legacy">
                         <h2>Legacy</h2>
                         <p>
@@ -162,6 +182,7 @@
             </div>
         </section>
 
+        <!-- Footer with credits and links -->
         <footer>
             <p>
                 © 2025 Echoes of the Ancients. Crafted with wisdom by Grok,
@@ -183,6 +204,7 @@
             </p>
         </footer>
 
+        <!-- Video fallback script -->
         <script>
             const video = document.querySelector("video");
             const img = document.querySelector(".header-media img");
