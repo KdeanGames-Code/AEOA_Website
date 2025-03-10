@@ -1569,6 +1569,47 @@ footer a:hover {
     }
 }
 /* ==========================================================================
+   Item Sheet Styling - Added for /world/items/dawn-shard.html and future pages
+   ========================================================================== */
+
+/* Styles the item sheet section, matching magic/armor layout */
+#item-sheet {
+    padding: 2rem; /* Consistent padding */
+    background: #0d0d0d; /* Dark background for theme */
+    max-width: 1200px; /* Caps width */
+    margin: 0 auto; /* Centers content */
+}
+
+/* Styles the main item portrait image */
+.itempage-img {
+    width: 100%;
+    max-width: 800px; /* Matches 800x600 prompt dimensions */
+    height: 600px; /* Fixed height for consistency */
+    object-fit: cover; /* Fills space without distortion */
+    border-radius: 10px; /* Matches your rounded aesthetic */
+    border: 2px solid #d4a017; /* Gold border for theme */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
+}
+
+/* Hover effect for item portrait image */
+.itempage-img:hover {
+    transform: scale(1.05); /* Slight enlargement */
+    box-shadow: 0 8px 16px rgba(212, 160, 23, 0.3); /* Gold-tinted shadow */
+}
+
+/* Responsive adjustments for item sheets */
+@media (max-width: 767px) {
+    #item-sheet {
+        padding: 2rem 1rem; /* Tighter padding */
+    }
+    .itempage-img {
+        width: 100%; /* Full width */
+        height: auto; /* Maintains aspect ratio */
+        max-width: 100%; /* Overrides desktop max-width */
+    }
+}
+/* ==========================================================================
    Future Section Placeholder
    ========================================================================== */
 
